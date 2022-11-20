@@ -24,6 +24,6 @@ class Aspirante extends Model
     {
         return $this->belongsTo(Postulacion::class, 'idpostulacion', 'idpostulacion');
     }
-
+dasdsa
     
 }
