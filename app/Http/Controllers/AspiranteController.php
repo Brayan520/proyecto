@@ -96,5 +96,4 @@ class AspiranteController extends Controller
         $aspirante->delete();
         return back();
     }
-    brayan
 }
