@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Solicitudservicio;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class SolicitudservicioController extends Controller
@@ -23,8 +25,8 @@ class SolicitudservicioController extends Controller
 
     public function create()
     {
-    $solicitudservicios  = Solicitudservicio::all();
-    return view ('solicitudservicio.create',['solicitudservicios'=>$solicitudservicios]);
+    $user  = User::all();
+    return view ('solicitudservicio.create',['user'=>$user]);
 
     }
 
@@ -32,7 +34,7 @@ class SolicitudservicioController extends Controller
     {
         $request->validate([
      'fechasolicitud'=> 'required',
-     'idusuario'=> 'required'
+     'id'=> 'required'
        ]);
        Solicitudservicio::create($request->all());
 
@@ -58,8 +60,8 @@ class SolicitudservicioController extends Controller
      */
     public function edit(Solicitudservicio $solicitudservicio)
     {   
-    $users  = User::all();    
-    return view ('solicitudservicio.edit',['solicitudservicio'=>$solicitudservicios, 'users'=>$users]);
+    $user  = User::all();    
+    return view ('solicitudservicio.edit',['solicitudservicio'=>$solicitudservicio, 'user'=>$user]);
     }
 
     /**
@@ -73,7 +75,7 @@ class SolicitudservicioController extends Controller
     {
       $request->validate([
         'fechasolicitud'=> 'required',
-     'idusuario'=> 'required'
+     'id'=> 'required'
        ]);
 
       $solicitudservicio->update($request->all());

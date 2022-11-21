@@ -11,13 +11,13 @@ class Solicitudservicio extends Model
     
         protected $table = 'solicitudservicio';
         protected $primaryKey = 'idsolicitudservicio';
-        protected $fillable = ['fechasolicitud', 'idusuario'];
+        protected $fillable = ['fechasolicitud', 'id'];
     
         public $timestamps = false;  
     
-        public function users()
+        public function user()
         {
-            return $this->belongsTo(User::class, 'idusuario', 'idusuario');
+            return $this->belongsTo(User::class, 'id', 'id');
         }
         
     }

@@ -17,8 +17,8 @@ return new class extends Migration
             $table->increments('idsolicitudservicio');
             $table->date('fechasolicitud');
 
-            $table->unsignedInteger('idusuario')->nullable();
-            $table->foreign('idusuario')->references('id')->on('users');
+            $table->unsignedInteger('id')->nullable();
+            $table->foreign('id')->references('id')->on('users');
         });
     }
 
