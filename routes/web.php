@@ -7,6 +7,7 @@ use App\Http\Controllers\AspiranteController;
 use App\Http\Controllers\EntrevistaController;
 use App\Http\Controllers\SolicitudservicioController;
 use App\Http\Controllers\DetalleservicioController;
+use App\Http\Controllers\ContratoservicioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +54,12 @@ Route::get('/detalleservicio', function () {
     return redirect('/detalleservicio');
 });
 Route::resource ('detalleservicio', DetalleservicioController::class);
+
+Route::get('/contratoservicio', function () {
+    return redirect('/contratoservicio');
+});
+Route::resource ('contratoservicio', ContratoservicioController::class);
+
 
 
 Auth::routes();

@@ -25,6 +25,7 @@
     <a href="{{ route('entrevista.index') }}" class="btn btn-primary ti-back-left">{{ __('Entrevistas') }}</a>
     <a href="{{ route('solicitudservicio.index') }}" class="btn btn-primary ti-back-left">{{ __('Solicitud Servicio') }}</a>
     <a href="{{ route('detalleservicio.index') }}" class="btn btn-primary ti-back-left">{{ __('Detalle Servicio') }}</a>
+    <a href="{{ route('contratoservicio.index') }}" class="btn btn-primary ti-back-left">{{ __('Contrato Servicio') }}</a>
 </div>
 @endsection
 
