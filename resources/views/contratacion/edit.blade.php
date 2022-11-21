@@ -49,31 +49,31 @@
 				@enderror
 				</div>
             <div class="col-md-6">
-					<label for="idperfil" class="form-label">Perfil</label>
-					<select id="idperfil" class="form-select" name="idperfil" value="{{old('idperfil')}}">
+					<label for="idcolaborador" class="form-label">Id Colaborador</label>
+					<select id="idcolaborador" class="form-select" name="idcolaborador" value="{{old('idcolaborador')}}">
 						<option value="" selected>Seleccionar...</option>
-						@foreach($perfils as $perfil)
-						<option value="{{ $perfil->idperfil}}" {{ ($vacante->idperfil == $perfil->idperfil)?'selected':''}}>{{$perfil->nombre}}</option>
+						@foreach($colaboradores as $colaborador)
+						<option value="{{ $colaborador->idcolaborador}}" {{ ($contratacion->idcolaborador == $colaborador->idcolaborador)?'selected':''}}>{{$colaborador->idcolaborador}}</option>
 						@endforeach
 					</select>
-					@error('idperfil')
+					@error('idcolaborador')
 					<small class="text-danger" role="alert">
-						selecciona un perfil
+						selecciona un colaborador
 					</small>
 					@enderror
 				</div>
 
 				<div class="col-md-6">
-					<label for="idcargo" class="form-label">Cargo</label>
-					<select id="idcargo" class="form-select" name="idcargo" value="{{old('idcargo')}}">
+					<label for="idaspirante" class="form-label">Id Aspirante</label>
+					<select id="idaspirante" class="form-select" name="idaspirante" value="{{old('idaspirante')}}">
 						<option value="" selected>Seleccionar...</option>
-						@foreach($cargos as $cargo)
-						<option value="{{ $cargo->idcargo}}" {{($vacante->idcargo == $cargo->idcargo)?'selected':''}}>{{$cargo->salario}}</option>
+						@foreach($aspirantes as $aspirante)
+						<option value="{{ $aspirante->idaspirante}}" {{($contratacion->idaspirante == $aspirante->idaspirante)?'selected':''}}>{{$aspirante->idaspirante}}</option>
 						@endforeach
 					</select>
-					@error('idcargo')
+					@error('idaspirante')
 					<small class="text-danger" role="alert">
-						selecciona un salario
+						selecciona un aspirante
 					</small>
 					@enderror
 				</div>
