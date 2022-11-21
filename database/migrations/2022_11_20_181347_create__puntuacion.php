@@ -17,7 +17,7 @@ return new class extends Migration
             $table->increments('idpuntuacion');
             $table->string('puntuacioncalificacion',50);
             $table->date('fechapuntuacion');
-            $table->string('observaciones',100);
+            $table->string('observaciones',100)->nullable();
 
             $table->unsignedInteger('identrevista')->nullable();
             $table->foreign('identrevista')->references('identrevista')->on('entrevista');
