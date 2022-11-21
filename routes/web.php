@@ -6,6 +6,7 @@ use App\Http\Controllers\PostulacionController;
 use App\Http\Controllers\AspiranteController;
 use App\Http\Controllers\EntrevistaController;
 use App\Http\Controllers\SolicitudservicioController;
+use App\Http\Controllers\DetalleservicioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,11 @@ Route::get('/solicitudservicio', function () {
     return redirect('/solicitudservicio');
 });
 Route::resource ('solicitudservicio', SolicitudservicioController::class);
+
+Route::get('/detalleservicio', function () {
+    return redirect('/detalleservicio');
+});
+Route::resource ('detalleservicio', DetalleservicioController::class);
 
 
 Auth::routes();

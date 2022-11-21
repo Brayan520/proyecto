@@ -10,8 +10,8 @@ class CargoController extends Controller
     public function index()
     {
 
-        $lsitacargo = Cargo::all();
-        return view('cargos.index', ['cargos' => $listacargo]);
+        $cargos = Cargo::all();
+        return view('cargo.index', ['cargos' => $cargos]);
     }
 
     /**
@@ -21,7 +21,7 @@ class CargoController extends Controller
      */
     public function create()
     {
-        return view('cargos.create');
+        return view('cargo.create');
     }
 
     /**
@@ -38,7 +38,7 @@ class CargoController extends Controller
         );
 
         Cargo::create($request->all());
-        return redirect()->route('cargos.index');
+        return redirect()->route('cargo.index');
     }
 
     /**
@@ -60,7 +60,7 @@ class CargoController extends Controller
      */
     public function edit(Cargo $cargo)
     {
-        return view('cargos.edit', ['cargo' => $cargo]);
+        return view('cargo.edit', ['cargo' => $cargo]);
     }
 
     /**
@@ -78,7 +78,7 @@ class CargoController extends Controller
         );
 
         $cargo->update($request->all());
-        return redirect()->route('cargos.index');
+        return redirect()->route('cargo.index');
     }
 
     /**
@@ -90,6 +90,6 @@ class CargoController extends Controller
     public function destroy(Cargo $cargo)
     {
         $cargo->delete();
-        return redirect()->route('cargos.index');   
+        return redirect()->route('cargo.index');   
     }
 }
