@@ -40,7 +40,7 @@
 				@enderror
 			</div>
 			<div class="col-md-6">
-				<label for="idcolaborador" class="form-label">I'd Colaborador</label>
+				<label for="idcolaborador" class="form-label">Id Colaborador</label>
 				<select class="form-control" id='idcolaborador' name='idcolaborador' value="{{ old('idcolaborador') }}">
 					<option value="">Seleccionar ...</option>
 					@foreach($colaboradores as $colaborador)
