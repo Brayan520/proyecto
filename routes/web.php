@@ -8,7 +8,9 @@ use App\Http\Controllers\EntrevistaController;
 use App\Http\Controllers\SolicitudservicioController;
 use App\Http\Controllers\DetalleservicioController;
 use App\Http\Controllers\ContratoservicioController;
-
+use App\Http\Controllers\CalificacionController;
+use App\Http\Controllers\ColaboradorController;
+use App\Http\Controllers\ContratacionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,6 +61,21 @@ Route::get('/contratoservicio', function () {
     return redirect('/contratoservicio');
 });
 Route::resource ('contratoservicio', ContratoservicioController::class);
+
+Route::get('/calificacion', function () {
+    return redirect('/calificacion');
+});
+Route::resource ('calificacion', CalificacionController::class);
+
+Route::get('/colaborador', function () {
+    return redirect('/colaborador');
+});
+Route::resource ('colaborador', ColaboradorController::class);
+
+Route::get('/contratacion', function () {
+    return redirect('/contratacion');
+});
+Route::resource ('contratacion', ContratacionController::class);
 
 
 

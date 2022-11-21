@@ -17,7 +17,7 @@ return new class extends Migration
             $table->increments('idcontratacion');
             $table->string('terminolaboral',50);
             $table->date('fechainicial');
-            $table->date('fechafinal');
+            $table->date('fechafinal')->nullable();
             $table->string('sueldo',50);
 
             $table->unsignedInteger('idcolaborador')->nullable();

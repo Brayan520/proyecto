@@ -26,6 +26,9 @@
     <a href="{{ route('solicitudservicio.index') }}" class="btn btn-primary ti-back-left">{{ __('Solicitud Servicio') }}</a>
     <a href="{{ route('detalleservicio.index') }}" class="btn btn-primary ti-back-left">{{ __('Detalle Servicio') }}</a>
     <a href="{{ route('contratoservicio.index') }}" class="btn btn-primary ti-back-left">{{ __('Contrato Servicio') }}</a>
+    <a href="{{ route('calificacion.index') }}" class="btn btn-primary ti-back-left">{{ __('Calificaciones') }}</a>
+    <a href="{{ route('colaborador.index') }}" class="btn btn-primary ti-back-left">{{ __('Colaboradores') }}</a>
+    <a href="{{ route('contratacion.index') }}" class="btn btn-primary ti-back-left">{{ __('Contrataciones') }}</a>
 </div>
 @endsection
 
