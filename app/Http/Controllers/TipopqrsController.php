@@ -11,10 +11,10 @@ class TipopqrsController extends Controller
     public function index()
     {
 
-        $tipopqrss = Tipopqrs::orderBy('idtipopqrs', 'ASC')->paginate(5);
+        $tipopqrs = Tipopqrs::orderBy('idtipopqrs', 'ASC')->paginate(5);
 
 
-        return view ('tipopqrs.index', ['tipopqrss' => $tipopqrss]);
+        return view ('tipopqrs.index', ['tipopqrs' => $tipopqrs]);
     }
 
     /**
@@ -60,9 +60,9 @@ class TipopqrsController extends Controller
      * @param  Sexo  $sexo
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tipopqrs $tipopqrs)
+    public function edit(Tipopqrs $tipopqr)
     {
-        return view('tipopqrs.edit', ['tipopqrs' => $tipopqrs]);
+        return view('tipopqrs.edit', ['tipopqr' => $tipopqr]);
     }
 
     /**
@@ -72,13 +72,13 @@ class TipopqrsController extends Controller
      * @param  Sexo  $sexo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tipopqrs $tipopqrs)
+    public function update(Request $request, Tipopqrs $tipopqr)
     {
         $request->validate(
             ['tipo' => 'required|min:3|max:100|unique:tipopqrs']
         );
 
-        $tipopqrs->update($request->all());
+        $tipopqr->update($request->all());
         return redirect()->route('tipopqrs.index');
     }
 
@@ -88,9 +88,9 @@ class TipopqrsController extends Controller
      * @param  Sexo  $sexo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tipopqrs $tipopqrs)
+    public function destroy(Tipopqrs $tipopqr)
     {
-        $tipopqrs->delete();
+        $tipopqr->delete();
         return redirect()->route('tipopqrs.index');   
     }
 }

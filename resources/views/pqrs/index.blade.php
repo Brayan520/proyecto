@@ -13,7 +13,7 @@
 		<div class="col-md-12">
 			<h2 class="text-success">Pqrs</h2>
 		</div>
-		@if (sizeof($pqrss) > 0)
+		@if (sizeof($pqrs) > 0)
 		<table class="table">
 			<thead>
 				<tr>
@@ -28,18 +28,18 @@
 				</tr>
 			</thead>
 			<tbody>
-				@foreach($pqrss as $pqrs)
+				@foreach($pqrs as $pqr)
 				<tr>
-				<td>{{ $pqrs->idpqrs }}</td>
-					<td>{{ $pqrs->descripcion }}</td>
-					<td>{{ $pqrs->fecha }}</td>
-					<td>{{ $pqrs->tipopqrss->tipo }}</td>
-					<td>{{ $pqrs->estados->tipo }}</td>
-					<td>{{ $pqrs->contratoservicios->direccion }}</td>
-					<td>{{ $pqrs->respuestas->respuesta }}</td>
+				<td>{{ $pqr->idpqrs }}</td>
+					<td>{{ $pqr->descripcion }}</td>
+					<td>{{ $pqr->fecha }}</td>
+					<td>{{ $pqr->tipopqrss->tipo }}</td>
+					<td>{{ $pqr->estados->tipo }}</td>
+					<td>{{ $pqr->contratoservicios->direccion }}</td>
+					<td>{{ $pqr->respuestas->respuesta }}</td>
 					<td class="text-center">
-						<a href="{{ route('pqrs.edit', $pqrs) }}" class="btn btn-success ti-pencil-alt"></a>
-						<form action="{{ route('pqrs.destroy', $pqrs) }}" method="POST" class="d-inline-block">
+						<a href="{{ route('pqrs.edit', $pqr) }}" class="btn btn-success ti-pencil-alt"></a>
+						<form action="{{ route('pqrs.destroy', $pqr) }}" method="POST" class="d-inline-block">
 							@csrf
 							@method('DELETE')
 							<button type="submit" class="btn btn-danger ti-trash"

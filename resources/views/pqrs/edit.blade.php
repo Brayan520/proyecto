@@ -9,14 +9,14 @@
 			</div>
 		</div>
 		<div class="col-md-12">
-			<form action="{{ route('pqrs.update', $pqrs)}}" method="POST">
+			<form action="{{ route('pqrs.update', $pqr)}}" method="POST">
 				@csrf
 				@method('PUT')
             
 
 				<div class="col-md-6">
 					<label for="descripcion" class="form-control-label">Descripcion</label>
-					<input type="text" class="form-control" id="descripcion" name="descripcion" value="{{old('descripcion', $pqrs->descripcion)}}">
+					<input type="text" class="form-control" id="descripcion" name="descripcion" value="{{old('descripcion', $pqr->descripcion)}}">
 				
 				@error('descripcion')
 				<small class="text-danger"> {{ $message}}</small>
@@ -25,7 +25,7 @@
 
 				<div class="col-md-6">
 					<label for="fecha" class="form-control-label">Fecha de la pqrs</label>
-					<input type="date" class="form-control" id="fecha" name="fecha" value="{{old('fecha', $pqrs->fecha)}}">
+					<input type="date" class="form-control" id="fecha" name="fecha" value="{{old('fecha', $pqr->fecha)}}">
 				
 				@error('fecha')
 				<small class="text-danger"> {{ $message}}</small>
@@ -37,7 +37,7 @@
 					<select id="idtipopqrs" class="form-select" name="idtipopqrs" value="{{old('idtipopqrs')}}">
 						<option value="" selected>Seleccionar...</option>
 						@foreach($tipopqrss as $tipopqrs)
-						<option value="{{ $tipopqrs->idtipopqrs}}" {{ ($pqrs->idtipopqrs == $tipopqrs->idtipopqrs)?'selected':''}}>{{$tipopqrs->tipo}}</option>
+						<option value="{{ $tipopqrs->idtipopqrs}}" {{ ($pqr->idtipopqrs == $tipopqrs->idtipopqrs)?'selected':''}}>{{$tipopqrs->tipo}}</option>
 						@endforeach
 					</select>
 					@error('idtipopqrs')
@@ -52,7 +52,7 @@
 					<select id="idestado" class="form-select" name="idestado" value="{{old('idestado')}}">
 						<option value="" selected>Seleccionar...</option>
 						@foreach($estados as $estado)
-						<option value="{{ $estado->idestado}}" {{($pqrs->idestado == $estado->idestado)?'selected':''}}>{{$estado->tipo}}</option>
+						<option value="{{ $estado->idestado}}" {{($pqr->idestado == $estado->idestado)?'selected':''}}>{{$estado->tipo}}</option>
 						@endforeach
 					</select>
 					@error('idestado')
@@ -67,7 +67,7 @@
 					<select id="idcontratoservicio" class="form-select" name="idcontratoservicio" value="{{old('idcontratoservicio')}}">
 						<option value="" selected>Seleccionar...</option>
 						@foreach($contratoservicios as $contratoservicio)
-						<option value="{{ $contratoservicio->idcontratoservicio}}" {{($pqrs->idcontratoservicio == $contratoservicio->idcontratoservicio)?'selected':''}}>{{$contratoservicio->direccion}}</option>
+						<option value="{{ $contratoservicio->idcontratoservicio}}" {{($pqr->idcontratoservicio == $contratoservicio->idcontratoservicio)?'selected':''}}>{{$contratoservicio->direccion}}</option>
 						@endforeach
 					</select>
 					@error('idcontratoservicio')
@@ -82,7 +82,7 @@
 					<select id="idrespuesta" class="form-select" name="idrespuesta" value="{{old('idrespuesta')}}">
 						<option value="" selected>Seleccionar...</option>
 						@foreach($respuestas as $respuesta)
-						<option value="{{ $respuesta->idrespuesta}}" {{($pqrs->idrespuesta == $respuesta->idrespuesta)?'selected':''}}>{{$respuesta->respuesta}}</option>
+						<option value="{{ $respuesta->idrespuesta}}" {{($pqr->idrespuesta == $respuesta->idrespuesta)?'selected':''}}>{{$respuesta->respuesta}}</option>
 						@endforeach
 					</select>
 					@error('idrespuesta')

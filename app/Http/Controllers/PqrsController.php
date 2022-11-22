@@ -13,10 +13,10 @@ class PqrsController extends Controller
 {
         public function index()
         {
-            $pqrss = Pqrs::orderBy('idpqrs', 'ASC')->paginate(5);
+            $pqrs = Pqrs::orderBy('idpqrs', 'ASC')->paginate(5);
     
     
-           return view ('pqrs.index', ['pqrss' => $pqrss]);
+           return view ('pqrs.index', ['pqrs' => $pqrs]);
         }
     
         /**
@@ -58,7 +58,7 @@ class PqrsController extends Controller
          * @param  \App\Models\Pqrs  $pqrss
          * @return \Illuminate\Http\Response
          */
-        public function show(Pqrs $pqrss)
+        public function show(Pqrs $pqrs)
         {
             //
         }
@@ -69,13 +69,13 @@ class PqrsController extends Controller
         * @param  \App\Models\Pqrs  $pqrss
          * @return \Illuminate\Http\Response
          */
-        public function edit(Pqrs $pqrs)
+        public function edit(Pqrs $pqr)
         {   
             $tipopqrss  = Tipopqrs::all();    
             $estados  = Estado::all();
             $contratoservicios  = Contratoservicio::all();
             $respuestas  = Respuesta::all();
-        return view ('pqrs.edit',['pqrs'=>$pqrs, 'tipopqrss'=>$tipopqrss, 'estados'=>$estados, 'contratoservicios'=>$contratoservicios, 'respuestas'=>$respuestas]);
+        return view ('pqrs.edit',['pqr'=>$pqr, 'tipopqrss'=>$tipopqrss, 'estados'=>$estados, 'contratoservicios'=>$contratoservicios, 'respuestas'=>$respuestas]);
         }
     
         /**
@@ -85,7 +85,7 @@ class PqrsController extends Controller
          * @param  \App\Models\Pqrs  $pqrss
          * @return \Illuminate\Http\Response
          */
-        public function update(Request $request, Pqrs $pqrs)
+        public function update(Request $request, Pqrs $pqr)
         {
           $request->validate([
             'descripcion'=> 'required|min:1|max:200',
@@ -96,7 +96,7 @@ class PqrsController extends Controller
             'idrespuesta'=> 'required'
            ]);
     
-          $pqrs->update($request->all());
+          $pqr->update($request->all());
            return redirect()->route('pqrs.index');
         }
     
@@ -106,9 +106,9 @@ class PqrsController extends Controller
          * @param  \App\Models\Pqrs  $pqrss
          * @return \Illuminate\Http\Response
          */
-        public function destroy(Pqrs $pqrs)
+        public function destroy(Pqrs $pqr)
         {
-            $pqrs->delete();
-            return back();
+            $pqr->delete();
+            return redirect()->route('pqrs.index'); 
         }
     }

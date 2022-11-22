@@ -62,10 +62,10 @@ class EntrevistaController extends Controller
     * @param  \App\Models\Entrevista  $entrevistas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Entrevista $entrevista)
+    public function edit(Entrevista $entrevistum)
     {   
     $aspirantes  = Aspirante::all();    
-    return view ('entrevista.edit',['entrevista'=>$entrevista, 'aspirantes'=>$aspirantes]);
+    return view ('entrevista.edit',['entrevistum'=>$entrevistum, 'aspirantes'=>$aspirantes]);
     }
 
     /**
@@ -75,7 +75,7 @@ class EntrevistaController extends Controller
      * @param  \App\Models\Entrevista  $entrevistas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Entrevista $entrevista)
+    public function update(Request $request, Entrevista $entrevistum)
     {
       $request->validate([
         'nombreentrevistador'=> 'required|min:3|max:100',
@@ -83,10 +83,10 @@ class EntrevistaController extends Controller
      'lugar'=> 'required|min:10|max:100',
      'fecha'=>'required',
      'hora'=> 'required',
-     'idaspirante'=> 'required'
+     'idaspirante'
        ]);
 
-      $entrevista->update($request->all());
+      $entrevistum->update($request->all());
        return redirect()->route('entrevista.index');
     }
 
@@ -96,9 +96,9 @@ class EntrevistaController extends Controller
      * @param  \App\Models\Entrevista  $entrevistas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Entrevista $entrevista)
+    public function destroy(Entrevista $entrevistum)
     {
-        $entrevista->delete();
+        $entrevistum->delete();
         return back();
     }
 }

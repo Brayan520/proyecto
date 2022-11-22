@@ -9,14 +9,14 @@
 			</div>
 		</div>
 		<div class="col-md-12">
-			<form action="{{ route('tipopqrs.update', $tipopqrs)}}" method="POST">
+			<form action="{{ route('tipopqrs.update', $tipopqr)}}" method="POST">
 				@csrf
 				@method('PUT')
             
 
 				<div class="col-md-6">
 					<label for="tipo" class="form-control-label">Tipo de pqrs</label>
-					<input type="text" class="form-control" id="tipo" name="tipo" value="{{old('tipo', $tipopqrs->tipo)}}">
+					<input type="text" class="form-control" id="tipo" name="tipo" value="{{old('tipo', $tipopqr->tipo)}}">
 				
 				@error('tipo')
 				<small class="text-danger"> {{ $message}}</small>

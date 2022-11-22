@@ -9,14 +9,14 @@
 			</div>
 		</div>
 		<div class="col-md-12">
-			<form action="{{ route('respuesta.update', $respuesta)}}" method="POST">
+			<form action="{{ route('respuesta.update', $respuestum)}}" method="POST">
 				@csrf
 				@method('PUT')
             
 
 				<div class="col-md-6">
 					<label for="fecha" class="form-control-label">Fecha de la respuesta</label>
-					<input type="date" class="form-control" id="fecha" name="fecha" value="{{old('fecha', $respuesta->fecha)}}">
+					<input type="date" class="form-control" id="fecha" name="fecha" value="{{old('fecha', $respuestum->fecha)}}">
 				
 				@error('fecha')
 				<small class="text-danger"> {{ $message}}</small>
@@ -25,7 +25,7 @@
 
 				<div class="col-md-6">
 					<label for="respuesta" class="form-control-label">Respuesta</label>
-					<input type="text" class="form-control" id="respuesta" name="respuesta" value="{{old('respuesta', $respuesta->respuesta)}}">
+					<input type="text" class="form-control" id="respuesta" name="respuesta" value="{{old('respuesta', $respuestum->respuesta)}}">
 				
 				@error('respuesta')
 				<small class="text-danger"> {{ $message}}</small>

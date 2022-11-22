@@ -24,14 +24,14 @@
 				</tr>
 			</thead>
 			<tbody>
-				@foreach($respuestas as $respuesta)
+				@foreach($respuestas as $respuestum)
 				<tr>
-					<td>{{ $respuesta->idrespuesta }}</td>
-					<td>{{ $respuesta->fecha }}</td>
-					<td>{{ $respuesta->respuesta }}</td>
+					<td>{{ $respuestum->idrespuesta }}</td>
+					<td>{{ $respuestum->fecha }}</td>
+					<td>{{ $respuestum->respuesta }}</td>
 					<td class="text-center">
-						<a href="{{ route('respuesta.edit', $respuesta) }}" class="btn btn-success ti-pencil-alt"></a>
-						<form action="{{ route('respuesta.destroy', $respuesta) }}" method="POST" class="d-inline-block">
+						<a href="{{ route('respuesta.edit', $respuestum) }}" class="btn btn-success ti-pencil-alt"></a>
+						<form action="{{ route('respuesta.destroy', $respuestum) }}" method="POST" class="d-inline-block">
 							@csrf
 							@method('DELETE')
 							<button type="submit" class="btn btn-danger ti-trash"

@@ -28,18 +28,18 @@
 				</tr>
 			</thead>
 			<tbody>
-				@foreach($entrevistas as $entrevista)
+				@foreach($entrevistas as $entrevistum)
 				<tr>
-					<td>{{ $entrevista->identrevista }}</td>
-					<td>{{ $entrevista->nombreentrevistador }}</td>
-					<td>{{ $entrevista->tipoentrevista }}</td>
-					<td>{{ $entrevista->lugar }}</td>
-					<td>{{ $entrevista->fecha }}</td>
-					<td>{{ $entrevista->hora }}</td>
-					<td>{{ $entrevista->aspirantes->hojadevidas->nombre_apellido }}</td>
+					<td>{{ $entrevistum->identrevista }}</td>
+					<td>{{ $entrevistum->nombreentrevistador }}</td>
+					<td>{{ $entrevistum->tipoentrevista }}</td>
+					<td>{{ $entrevistum->lugar }}</td>
+					<td>{{ $entrevistum->fecha }}</td>
+					<td>{{ $entrevistum->hora }}</td>
+					<td>{{ $entrevistum->aspirantes->hojadevidas->nombre_apellido }}</td>
 					<td class="text-center">
-						<a href="{{ route('entrevista.edit', $entrevista) }}" class="btn btn-success ti-pencil-alt"></a>
-						<form action="{{ route('entrevista.destroy', $entrevista) }}" method="POST" class="d-inline-block">
+						<a href="{{ route('entrevista.edit', $entrevistum) }}" class="btn btn-success ti-pencil-alt"></a>
+						<form action="{{ route('entrevista.destroy', $entrevistum) }}" method="POST" class="d-inline-block">
 							@csrf
 							@method('DELETE')
 							<button type="submit" class="btn btn-danger ti-trash"

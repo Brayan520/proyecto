@@ -60,9 +60,9 @@ class RespuestaController extends Controller
      * @param  Sexo  $sexo
      * @return \Illuminate\Http\Response
      */
-    public function edit(Respuesta $respuesta)
+    public function edit(Respuesta $respuestum)
     {
-        return view('respuesta.edit', ['respuesta' => $respuesta]);
+        return view('respuesta.edit', ['respuestum' => $respuestum]);
     }
 
     /**
@@ -72,14 +72,14 @@ class RespuestaController extends Controller
      * @param  Sexo  $sexo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Respuesta $respuesta)
+    public function update(Request $request, Respuesta $respuestum)
     {
         $request->validate(
             ['fecha' => 'required',
             'respuesta' => 'required|min:3|max:200|']
         );
 
-        $respuesta->update($request->all());
+        $respuestum->update($request->all());
         return redirect()->route('respuesta.index');
     }
 
@@ -89,9 +89,9 @@ class RespuestaController extends Controller
      * @param  Sexo  $sexo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Respuesta $respuesta)
+    public function destroy(Respuesta $respuestum)
     {
-        $respuesta->delete();
+        $respuestum->delete();
         return redirect()->route('respuesta.index');   
     }
 }

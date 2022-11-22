@@ -13,7 +13,7 @@
 		<div class="col-md-12">
 			<h2 class="text-success">Tipos de pqrs</h2>
 		</div>
-		@if (sizeof($tipopqrss) > 0)
+		@if (sizeof($tipopqrs) > 0)
 		<table class="table">
 			<thead>
 				<tr>
@@ -23,13 +23,13 @@
 				</tr>
 			</thead>
 			<tbody>
-				@foreach($tipopqrss as $tipopqrs)
+				@foreach($tipopqrs as $tipopqr)
 				<tr>
-					<td>{{ $tipopqrs->idtipopqrs }}</td>
-					<td>{{ $tipopqrs->tipo }}</td>
+					<td>{{ $tipopqr->idtipopqrs }}</td>
+					<td>{{ $tipopqr->tipo }}</td>
 					<td class="text-center">
-						<a href="{{ route('tipopqrs.edit', $tipopqrs) }}" class="btn btn-success ti-pencil-alt"></a>
-						<form action="{{ route('tipopqrs.destroy', $tipopqrs) }}" method="POST" class="d-inline-block">
+						<a href="{{ route('tipopqrs.edit', $tipopqr) }}" class="btn btn-success ti-pencil-alt"></a>
+						<form action="{{ route('tipopqrs.destroy', $tipopqr) }}" method="POST" class="d-inline-block">
 							@csrf
 							@method('DELETE')
 							<button type="submit" class="btn btn-danger ti-trash"
