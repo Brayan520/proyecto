@@ -5,7 +5,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div align="right">
-				<a href="{{ route('servicio.create') }}" class="btn btn-primary">Agregar</a>
+				<a href="{{ route('servicios.create') }}" class="btn btn-primary">Agregar</a>
 				<a href="{{ route('home') }}" class="btn btn-success ti-home"></a>
 			</div>	
 		</div>
