@@ -5,67 +5,75 @@
 	<div class="row">
 		<div class="col-md-12">
 
-				<a href="{{ route('vacante.index') }}" class="btn btn-primary ti-back-left" style="width: 5%;"></a>
+				<a href="{{ route('contratacion.index') }}" class="btn btn-primary ti-back-left" style="width: 5%;"></a>
 			</div>
 		</div>
 		<div class="col-md-12">
-			<form action="{{ route('vacante.update', $vacante)}}" method="POST">
+			<form action="{{ route('contratacion.update', $contratacion)}}" method="POST">
 				@csrf
 				@method('PUT')
             
 
 				<div class="col-md-6">
-					<label for="experiencia" class="form-control-label">Experiencia</label>
-					<input type="text" class="form-control" id="experiencia" name="experiencia" value="{{old('experiencia', $vacante->experiencia)}}">
+					<label for="terminolaboral" class="form-control-label">Termino Laboral</label>
+					<input type="text" class="form-control" id="terminolaboral" name="terminolaboral" value="{{old('terminolaboral', $contratacion->terminolaboral)}}">
 				
-				@error('experiencia')
+				@error('terminolaboral')
 				<small class="text-danger"> {{ $message}}</small>
 				@enderror
 				</div>
 
 				<div class="col-md-6">
-					<label for="horario" class="form-control-label">Horario</label>
-					<input type="text" class="form-control" id="horario" name="horario" value="{{old('horario', $vacante->horario)}}">
+					<label for="fechainicial" class="form-control-label">Fecha Inicial</label>
+					<input type="date" class="form-control" id="fechainicial" name="fechainicial" value="{{old('fechainicial', $contratacion->fechainicial)}}">
 				
-				@error('horario')
+				@error('fechainicial')
 				<small class="text-danger"> {{ $message}}</small>
 				@enderror
 				</div>
 
-				<div class="col-md-6">Disponibilidad</label>
-					<input type="text" class="form-control" id="disponibilidad" name="disponibilidad" value="{{old('disponibilidad', $vacante->disponibilidad)}}">
+				<div class="col-md-6">
+<label for="fechafinal" class="form-control-label">Fecha Final</label>
+					<input type="date" class="form-control" id="fechafinal" name="fechafinal" value="{{old('fechafinal', $contratacion->fechafinal)}}">
 				
-				@error('disponibilidad')
+				@error('fechafinal')
 				<small class="text-danger"> {{ $message}}</small>
 				@enderror
 				</div>
-
+				<div class="col-md-6">
+<label for="sueldo" class="form-control-label">Sueldo</label>
+					<input type="text" class="form-control" id="sueldo" name="sueldo" value="{{old('sueldo', $contratacion->sueldo)}}">
+				
+				@error('sueldo')
+				<small class="text-danger"> {{ $message}}</small>
+				@enderror
+				</div>
             <div class="col-md-6">
-					<label for="idperfil" class="form-label">Perfil</label>
-					<select id="idperfil" class="form-select" name="idperfil" value="{{old('idperfil')}}">
+					<label for="idcolaborador" class="form-label">Id Colaborador</label>
+					<select id="idcolaborador" class="form-select" name="idcolaborador" value="{{old('idcolaborador')}}">
 						<option value="" selected>Seleccionar...</option>
-						@foreach($perfils as $perfil)
-						<option value="{{ $perfil->idperfil}}" {{ ($vacante->idperfil == $perfil->idperfil)?'selected':''}}>{{$perfil->nombre}}</option>
+						@foreach($colaboradores as $colaborador)
+						<option value="{{ $colaborador->idcolaborador}}" {{ ($contratacion->idcolaborador == $colaborador->idcolaborador)?'selected':''}}>{{$colaborador->idcolaborador}}</option>
 						@endforeach
 					</select>
-					@error('idperfil')
+					@error('idcolaborador')
 					<small class="text-danger" role="alert">
-						selecciona un perfil
+						selecciona un colaborador
 					</small>
 					@enderror
 				</div>
 
 				<div class="col-md-6">
-					<label for="idcargo" class="form-label">Cargo</label>
-					<select id="idcargo" class="form-select" name="idcargo" value="{{old('idcargo')}}">
+					<label for="idaspirante" class="form-label">Id Aspirante</label>
+					<select id="idaspirante" class="form-select" name="idaspirante" value="{{old('idaspirante')}}">
 						<option value="" selected>Seleccionar...</option>
-						@foreach($cargos as $cargo)
-						<option value="{{ $cargo->idcargo}}" {{($vacante->idcargo == $cargo->idcargo)?'selected':''}}>{{$cargo->salario}}</option>
+						@foreach($aspirantes as $aspirante)
+						<option value="{{ $aspirante->idaspirante}}" {{($contratacion->idaspirante == $aspirante->idaspirante)?'selected':''}}>{{$aspirante->idaspirante}}</option>
 						@endforeach
 					</select>
-					@error('idcargo')
+					@error('idaspirante')
 					<small class="text-danger" role="alert">
-						selecciona un salario
+						selecciona un aspirante
 					</small>
 					@enderror
 				</div>

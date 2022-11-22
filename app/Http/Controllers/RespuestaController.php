@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Respuesta;
 use Illuminate\Http\Request;
-use App\Models\Perfil;
 
-class PerfilController extends Controller
+class RespuestaController extends Controller
 {
     public function index()
     {
 
-        $perfils = Perfil::orderBy('idperfil', 'ASC')->paginate(5);
+        $respuestas = Respuesta::orderBy('idrespuesta', 'ASC')->paginate(5);
 
 
-        return view ('perfil.index', ['perfils' => $perfils]);
+        return view ('respuesta.index', ['respuestas' => $respuestas]);
     }
 
     /**
@@ -23,7 +23,7 @@ class PerfilController extends Controller
      */
     public function create()
     {
-        return view('perfil.create');
+        return view('respuesta.create');
     }
 
     /**
@@ -35,11 +35,12 @@ class PerfilController extends Controller
     public function store(Request $request)
     {
         $request->validate(
-            ['nombre' => 'required|min:3|max:100|unique:perfil']
+            ['fecha' => 'required',
+            'respuesta' => 'required|min:3|max:200|']
         );
 
-        Perfil::create($request->all());
-        return redirect()->route('perfil.index');
+        Respuesta::create($request->all());
+        return redirect()->route('respuesta.index');
     }
 
     /**
@@ -59,9 +60,9 @@ class PerfilController extends Controller
      * @param  Sexo  $sexo
      * @return \Illuminate\Http\Response
      */
-    public function edit(Perfil $perfil)
+    public function edit(Respuesta $respuesta)
     {
-        return view('perfil.edit', ['perfil' => $perfil]);
+        return view('respuesta.edit', ['respuesta' => $respuesta]);
     }
 
     /**
@@ -71,14 +72,15 @@ class PerfilController extends Controller
      * @param  Sexo  $sexo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Perfil $perfil)
+    public function update(Request $request, Respuesta $respuesta)
     {
         $request->validate(
-            ['nombre' => 'required|min:3|max:100|unique:perfil']
+            ['fecha' => 'required',
+            'respuesta' => 'required|min:3|max:200|']
         );
 
-        $perfil->update($request->all());
-        return redirect()->route('perfil.index');
+        $respuesta->update($request->all());
+        return redirect()->route('respuesta.index');
     }
 
     /**
@@ -87,10 +89,9 @@ class PerfilController extends Controller
      * @param  Sexo  $sexo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Perfil $perfil)
+    public function destroy(Respuesta $respuesta)
     {
-        $perfil->delete();
-        return redirect()->route('perfil.index');   
+        $respuesta->delete();
+        return redirect()->route('respuesta.index');   
     }
 }
-

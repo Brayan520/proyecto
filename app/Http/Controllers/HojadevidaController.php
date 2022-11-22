@@ -9,10 +9,10 @@ class HojadevidaController extends Controller
 {
     public function index()
     {
-        $vacantes = Vacante::orderBy('idvacante', 'ASC')->paginate(5);
+        $hojadevidas = Hojadevida::orderBy('idhojadevida', 'ASC')->paginate(5);
 
 
-       return view ('vacante.index', ['vacantes' => $vacantes]);
+       return view ('hojadevida.index', ['hojadevidas' => $hojadevidas]);
     }
 
     /**
@@ -24,9 +24,8 @@ class HojadevidaController extends Controller
 
     public function create()
     {
-    $perfils  = Perfil::all();    
-    $cargos  = Cargo::all();
-    return view ('vacante.create',['perfils'=>$perfils, 'cargos'=>$cargos]);
+
+    return view ('hojadevida.create');
 
     }
 
@@ -48,9 +47,9 @@ class HojadevidaController extends Controller
             'referenciapersonal'=>'required|min:1|max:100',
             'fecharegistro'=> 'required'
        ]);
-       Vacante::create($request->all());
+       Hojadevida::create($request->all());
 
-       return redirect()->route('vacante.index');
+       return redirect()->route('hojadevida.index');
     }
 
     /**
@@ -59,7 +58,7 @@ class HojadevidaController extends Controller
      * @param  \App\Models\Vacante  $vacantes
      * @return \Illuminate\Http\Response
      */
-    public function show(Vacante $vacantes)
+    public function show(Hojadevida $hojadevidas)
     {
         //
     }
@@ -70,11 +69,9 @@ class HojadevidaController extends Controller
     * @param  \App\Models\Vacante  $vacantes
      * @return \Illuminate\Http\Response
      */
-    public function edit(Vacante $vacante)
+    public function edit(Hojadevida $hojadevida)
     {   
-    $perfils  = Perfil::all();    
-    $cargos  = Cargo::all();
-    return view ('vacante.edit',['vacante'=>$vacante, 'perfils'=>$perfils, 'cargos'=>$cargos]);
+    return view ('hojadevida.edit');
     }
 
     /**
@@ -84,7 +81,7 @@ class HojadevidaController extends Controller
      * @param  \App\Models\Vacante  $vacantes
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Vacante $vacante)
+    public function update(Request $request, Hojadevida $hojadevida)
     {
       $request->validate([
         'nombre'=> 'required|min:2|max:100',
@@ -103,8 +100,8 @@ class HojadevidaController extends Controller
      'fecharegistro'=> 'required'
        ]);
 
-      $vacante->update($request->all());
-       return redirect()->route('vacante.index');
+      $hojadevida->update($request->all());
+       return redirect()->route('hojadevida.index');
     }
 
     /**
@@ -113,9 +110,9 @@ class HojadevidaController extends Controller
      * @param  \App\Models\Vacante  $vacantes
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Vacante $vacante)
+    public function destroy(Hojadevida $hojadevida)
     {
-        $vacante->delete();
+        $hojadevida->delete();
         return back();
     }
 }

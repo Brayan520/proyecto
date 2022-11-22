@@ -9,9 +9,10 @@ class ServicioController extends Controller
 {
     public function index()
     {
+        $servicios = Servicio::orderBy('idservicio', 'ASC')->paginate(5);
 
-        $servicios = Servicio::all();
-        return view('servicio.index', ['servicios' => $servicios]);
+
+        return view ('servicio.index', ['servicios' => $servicios]);
     }
 
     /**

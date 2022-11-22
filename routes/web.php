@@ -1,16 +1,27 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\VacanteController;
-use App\Http\Controllers\PostulacionController;
 use App\Http\Controllers\AspiranteController;
-use App\Http\Controllers\EntrevistaController;
-use App\Http\Controllers\SolicitudservicioController;
-use App\Http\Controllers\DetalleservicioController;
-use App\Http\Controllers\ContratoservicioController;
 use App\Http\Controllers\CalificacionController;
+use App\Http\Controllers\CargoController;
 use App\Http\Controllers\ColaboradorController;
 use App\Http\Controllers\ContratacionController;
+use App\Http\Controllers\ContratoservicioController;
+use App\Http\Controllers\DetalleservicioController;
+use App\Http\Controllers\EntrevistaController;
+use App\Http\Controllers\EstadoController;
+use App\Http\Controllers\HojadevidaController;
+use App\Http\Controllers\PerfilController;
+use App\Http\Controllers\PostulacionController;
+use App\Http\Controllers\PqrsController;
+use App\Http\Controllers\PuntuacionController;
+use App\Http\Controllers\RespuestaController;
+use App\Http\Controllers\ServicioController;
+use App\Http\Controllers\SolicitudservicioController;
+use App\Http\Controllers\TipopqrsController;
+use App\Http\Controllers\VacanteController;
+use App\Models\Solicitudservicio;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,45 +38,20 @@ Route::get('/', function () {
 
 });
 
-Route::get('/vacante', function () {
-    return redirect('/vacante');
-});
-Route::resource ('vacante', VacanteController::class);
-
-Route::get('/postulacion', function () {
-    return redirect('/postulacion');
-});
-Route::resource ('postulacion', PostulacionController::class);
-
 Route::get('/aspirante', function () {
     return redirect('/aspirante');
 });
 Route::resource ('aspirante', AspiranteController::class);
 
-Route::get('/entrevista', function () {
-    return redirect('/entrevista');
-});
-Route::resource ('entrevista', EntrevistaController::class);
-
-Route::get('/solicitudservicio', function () {
-    return redirect('/solicitudservicio');
-});
-Route::resource ('solicitudservicio', SolicitudservicioController::class);
-
-Route::get('/detalleservicio', function () {
-    return redirect('/detalleservicio');
-});
-Route::resource ('detalleservicio', DetalleservicioController::class);
-
-Route::get('/contratoservicio', function () {
-    return redirect('/contratoservicio');
-});
-Route::resource ('contratoservicio', ContratoservicioController::class);
-
 Route::get('/calificacion', function () {
     return redirect('/calificacion');
 });
 Route::resource ('calificacion', CalificacionController::class);
+
+Route::get('/cargo', function () {
+    return redirect('/cargo');
+});
+Route::resource ('cargo', CargoController::class);
 
 Route::get('/colaborador', function () {
     return redirect('/colaborador');
@@ -76,6 +62,76 @@ Route::get('/contratacion', function () {
     return redirect('/contratacion');
 });
 Route::resource ('contratacion', ContratacionController::class);
+
+Route::get('/contratoservicio', function () {
+    return redirect('/contratoservicio');
+});
+Route::resource ('contratoservicio', ContratoservicioController::class);
+
+Route::get('/detalleservicio', function () {
+    return redirect('/detalleservicio');
+});
+Route::resource ('detalleservicio', DetalleservicioController::class);
+
+Route::get('/entrevista', function () {
+    return redirect('/entrevista');
+});
+Route::resource ('entrevista', EntrevistaController::class);
+
+Route::get('/estado', function () {
+    return redirect('/estado');
+});
+Route::resource ('estado', EstadoController::class);
+
+Route::get('/hojadevida', function () {
+    return redirect('/hojadevida');
+});
+Route::resource ('hojadevida', HojadevidaController::class);
+
+Route::get('/perfil', function () {
+    return redirect('/perfil');
+});
+Route::resource ('perfil', PerfilController::class);
+
+Route::get('/postulacion', function () {
+    return redirect('/postulacion');
+});
+Route::resource ('postulacion', PostulacionController::class);
+
+Route::get('/pqrs', function () {
+    return redirect('/pqrs');
+});
+Route::resource ('pqrs', PqrsController::class);
+
+Route::get('/puntuacion', function () {
+    return redirect('/puntuacion');
+});
+Route::resource ('puntuacion', PuntuacionController::class);
+
+Route::get('/respuesta', function () {
+    return redirect('/respuesta');
+});
+Route::resource ('respuesta', RespuestaController::class);
+
+Route::get('/servicio', function () {
+    return redirect('/servicio');
+});
+Route::resource ('servicio', ServicioController::class);
+
+Route::get('/solicitudservicio', function () {
+    return redirect('/solicitudservicio');
+});
+Route::resource ('solicitudservicio', Solicitudservicio::class);
+
+Route::get('/tipopqrs', function () {
+    return redirect('/tipopqrs');
+});
+Route::resource ('tipopqrs', TipopqrsController::class);
+
+Route::get('/vacante', function () {
+    return redirect('/vacante');
+});
+Route::resource ('vacante', VacanteController::class);
 
 
 

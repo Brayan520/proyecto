@@ -11,7 +11,7 @@ class ContratacionController extends Controller
 {
     public function index()
     {
-        $contrataciones = Contratacion::orderBy('idvacante', 'ASC')->paginate(5);
+        $contrataciones = Contratacion::orderBy('idcontratacion', 'ASC')->paginate(5);
 
 
        return view ('contratacion.index', ['contrataciones' => $contrataciones]);

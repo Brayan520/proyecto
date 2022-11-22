@@ -9,9 +9,10 @@ class CargoController extends Controller
 {
     public function index()
     {
+        $cargos = Cargo::orderBy('idcargo', 'ASC')->paginate(5);
 
-        $cargos = Cargo::all();
-        return view('cargo.index', ['cargos' => $cargos]);
+
+        return view ('cargo.index', ['cargos' => $cargos]);
     }
 
     /**

@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Estado;
 use Illuminate\Http\Request;
-use App\Models\Perfil;
 
-class PerfilController extends Controller
+class EstadoController extends Controller
 {
     public function index()
     {
 
-        $perfils = Perfil::orderBy('idperfil', 'ASC')->paginate(5);
+        $estados = Estado::orderBy('idestado', 'ASC')->paginate(5);
 
 
-        return view ('perfil.index', ['perfils' => $perfils]);
+        return view ('estado.index', ['estados' => $estados]);
     }
 
     /**
@@ -23,7 +23,7 @@ class PerfilController extends Controller
      */
     public function create()
     {
-        return view('perfil.create');
+        return view('estado.create');
     }
 
     /**
@@ -35,11 +35,11 @@ class PerfilController extends Controller
     public function store(Request $request)
     {
         $request->validate(
-            ['nombre' => 'required|min:3|max:100|unique:perfil']
+            ['tipo' => 'required|min:3|max:100|unique:estado']
         );
 
-        Perfil::create($request->all());
-        return redirect()->route('perfil.index');
+        Estado::create($request->all());
+        return redirect()->route('estado.index');
     }
 
     /**
@@ -59,9 +59,9 @@ class PerfilController extends Controller
      * @param  Sexo  $sexo
      * @return \Illuminate\Http\Response
      */
-    public function edit(Perfil $perfil)
+    public function edit(Estado $estado)
     {
-        return view('perfil.edit', ['perfil' => $perfil]);
+        return view('estado.edit', ['estado' => $estado]);
     }
 
     /**
@@ -71,14 +71,14 @@ class PerfilController extends Controller
      * @param  Sexo  $sexo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Perfil $perfil)
+    public function update(Request $request, Estado $estado)
     {
         $request->validate(
-            ['nombre' => 'required|min:3|max:100|unique:perfil']
+            ['tipo' => 'required|min:3|max:100|unique:estado']
         );
 
-        $perfil->update($request->all());
-        return redirect()->route('perfil.index');
+        $estado->update($request->all());
+        return redirect()->route('estado.index');
     }
 
     /**
@@ -87,10 +87,9 @@ class PerfilController extends Controller
      * @param  Sexo  $sexo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Perfil $perfil)
+    public function destroy(Estado $estado)
     {
-        $perfil->delete();
-        return redirect()->route('perfil.index');   
+        $estado->delete();
+        return redirect()->route('estado.index');   
     }
 }
-

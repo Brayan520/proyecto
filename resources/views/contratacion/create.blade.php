@@ -4,55 +4,64 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-				<a href="{{ route('vacante.index') }}" class="btn btn-primary ti-back-left" style="width: 5%;"></a>
+				<a href="{{ route('contratacion.index') }}" class="btn btn-primary ti-back-left" style="width: 5%;"></a>
 			</div>
 		</div>
 		<div class="col-md-12">
-		<form action="{{ route('vacante.store') }}" method="POST">
+		<form action="{{ route('contratacion.store') }}" method="POST">
 			@csrf
 			<div class="col-md-6">
-				<label for="experiencia" class="form-label">Experiencia</label>
-				<input type="text" class="form-control" id="experiencia" name="experiencia" value="{{ old('experiencia') }}">
-				@error('experiencia')
+				<label for="terminolaboral" class="form-label">Termino Laboral</label>
+				<input type="text" class="form-control" id="terminolaboral" name="terminolaboral" value="{{ old('terminolaboral') }}">
+				@error('terminolaboral')
 				<small class="text-danger">{{ $message }}</small>
 				@enderror
 			</div>
 			<div class="col-md-6">
-				<label for="horario" class="form-label">Horario</label>
-				<input type="text" class="form-control" id="horario" name="horario" value="{{ old('horario') }}">
-				@error('horario')
+				<label for="fechainicial" class="form-label">Fecha Inicial</label>
+				<input type="date" class="form-control" id="fechainicial" name="fechainicial" value="{{ old('fechainicial') }}">
+				@error('fechainicial')
 				<small class="text-danger">{{ $message }}</small>
 				@enderror
 			</div>
 			<div class="col-md-6">
-				<label for="horario" class="form-label">Disponibilidad</label>
-				<input type="text" class="form-control" id="disponibilidad" name="disponibilidad" value="{{ old('disponibilidad') }}">
-				@error('disponibilidad')
+				<label for="fechafinal" class="form-label">Fecha Final</label>
+				<input type="date" class="form-control" id="fechafinal" name="fechafinal" value="{{ old('fechafinal') }}">
+				@error('fechafinal')
+				<small class="text-danger">{{ $message }}</small>
+				@enderror
+			</div>
+
+<div class="col-md-6">
+				<label for="sueldo" class="form-label">Sueldo</label>
+				<input type="text" class="form-control" id="sueldo" name="sueldo" value="{{ old('sueldo') }}">
+				@error('sueldo')
 				<small class="text-danger">{{ $message }}</small>
 				@enderror
 			</div>
 			<div class="col-md-6">
-				<label for="idperfil" class="form-label">Perfil</label>
-				<select class="form-control" id='idperfil' name='idperfil' value="{{ old('idperfil') }}">
+				<label for="idcolaborador" class="form-label">Id Colaborador</label>
+				<select class="form-control" id='idcolaborador' name='idcolaborador' value="{{ old('idcolaborador') }}">
 					<option value="">Seleccionar ...</option>
-					@foreach($perfils as $perfil)
-					<option value="{{ $perfil->idperfil }}">{{ $perfil->nombre }}</option>
+					@foreach($colaboradores as $colaborador)
+					<option value="{{ $colaborador->idcolaborador }}">{{ $colaborador->idcolaborador }}</option>
 					@endforeach
 				</select>
-				@error('idperfil')
-				<small class="text-danger">Seleccione un Perfil</small>
+				@error('idcolaborador')
+				<small class="text-danger">Seleccione un Colaborador</small>
 				@enderror
 			</div>
+
 			<div class="col-md-6">
-				<label for="idcargo" class="form-label">Salario</label>
-				<select class="form-control" id='idcargo' name='idcargo' value="{{ old('idcargo') }}">
+				<label for="idaspirante" class="form-label">Id Aspirante</label>
+				<select class="form-control" id='idaspirante' name='idaspirante' value="{{ old('idaspirante') }}">
 					<option value="">Seleccionar ...</option>
-					@foreach($cargos as $cargo)
-					<option value="{{ $cargo->idcargo }}">{{ $cargo->salario }}</option>
+					@foreach($aspirantes as $aspirante)
+					<option value="{{ $aspirante->idaspirante }}">{{ $aspirante->idaspirante }}</option>
 					@endforeach
 				</select>
-				@error('idcargo')
-				<small class="text-danger">Seleccione un Salario</small>
+				@error('idaspirante')
+				<small class="text-danger">Seleccione un Aspirante</small>
 				@enderror
 			</div>
 			<div class="col-md-6 mt-3">

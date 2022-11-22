@@ -25,9 +25,9 @@ return new class extends Migration
             $table->string('edad',3);
             $table->string('estudios',100);
             $table->string('competencias',100);
-            $table->string('experiencialaboral',100);
-            $table->string('referencialaboral',100);
-            $table->string('referenciapersonal',100);
+            $table->string('experiencialaboral',100)->nullable();
+            $table->string('referencialaboral',100)->nullable();
+            $table->string('referenciapersonal',100)->nullable();
             $table->date('fecharegistro');
 
         });

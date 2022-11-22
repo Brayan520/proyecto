@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Perfil;
 
-class PerfilController extends Controller
+use App\Models\Tipopqrs;
+use Illuminate\Http\Request;
+
+class TipopqrsController extends Controller
 {
     public function index()
     {
-
-        $perfils = Perfil::orderBy('idperfil', 'ASC')->paginate(5);
-
-
-        return view ('perfil.index', ['perfils' => $perfils]);
+        $tipopqrss = Tipopqrs::orderBy('idtipopqrs', 'ASC')->paginate(5);
+        return view('tipopqrs.index', ['tipopqrss' => $tipopqrss]);
     }
 
     /**
@@ -23,7 +21,7 @@ class PerfilController extends Controller
      */
     public function create()
     {
-        return view('perfil.create');
+        return view('tipopqrs.create');
     }
 
     /**
@@ -35,11 +33,12 @@ class PerfilController extends Controller
     public function store(Request $request)
     {
         $request->validate(
-            ['nombre' => 'required|min:3|max:100|unique:perfil']
+            [
+            'tipo' => 'required|min:3|max:200|unique:tipopqrs']
         );
 
-        Perfil::create($request->all());
-        return redirect()->route('perfil.index');
+        Tipopqrs::create($request->all());
+        return redirect()->route('tipopqrs.index');
     }
 
     /**
@@ -59,9 +58,9 @@ class PerfilController extends Controller
      * @param  Sexo  $sexo
      * @return \Illuminate\Http\Response
      */
-    public function edit(Perfil $perfil)
+    public function edit(Tipopqrs $tipopqrs)
     {
-        return view('perfil.edit', ['perfil' => $perfil]);
+        return view('tipopqrs.edit', ['tipopqrs' => $tipopqrs]);
     }
 
     /**
@@ -71,14 +70,15 @@ class PerfilController extends Controller
      * @param  Sexo  $sexo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Perfil $perfil)
+    public function update(Request $request, Tipopqrs $tipopqrs)
     {
         $request->validate(
-            ['nombre' => 'required|min:3|max:100|unique:perfil']
+            [
+                'tipo' => 'required|min:3|max:200|unique:tipopqrs']
         );
 
-        $perfil->update($request->all());
-        return redirect()->route('perfil.index');
+        $tipopqrs->update($request->all());
+        return redirect()->route('tipopqrs.index');
     }
 
     /**
@@ -87,10 +87,9 @@ class PerfilController extends Controller
      * @param  Sexo  $sexo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Perfil $perfil)
+    public function destroy(Tipopqrs $tipopqrs)
     {
-        $perfil->delete();
-        return redirect()->route('perfil.index');   
+        $tipopqrs->delete();
+        return redirect()->route('tipopqrs.index');   
     }
 }
-
