@@ -41,10 +41,10 @@ class HojadevidaController extends Controller
             'fechanacimiento'=> 'required',
             'edad'=> 'required|min:2|max:2',
             'estudios'=>'required|min:1|max:100',
-            'competencias'=> 'required|min:1|max:100',
-            'experiencialaboral'=> 'required',
-            'referencialaboral'=> 'required|min:1|max:100',
-            'referenciapersonal'=>'required|min:1|max:100',
+            'competencias'=> 'min:1|max:100',
+            'experiencialaboral',
+            'referencialaboral'=> 'min:1|max:100',
+            'referenciapersonal'=>'min:1|max:100',
             'fecharegistro'=> 'required'
        ]);
        Hojadevida::create($request->all());
@@ -71,7 +71,7 @@ class HojadevidaController extends Controller
      */
     public function edit(Hojadevida $hojadevida)
     {   
-    return view ('hojadevida.edit');
+    return view ('hojadevida.edit', ['hojadevida' => $hojadevida]);
     }
 
     /**
@@ -93,10 +93,10 @@ class HojadevidaController extends Controller
      'fechanacimiento'=> 'required',
      'edad'=> 'required|min:2|max:2',
      'estudios'=>'required|min:1|max:100',
-     'competencias'=> 'required|min:1|max:100',
-     'experiencialaboral'=> 'required',
-     'referencialaboral'=> 'required|min:1|max:100',
-     'referenciapersonal'=>'required|min:1|max:100',
+     'competencias'=> 'min:1|max:100',
+     'experiencialaboral',
+     'referencialaboral'=> 'min:1|max:100',
+     'referenciapersonal'=>'min:1|max:100',
      'fecharegistro'=> 'required'
        ]);
 
@@ -113,7 +113,7 @@ class HojadevidaController extends Controller
     public function destroy(Hojadevida $hojadevida)
     {
         $hojadevida->delete();
-        return back();
+        return redirect()->route('hojadevida.index'); 
     }
 }
 $hojadevidas = Hojadevida::all()->pluck('nombre_apellido');

@@ -43,7 +43,7 @@
 							@csrf
 							@method('DELETE')
 							<button type="submit" class="btn btn-danger ti-trash"
-							onclick="return confirm('¿Está seguro de eliminar la hoaja de vida?!!')"></button>
+							onclick="return confirm('¿Está seguro de eliminar la hoja de vida?!!')"></button>
 						</form>
 					</td>
 				</tr>
@@ -54,7 +54,7 @@
 			
 		</div>
 		@else
-		<div class="alert alert-secondary"><h3>No se encontraron Entrevistas</h3></div>
+		<div class="alert alert-secondary"><h3>No se encontraron Hojas de vida</h3></div>
 		@endif
 	</div>
 </div>

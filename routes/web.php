@@ -121,7 +121,7 @@ Route::resource ('servicio', ServicioController::class);
 Route::get('/solicitudservicio', function () {
     return redirect('/solicitudservicio');
 });
-Route::resource ('solicitudservicio', Solicitudservicio::class);
+Route::resource ('solicitudservicio', SolicitudservicioController::class);
 
 Route::get('/tipopqrs', function () {
     return redirect('/tipopqrs');
@@ -132,6 +132,7 @@ Route::get('/vacante', function () {
     return redirect('/vacante');
 });
 Route::resource ('vacante', VacanteController::class);
+
 
 
 

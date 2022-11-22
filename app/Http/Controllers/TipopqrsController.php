@@ -10,8 +10,11 @@ class TipopqrsController extends Controller
 {
     public function index()
     {
+
         $tipopqrss = Tipopqrs::orderBy('idtipopqrs', 'ASC')->paginate(5);
-        return view('tipopqrs.index', ['tipopqrss' => $tipopqrss]);
+
+
+        return view ('tipopqrs.index', ['tipopqrss' => $tipopqrss]);
     }
 
     /**
@@ -33,8 +36,7 @@ class TipopqrsController extends Controller
     public function store(Request $request)
     {
         $request->validate(
-            [
-            'tipo' => 'required|min:3|max:200|unique:tipopqrs']
+            ['tipo' => 'required|min:3|max:100|unique:tipopqrs']
         );
 
         Tipopqrs::create($request->all());
@@ -73,8 +75,7 @@ class TipopqrsController extends Controller
     public function update(Request $request, Tipopqrs $tipopqrs)
     {
         $request->validate(
-            [
-                'tipo' => 'required|min:3|max:200|unique:tipopqrs']
+            ['tipo' => 'required|min:3|max:100|unique:tipopqrs']
         );
 
         $tipopqrs->update($request->all());
