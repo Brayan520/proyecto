@@ -20,7 +20,8 @@ use App\Http\Controllers\ServicioController;
 use App\Http\Controllers\SolicitudservicioController;
 use App\Http\Controllers\TipopqrsController;
 use App\Http\Controllers\VacanteController;
-use App\Models\Solicitudservicio;
+
+
 
 /*
 |--------------------------------------------------------------------------
