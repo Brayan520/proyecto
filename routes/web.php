@@ -24,6 +24,8 @@ use App\Http\Controllers\VacanteController;
 
 //Cliente
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\CatalogoservicioController;
+use App\Http\Controllers\TrabajaconnosotrosController;
 
 
 
@@ -151,3 +153,13 @@ Route::get('/cliente', function () {
     return redirect('/cliente');
 });
 Route::resource ('cliente', ClienteController::class);
+
+Route::get('/catalogoservicio', function () {
+    return redirect('/catalogoservicio');
+});
+Route::resource ('catalogoservicio', CatalogoservicioController::class);
+
+Route::get('/trabajaconnosotros', function () {
+    return redirect('/trabajaconnosotros');
+});
+Route::resource ('trabajaconnosotros', TrabajaconnosotrosController::class);
