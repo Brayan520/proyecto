@@ -22,6 +22,9 @@ use App\Http\Controllers\SolicitudservicioController;
 use App\Http\Controllers\TipopqrsController;
 use App\Http\Controllers\VacanteController;
 
+//Cliente
+use App\Http\Controllers\ClienteController;
+
 
 
 /*
@@ -141,3 +144,10 @@ Route::resource ('vacante', VacanteController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+/*Clientes*/
+Route::get('/cliente', function () {
+    return redirect('/cliente');
+});
+Route::resource ('cliente', ClienteController::class);
