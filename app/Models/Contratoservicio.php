@@ -20,4 +20,8 @@ class Contratoservicio extends Model
         return $this->belongsTo(Solicitudservicio::class, 'idsolicitudservicio', 'idsolicitudservicio');
     }
     
+    public function pqrss()
+    {
+        return $this->hasMany(Pqrs::class, 'idcontratoservicio', 'idcontratoservicio');
+    }
 }

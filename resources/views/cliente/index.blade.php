@@ -147,10 +147,10 @@ img{
 					<a style="text-decoration: none;" href="{{ route('cliente.index') }}" class="w3-bar-item w3-button ">Inicio</a> 
 					<a style="text-decoration: none;" href="{{ route('catalogoservicio.index') }}" class="w3-bar-item w3-button">Catalogo
 						de servicio</a> <a style="text-decoration: none;" href="{{ route('trabajaconnosotros.index') }}" class="w3-bar-item w3-button">Trabaja
-						con nosotros</a> <a style="text-decoration: none;" href="pqrs.html" class="w3-bar-item w3-button">PQRS</a>
-					<a style="text-decoration: none;" th:href="@{/crearcalificaciones/nuevo}" class="w3-bar-item w3-button">Calificaciones</a>
-					<a style="text-decoration: none;" href="quienessomos.html" class="w3-bar-item w3-button">Quienes
-						somos</a> <a style="text-decoration: none;" href="contactanos.html" class="w3-bar-item w3-button">Contactanos</a>
+						con nosotros</a> <a style="text-decoration: none;" href="{{ route('pqrs.index') }}" class="w3-bar-item w3-button">PQRS</a>
+						<a style="text-decoration: none;" href="{{ route('calificaciones.index') }}" class="w3-bar-item w3-button">Calificaciones</a>
+					<a style="text-decoration: none;" href="{{ route('quienessomos.index') }}" class="w3-bar-item w3-button">Quienes
+						somos</a> <a style="text-decoration: none;" href="{{ route('contactanos.index') }}" class="w3-bar-item w3-button">Contactanos</a>
 				</div>
 
 
@@ -177,7 +177,7 @@ img{
 						<p class="texto">En esta seccion podras verificar todos los
 							tipos de servicios que manejamos, ingresa ahora, conocelos y
 							adquirelos.</p>
-						<a href="catalogoservicios.html">
+						<a href="{{ route('catalogoservicio.index') }}">
 							<button class="w3-button w3-blue" style="border-radius: 8px;">Dirigirme</button>
 						</a>
 					</div>
@@ -191,7 +191,7 @@ img{
 							NOSOTROS</h5>
 						<p class="texto">Si te interesa trabajar con nosotros dale ya
 							en el boton y enterate de todo.</p>
-						<a href="vacantes.html">
+						<a href="{{ route('trabajaconnosotros.index') }}">
 							<button class="w3-button w3-blue" style="border-radius: 8px;">Me
 								interesa</button>
 						</a>
@@ -206,7 +206,7 @@ img{
 						<h5 class="titulo">PQRS</h5>
 						<p class="texto">Aqui podras hacer saber tus peticiones,
 							quejas, reclamos y sugerencias respectivas a los servicios.</p>
-						<a href="pqrs.html">
+						<a href="{{ route('pqrs.index') }}">
 							<button class="w3-button w3-blue" style="border-radius: 8px;">Dirigirme</button>
 						</a>
 					</div>
@@ -219,7 +219,7 @@ img{
 						<h5 class="titulo">CALIFICACIONES</h5>
 						<p class="texto">Califica los servicios que has adquirido
 							dandole click en el boton, animate.</p>
-						<a th:href="@{/crearcalificaciones/nuevo}">
+						<a th:href="{{ route('calificaciones.index') }}">
 							<button class="w3-button w3-blue" style="border-radius: 8px;">Dirigirme</button>
 						</a>
 					</div>

@@ -18,14 +18,14 @@ return new class extends Migration
             $table->string('descripcion',200);
             $table->date('fecha');
 
-            $table->unsignedInteger('idtipopqrs')->nullable();
+            $table->unsignedInteger('idtipopqrs');
             $table->foreign('idtipopqrs')->references('idtipopqrs')->on('tipopqrs');
 
-            $table->unsignedInteger('idestado')->nullable();
+            $table->unsignedInteger('idestado');
             $table->foreign('idestado')->references('idestado')->on('estado');
 
-            $table->unsignedInteger('idcontratoservicio')->nullable();
-            $table->foreign('idcontratoservicio')->references('idcontratoservicio')->on('contratoservicio');
+            $table->unsignedInteger('idcontratoservicio')->unique();
+            $table->foreign('idcontratoservicio')->references('idcontratoservicio')->on('contratoservicio')->array_unique;
 
             $table->unsignedInteger('idrespuesta')->nullable();
             $table->foreign('idrespuesta')->references('idrespuesta')->on('respuesta');

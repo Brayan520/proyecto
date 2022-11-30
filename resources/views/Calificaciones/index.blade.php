@@ -1,10 +1,9 @@
 @extends('layouts.app')
 @section('content')
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<title>servicios</title>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,17 +26,15 @@
 <!-- Latest compiled JavaScript -->
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-<link rel="stylesheet" href="static/css/pie_pagina.css"
-	th:href="@{css/pie_pagina.css}">
-<link rel="stylesheet" href="static/css/CatalogoServicios.css"
-	th:href="@{css/CatalogoServicios.css}">
-<link rel="stylesheet" href="static/css/Encabezado-Cliente.css"
-	th:href="@{css/Encabezado-Cliente.css}">
-
+<link rel="stylesheet" th:href="@{/css/Encabezado-Cliente.css}">
+<link rel="stylesheet" th:href="@{/css/pie_pagina.css}">
+<script src="js/Calificaciones.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
+
 <style>
-	.container-fluid{
+    .container-fluid{
     background-color: #C9C8C8;
 }
 .texto2{
@@ -70,139 +67,93 @@ img{
     color: rgb(255, 255, 255);
     padding: 4px;
 }
-.container-fluid{
-    background-color: #C9C8C8;
+.encabezado{
+    background-color: #dddada;
+}   
+.logo{
+    height: 90px;
+    width: 160px;
+    margin-top: 5px;
+    margin-left: 20px;
 }
-.texto2{
-    padding-left: 10%;
-}
-img{
-    width: 40%;
-    height: 80%;
-}
-.iconos{
-    margin-bottom: 5%; 
-}
-.boton .facebook{
-    background: #3b5998;
-    color: #fff;
-    padding: 4px;
-}
-.boton .instagram{
-    background: #d11d62;
-    color: rgb(255, 255, 255);
-    padding: 4px;
-}
-.boton .email{
-    background: #ffffff;
-    color: rgb(255, 0, 0);
-    padding: 4px;
-}
-.boton .mobile{
-    background: #14ac14;
-    color: rgb(255, 255, 255);
-    padding: 4px;
-}
-.forma-cuadro {
-    grid-template-columns: repeat(2, calc(33.3333% - 20px));
-    grid-gap: 30px;
-    margin-left: 250px;
-    width: 100%;
-}
-.margen-abajo {
-    min-height: 864px;
-
-}
-.titulo-principal {
-    font-size: 40px;
+.nproyecto{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    margin-right: 50%;
     font-weight: bold;
-}  
-.margen-texto {
-    padding: 10px;
 }
-.margen-cuadro{
-    height: 50px;
-    width: 50px;
-}
-.cuadro {
-  display: grid;
-}
-.fondo-blanco{
-  color: #111111;
-  background-color: #ffffff;
-}
-.fondo-gris{
-  color: #111111;
-  background-color: #f2f2f2;
-}
-body {
-    margin: 0%;
-}
-.titulo{
-    text-align: center;
-    margin-top: 10%;
-}
-.texto-centro {
-    text-align: center;
-    color: #111111;
-    background-color: #f2f2f2;
-}
-.refe{
-    height: 200px;
 
-}
-	</style>
+    </style>
 
-<body>
 
+<body class="body" onload="mueveReloj()">
 <div class="w3-bar w3-black" style="margin-top: -23px;">
 					<a style="text-decoration: none;" href="{{ route('cliente.index') }}" class="w3-bar-item w3-button ">Inicio</a> 
 					<a style="text-decoration: none;" href="{{ route('catalogoservicio.index') }}" class="w3-bar-item w3-button">Catalogo
 						de servicio</a> <a style="text-decoration: none;" href="{{ route('trabajaconnosotros.index') }}" class="w3-bar-item w3-button">Trabaja
 						con nosotros</a> <a style="text-decoration: none;" href="{{ route('pqrs.index') }}" class="w3-bar-item w3-button">PQRS</a>
-						<a style="text-decoration: none;" th:href="{{ route('calificaciones.index') }}" class="w3-bar-item w3-button">Calificaciones</a>
+					<a style="text-decoration: none;" href="{{ route('calificaciones.index') }}" class="w3-bar-item w3-button">Calificaciones</a>
 					<a style="text-decoration: none;" href="{{ route('quienessomos.index') }}" class="w3-bar-item w3-button">Quienes
 						somos</a> <a style="text-decoration: none;" href="{{ route('contactanos.index') }}" class="w3-bar-item w3-button">Contactanos</a>
 				</div>
-
-
-	<div class="texto-centro  fondo-gris" style="padding-top: 3%; padding-bottom:30%;">
-		<div class="margen-arriba margen-abajo" style="margin: 1%;">
-			<h4 class="titulo-principal" style="margin-bottom: 2%;">SELECCIONA
-				TU SERVICIO</h4>
-			<div class="cuadro forma-cuadro">
-
-				<div class="fondo-blanco"
-					style="border-radius: 10px; margin-top: 0%;">
-					<div class="margen-texto">
-						<div class="margen-cuadro"></div>
-						<img class="imagen" src="https://i.ibb.co/2j2TDNm/Asesoria-La.png"
-							style="height: 30%; width: 30%; margin-top: -5%; margin-left: 2%; margin-bottom: -18%; padding-bottom: -10%;">
-						<h5 class="titulo" style="margin-top: 40px;">SERVICIOS DE
-							LIMPIEZA Y MANTENIMIENTO</h5>
-						<a href="">
-							<button class="w3-button w3-blue" style="border-radius: 8px;">Me
-								interesa</button>
-						</a>
+                <div class="largo-cuadros">
+		<section
+			style="border: 2px solid black; margin-left: 25%; margin-right: 25%; padding-left: 2%; padding-right: -8%; margin-top: 5%; margin-bottom: 5%;">
+			<div class="largo-cuadros-1">
+				<h2 class="w3-center" style="font-weight: bold;">CALIFICA EL
+					SERVICIO</h2>
+				<div class="">
+					<div>
+						<a href="#"><button
+								style="margin-top: 6px; border-radius: 1vh; margin-left: 38%;"
+								class="w3-blue">Seleccionar servicio</button></a>
 					</div>
-				</div>
-				<div class="fondo-blanco"
-					style="border-radius: 10px; margin-top: 0%;">
-					<div class="margen-texto">
-						<div class="margen-cuadro"></div>
-						<img class="imagen" src="https://i.ibb.co/7JK0N5t/Seguridad-Social.png" 
-							style="height: 24%; width: 24%; margin-top: -5%; margin-left: 2%; margin-bottom: 0%; padding-bottom: -10%;">
-						<h5 class="titulo">ASESORIA LABORAL</h5>
-						<a href="asesorialaboral.html">
-							<button class="w3-button w3-blue" style="border-radius: 8px;">Dirigirme</button>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-		<footer>
-			<div class="container-fluid text-black" style="margin-bottom:-35px;">
+					<form name="form_reloj" th:action="@{/calificacionesadmin}"
+						th:object="${calificacionesadmi}" method="POST">
+						<label>Fecha:</label> <input type=date id="fecha"
+							name="FechaCalificacion" th:field="*{FechaCalificacion}" readonly></input>
+						<div>
+							<br> <label>Hora:</label> <input type=datetime
+								name="HoraCalificacion" size="10"
+								onfocus="window.document.form_reloj.HoraCalificacion.blur()"
+								th:field="*{HoraCalificacion}" readonly></input>
+						</div>
+						<div style="margin-top: 2%; margin-bottom: 3%;">
+							<p class="w3-center">Califica el servicio de 1 a 10, donde 1
+								es malo y 10 es bueno</p>
+							<div style="margin-left: 40%;">
+								<select style="margin-left: 40px;" name="PuntuacionCalificacion"
+									th:field="*{PuntuacionCalificacion}" required>
+									<option value=""></option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value=7>7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+								</select>
+							</div>
+						</div>
+						<textarea rows="" cols="" placeholder="Observaciones"
+							style="margin-left: 240px;" name="Observaciones"
+							th:field="*{Observaciones}"></textarea>
+						<div class="w3-center">
+							<button class="btn btn-primary"
+								style="margin-top: 8px; margin-bottom: 3%;" id="submit"
+								onclick='formulariocalificacion()'>Enviar</button>
+							<button class="btn btn-primary"
+								style="margin-top: 8px; margin-bottom: 3%;" id="submit">Consultar
+								Calificación</button>
+						</div>
+					</form>
+		</section>
+        <footer>
+	<div class="container-fluid text-black">
 				<div class="row">
 					<div class="col-md-4" style="margin-top: 2%;">
 						<div class="w3-center">
@@ -275,5 +226,32 @@ body {
             </div>
 	</footer>
 </body>
+
+<script>
+	$(document).ready(function() {
+
+		var now = new Date();
+
+		var day = ("0" + now.getDate()).slice(-2);
+		var month = ("0" + (now.getMonth() + 1)).slice(-2);
+
+		var today = now.getFullYear() + "-" + (month) + "-" + (day);
+		$("#fecha").val(today);
+	});
+</script>
+<script language="JavaScript">
+	function mueveReloj() {
+		momentoActual = new Date()
+		hora = momentoActual.getHours()
+		minuto = momentoActual.getMinutes()
+		segundo = momentoActual.getSeconds()
+
+		horaImprimible = hora + " : " + minuto + " : " + segundo
+
+		document.form_reloj.HoraCalificacion.value = horaImprimible
+
+		setTimeout("mueveReloj()")
+	}
+</script>
 </html>
 @endsection 

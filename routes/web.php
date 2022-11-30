@@ -26,6 +26,9 @@ use App\Http\Controllers\VacanteController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\CatalogoservicioController;
 use App\Http\Controllers\TrabajaconnosotrosController;
+use App\Http\Controllers\CalificacionesController;
+use App\Http\Controllers\ContactanosController;
+use App\Http\Controllers\QuienessomosController;
 
 
 
@@ -163,3 +166,18 @@ Route::get('/trabajaconnosotros', function () {
     return redirect('/trabajaconnosotros');
 });
 Route::resource ('trabajaconnosotros', TrabajaconnosotrosController::class);
+
+Route::get('/calificaciones', function () {
+    return redirect('/calificaciones');
+});
+Route::resource ('calificaciones', CalificacionesController::class);
+
+Route::get('/quienessomos', function () {
+    return redirect('/quienessomos');
+});
+Route::resource ('quienessomos', QuienessomosController::class);
+
+Route::get('/contactanos', function () {
+    return redirect('/contactanos');
+});
+Route::resource ('contactanos', ContactanosController::class);

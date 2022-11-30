@@ -10,4 +10,8 @@ class CatalogoservicioController extends Controller
     {
         return view ('catalogoservicio.index');
 }
+public function serviciolimpieza()
+    {
+        return view('catalogoservicio.serviciolimpieza');
+    }
 }
