@@ -276,7 +276,7 @@ img{
 			</div>
 		</div>
 		<footer>
-			<div class="container-fluid text-black">
+			<div class="container-fluid text-black" style="margin-bottom:-35px;">
 				<div class="row">
 					<div class="col-md-4" style="margin-top: 2%;">
 						<div class="w3-center">

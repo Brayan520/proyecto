@@ -171,7 +171,7 @@ img{
   margin: 0 auto 0 49px;
 }
     </style>
-
+<body style="font-family:Arial, Helvetica, sans-serif">
 <div class="w3-bar w3-black" style="margin-top: -23px;">
 					<a style="text-decoration: none;" href="{{ route('cliente.index') }}" class="w3-bar-item w3-button ">Inicio</a> 
 					<a style="text-decoration: none;" href="{{ route('catalogoservicio.index') }}" class="w3-bar-item w3-button">Catalogo
@@ -267,7 +267,7 @@ img{
 			</div>
 		</div>
 	</section>
-    <footer>
+    <footer style="margin-bottom:-35px;">
 	<div class="container-fluid text-black">
 				<div class="row">
 					<div class="col-md-4" style="margin-top: 2%;">

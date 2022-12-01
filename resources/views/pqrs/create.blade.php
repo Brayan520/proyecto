@@ -46,6 +46,7 @@ img{
     padding: 4px;
 }
 	</style>
+	<body style="font-family:Arial, Helvetica, sans-serif">
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
@@ -126,7 +127,7 @@ img{
 </script>
 </div>
 <footer>
-			<div class="container-fluid text-black">
+			<div class="container-fluid text-black" style="margin-bottom:-35px;">
 				<div class="row">
 					<div class="col-md-4" style="margin-top: 2%;">
 						<div class="w3-center">
@@ -198,5 +199,6 @@ img{
 				</div>
             </div>
 	</footer>
+	</body>
 </html>
 @endsection
