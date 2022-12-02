@@ -29,7 +29,8 @@ use App\Http\Controllers\TrabajaconnosotrosController;
 use App\Http\Controllers\CalificacionesController;
 use App\Http\Controllers\ContactanosController;
 use App\Http\Controllers\QuienessomosController;
-
+use App\Http\Controllers\VacantelimpiezaController;
+use App\Http\Controllers\PostularController;
 
 
 /*
@@ -181,3 +182,13 @@ Route::get('/contactanos', function () {
     return redirect('/contactanos');
 });
 Route::resource ('contactanos', ContactanosController::class);
+
+Route::get('/vacantelimpieza', function () {
+    return redirect('/vacantelimpieza');
+});
+Route::resource ('vacantelimpieza', VacantelimpiezaController::class);
+
+Route::get('/postular', function () {
+    return redirect('/postular');
+});
+Route::resource ('postular', PostularController::class);

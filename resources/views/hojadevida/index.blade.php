@@ -35,7 +35,7 @@
 					<td>{{ $hojadevida->identificacion }}</td>
 					<td>{{ $hojadevida->correo }}</td>
 					<td>{{ $hojadevida->direccion }}</td>
-					<td>{{ $hojadevida->telefono }}</td>
+					<td>{{ $hojadevida->telefonoprincipal }}</td>
 					<td>{{ $hojadevida->fechanacimiento }}</td>
 					<td class="text-center">
 						<a href="{{ route('hojadevida.edit', $hojadevida) }}" class="btn btn-success ti-pencil-alt"></a>

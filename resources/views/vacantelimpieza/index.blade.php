@@ -1,14 +1,12 @@
 @extends('layouts.app')
 @section('content')
-<!DOCTYPE html>
 <html>
 
 <head>
-<title>servicios</title>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cliente</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
@@ -27,76 +25,18 @@
 <!-- Latest compiled JavaScript -->
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<title>Vacante-cliente</title>
 <link rel="stylesheet" href="static/css/pie_pagina.css"
-	th:href="@{css/pie_pagina.css}">
-<link rel="stylesheet" href="static/css/CatalogoServicios.css"
-	th:href="@{css/CatalogoServicios.css}">
+	th:href="@{css/pie_pagina.css}" media="screen">
+<link rel="stylesheet" href="static/css/vacante-cliente.css"
+	th:href="@{css/vacante-cliente.css}" media="screen">
 <link rel="stylesheet" href="static/css/Encabezado-Cliente.css"
-	th:href="@{css/Encabezado-Cliente.css}">
-
+	th:href="@{css/Encabezado-Cliente.css}" media="screen">
 
 </head>
+
 <style>
-.rectangulo {
-  min-height: 130px;
-  color: #ffffff;
-  background-color: #478ac9;
-}
-.centrar-texto {
-  padding: 30px;
-}
-.texto-vacante {
-  font-size: 40px;
-  width: 464px;
-  font-weight: 700;
-  margin: auto;
-}
-.margenes-cuadros {
-  width: 1168px;
-  margin: auto;
-}
-.cuadrar-cuadros {
-  grid-template-columns: 33.3333% 33.3333% 33.3333%;
-  min-height: 928px;
-  display: grid;
-}
-.bajar-cuadro {
-  padding: 20px 0;
-}
-.forma-imagen {
-  height: 213px;
-  width: 357px;
-}
-.cuadrar-subtitulo {
-  margin: 21px -18px 0 11px;
-}
-.cuadrar-texto {
-  margin: 19px 30px 0;
-}
-.letra-azul {
-  border-style: none none solid;
-  margin: 21px auto 0 30px;
-}
-.linea-azul {
-  color: #478ac9 !important;
-}
-.encabezado{
-    background-color: #dddada;
-}   
-.logo{
-    height: 90px;
-    width: 160px;
-    margin-top: 5px;
-    margin-left: 20px;
-}
-.nproyecto{
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-top: 20px;
-    margin-right: 50%;
-    font-weight: bold;
-}
-.container-fluid{
+					.container-fluid{
     background-color: #C9C8C8;
 }
 .texto2{
@@ -129,9 +69,57 @@ img{
     color: rgb(255, 255, 255);
     padding: 4px;
 }
-	</style>
-
-
+.encabezado{
+    background-color: #dddada;
+}   
+.logo{
+    height: 90px;
+    width: 160px;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+.nproyecto{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    margin-right: 50%;
+    font-weight: bold;
+}
+.margen-texto {
+  font-weight: 700;
+  margin: 64px 189px 0 auto;
+}
+.cuadrar-texto {
+  margin: -234px 82px 0 508px;
+}
+.u-btn-1 {
+  font-weight: 700;
+  margin: 38px 232px 0 auto;
+  padding: 8px 33px;
+}
+.u-btn-2 {
+  font-weight: 700;
+  margin: 72px auto 60px;
+  padding: 8px 33px;
+}
+@media (max-width: 1199px) {
+}
+.texto-centro {
+  display: table;
+}
+.cuadrar {
+  margin: auto;
+  width: var(--theme-sheet-width-xl);
+}
+.margen{       
+  --theme-sheet-width-xl: 1140px;
+}
+.boton{
+   background-color: #478ac9;
+   color: #ffffff;
+   display: table;
+} 
+					</style>
 <div class="w3-bar w3-black" style="margin-top: -23px;">
 					<a style="text-decoration: none;" href="{{ route('cliente.index') }}" class="w3-bar-item w3-button ">Inicio</a> 
 					<a style="text-decoration: none;" href="{{ route('catalogoservicio.index') }}" class="w3-bar-item w3-button">Catalogo
@@ -142,63 +130,26 @@ img{
 						somos</a> <a style="text-decoration: none;" href="{{ route('contactanos.index') }}" class="w3-bar-item w3-button">Contactanos</a>
 				</div>
 
-
 				<body>
-	<section>
-		<div class="rectangulo">
-			<div class="centrar-texto">
-				<h2 class="texto-vacante">Vacantes disponibles</h2>
-			</div>
+                <div class="margen">
+		<div class="cuadrar">
+			<h3 class="texto-centro margen-texto">Auxiliar de servicios
+				generales</h3>
+			<img src="https://i.ibb.co/HDSV8Pq/IStock-906777508.jpg" alt="">
+			<h5 class="cuadrar-texto">
+				Descripción de la vacante: Se requiere personal para ocupar el cargo
+				de, AUXILIAR DE SERVICIOS GENERALES con o sin experiencia
+				<p>Formación: No requerido</p>
+				<p>Disponibilidad: Para Trabajar en tiempo Completo o según
+					acuerdos de operación.</p>
+				<p>Experiencia: con o sin experiencia</p>
+				<p>Sitio de trabajo: BOGOTA</p>
+			</h5>
+			<a style="text-decoration:none" href="{{ route('vacantelimpieza.create') }}" class="boton u-btn-1">Aplica su hoja
+				de vida, Dando click.</a> <a style="text-decoration:none" href="{{ route('trabajaconnosotros.index') }}" class="boton u-btn-2">Volver
+				atras</a>
 		</div>
-		<div class="margenes-cuadros">
-			<div class="cuadrar-cuadros">
-				<div>
-					<div class="bajar-cuadro">
-						<img alt="" class="forma-imagen" src="https://i.ibb.co/hD0RxXQ/IStock-906777508.jpg">
-						<h3 class="cuadrar-subtitulo">Limpieza y Mantenimiento</h3>
-						<p class="cuadrar-texto">Postulate como operario de aseo y
-							mantenimiento.</p>
-						<a style="text-decoration: none;" href="{{ route('vacantelimpieza.index') }}" class="linea-azul letra-azul">Más
-							información</a>
-					</div>
-				</div>
-				<div>
-					<div class="bajar-cuadro">
-						<img alt="" class="forma-imagen"
-							src="https://i.ibb.co/1mtW7Z9/Para-que-sirve-el-marketing-digital.jpg">
-						<h3 class="cuadrar-subtitulo">Marketing Digital</h3>
-						<p class="cuadrar-texto">Si te gusta la publicidad, esta es tu
-							oportunidad, postulate ya.</p>
-						<a style="text-decoration: none;" href="trabajaconnosotros.html" class="linea-azul letra-azul">Más
-							información</a>
-					</div>
-				</div>
-				<div>
-					<div class="bajar-cuadro">
-						<img class="forma-imagen"
-							src="https://i.ibb.co/bQHSbK3/Como-se-selecciona-un-gerente-y-los-puestos-de-liderazgo-en-general-20133-350x230.jpg">
-						<h3 class="cuadrar-subtitulo">Auxiliar de R.R.H.H.</h3>
-						<p class="cuadrar-texto">Si eres auxiliar de recursos humanos,
-							esta es tu oportunidad.</p>
-						<a style="text-decoration: none;" href="trabajaconnosotros.html" class="linea-azul letra-azul">Más
-							información</a>
-					</div>
-				</div>
-				<div>
-					<div class="bajar-cuadro">
-						<img alt="" class="forma-imagen"
-							src="https://i.ibb.co/gVXrMWR/Nomina-prestaciones-sociales-2.jpg">
-						<h3 class="cuadrar-subtitulo">Auxiliar de Nómina</h3>
-						<p class="cuadrar-texto">Si eres auxiliar de nómina, esta es
-							tu oportunidad.</p>
-						<a style="text-decoration: none;" href="trabajaconnosotros.html" class="linea-azul letra-azul">Más
-							información</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<footer>
+    	<footer>
 	<div class="container-fluid text-black" style="margin-bottom:-35px;">
 				<div class="row">
 					<div class="col-md-4" style="margin-top: 2%;">

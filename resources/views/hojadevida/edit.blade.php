@@ -32,24 +32,6 @@
 				</div>
 
 				<div class="col-md-6">
-					<label for="identificacion" class="form-control-label">Identificacion</label>
-					<input type="number" class="form-control" id="identificacion" name="identificacion" value="{{old('identificacion', $hojadevida->identificacion)}}">
-				
-				@error('identificacion')
-				<small class="text-danger"> {{ $message}}</small>
-				@enderror
-				</div>
-
-				<div class="col-md-6">
-					<label for="correo" class="form-control-label">Correo</label>
-					<input type="email" class="form-control" id="correo" name="correo" value="{{old('correo', $hojadevida->correo)}}">
-				
-				@error('correo')
-				<small class="text-danger"> {{ $message}}</small>
-				@enderror
-				</div>
-
-				<div class="col-md-6">
 					<label for="direccion" class="form-control-label">Direccion</label>
 					<input type="text" class="form-control" id="direccion" name="direccion" value="{{old('direccion', $hojadevida->direccion)}}">
 				
@@ -57,16 +39,7 @@
 				<small class="text-danger"> {{ $message}}</small>
 				@enderror
 				</div>
-
-				<div class="col-md-6">
-					<label for="telefono" class="form-control-label">Telefono</label>
-					<input type="number" class="form-control" id="telefono" name="telefono" value="{{old('telefono', $hojadevida->telefono)}}">
-				
-				@error('telefono')
-				<small class="text-danger"> {{ $message}}</small>
-				@enderror
-				</div>
-
+	
 				<div class="col-md-6">
 					<label for="fechanacimiento" class="form-control-label">Fecha de nacimiento</label>
 					<input type="date" class="form-control" id="fechanacimiento" name="fechanacimiento" value="{{old('fechanacimiento', $hojadevida->fechanacimiento)}}">
@@ -133,7 +106,7 @@
 
 				<div class="col-md-6">
 					<label for="fecharegistro" class="form-control-label">Fecha de registro</label>
-					<input type="date" class="form-control" id="fecharegistro" name="fecharegistro" value="{{old('fecharegistro', $hojadevida->fecharegistro)}}">
+					<input readonly type="date" class="form-control" id="fecharegistro" name="fecharegistro" value="{{old('fecharegistro', $hojadevida->fecharegistro)}}">
 				
 				@error('fecha')
 				<small class="text-danger"> {{ $message}}</small>
