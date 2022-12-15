@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 
 <head>
 <meta charset="UTF-8">
@@ -163,6 +163,14 @@ margin-left: 290px;
 			<div class="abajo forma">
 			<h2 style="font-weight: bold;">Postulación</h2>
 			<form action="{{ route('vacantelimpieza.store') }}" method="POST">
+			@csrf
+			<div>
+						<label>Fecha</label> <input type="date"
+							 class="cuadros" id="fecha" name="fecharegistrto" value="{{ old('fecharegistro') }}" readonly>
+				@error('fecharegistro')
+				<small class="text-danger">{{ $message }}</small>
+				@enderror
+			</div>
 				<hr>
 				<label>Postulación</label>
 					<div>
@@ -172,13 +180,18 @@ margin-left: 290px;
 					</div>
 				<hr>
 				<div>
+				<div>
 					<h1 style="font-weight: bold;">Datos personales</h1>
 				</div>
 				<hr>
+				
 					<div>
 						<label>Nombre</label> <input type="text"
 							placeholder="Introduzca su nombre" class="cuadros"
-							id="nombre" required>
+							id="nombre" name="nombre" value="{{ old('nombre') }}">
+				@error('nombre')
+				<small class="text-danger">{{ $message }}</small>
+				@enderror
 					</div>
 					<hr>
 					<div>
@@ -279,7 +292,7 @@ margin-left: 290px;
 								</label>
 							</div>
 							<div>
-								<input type="checkbox"> <label>Cursos</a>
+								<input type="checkbox"> <label>Cursos complementaarios</a>
 								</label>
 							</div>
 							<hr>
@@ -357,16 +370,21 @@ margin-left: 290px;
 			</div>
 			<hr>
 </div>
-			<div style="margin-left: 25%; margin-top: -40px;">
-				<input type="checkbox" required> <label>Acepto el
+</div>
+		</div>
+			<div style="margin-left: 390px; margin-top: -40px;">
+				<input type="checkbox" required> <a href="https://alianzafrancesa.edu.co/bogota/tratamiento-datos-personales/"><label>Acepto el
 					tratamiento y protección de datos.</a>
 				</label>
+				<hr>
 			</div>
-
-			<input type="submit" class="btn btn-primary u-btn"
-				style="margin-left: 290px; padding: 10px; padding-left: 6px; padding-left: 5%; padding-right: 4%; border: none; margin-top: 8px; margin-bottom: 3%; cursor: pointer;"
-				id="submit">
+			<input type="submit" class="btn btn-primary"
+				style="margin-left: 390px"
+				id="submit" value="Registrar postulación">
 			</form>
+			<br>
+			<br>
+
 	</section>
     <footer style="margin-bottom:-35px;">
 	<div class="container-fluid text-black">

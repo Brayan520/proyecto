@@ -164,7 +164,7 @@ img{
 	</div>
 	<div class="texto-centro  fondo-gris" style="padding-top: 3%;">
 		<div class="margen-arriba margen-abajo">
-			<h2 class="titulo-principal" style="margin-bottom: 2%;">CLIENTE</h2>
+			<h2 class="titulo-principal" style="margin-bottom: 2%;">CLIENTE {{ Auth::user()->nombre_apellido }}</h2>
 			<div class="cuadro forma-cuadro">
 				<div class="fondo-blanco" style="border-radius: 10px;">
 					<div class="margen-texto">

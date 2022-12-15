@@ -12,6 +12,10 @@ class VacantelimpiezaController extends Controller
         return view ('vacantelimpieza.index');
 
     }
+    public function create()
+    {
+        return view('vacantelimpieza.create');
+    }
     public function store(Request $request)
 {
     $request->validate([

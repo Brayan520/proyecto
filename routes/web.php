@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\AspiranteController;
 use App\Http\Controllers\CalificacionController;
 use App\Http\Controllers\CargoController;
@@ -32,6 +33,9 @@ use App\Http\Controllers\QuienessomosController;
 use App\Http\Controllers\VacantelimpiezaController;
 use App\Http\Controllers\PostularController;
 
+//Administrador
+use App\Http\Controllers\AdministradorController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -45,9 +49,9 @@ use App\Http\Controllers\PostularController;
 */
 
 Route::get('/', function () {
-    return redirect('/login');
-
+    return redirect('/index');
 });
+Route::resource ('index', IndexController::class);
 
 Route::get('/aspirante', function () {
     return redirect('/aspirante');
@@ -192,3 +196,10 @@ Route::get('/postular', function () {
     return redirect('/postular');
 });
 Route::resource ('postular', PostularController::class);
+
+
+/*Administrador*/
+Route::get('/administrador', function () {
+    return redirect('/administrador');
+});
+Route::resource ('administrador', AdministradorController::class);
