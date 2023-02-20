@@ -87,9 +87,9 @@ img{
 
 <body>
 <div class="w3-bar w3-black" style="margin-top: -23px;">
-<a style="text-decoration: none;" href="{{ route('cliente.index') }}" class="w3-bar-item w3-button ">INICIO</a> 
-					<a style="text-decoration: none;" href="{{ route('catalogoservicio.index') }}" class="w3-bar-item w3-button">CONTACTANOS</a>
-					 <a style="text-decoration: none;" href="{{ route('trabajaconnosotros.index') }}" class="w3-bar-item w3-button">¿QUIENES SOMOS?</a>
+<a style="text-decoration: none;" href="{{ route('index.index') }}" class="w3-bar-item w3-button ">INICIO</a> 
+					<a style="text-decoration: none;" href="{{ route('contactanos.index') }}" class="w3-bar-item w3-button">CONTACTANOS</a>
+					 <a style="text-decoration: none;" href="{{ route('quienessomos.index') }}" class="w3-bar-item w3-button">¿QUIENES SOMOS?</a>
 				</div>
                 <div id="demo" class="carousel slide" data-ride="carousel">
 

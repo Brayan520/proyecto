@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
@@ -27,14 +26,15 @@
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<title>Administrador</title>
-<link rel="stylesheet" href="static/css/Administrador.css"
-	th:href="@{css/Administrador.css}">
+<title>Reportes</title>
+<link rel="stylesheet" href="static/css/Reportes.css"
+	th:href="@{css/Reportes.css}" media="screen">
 <link rel="stylesheet" href="static/css/pie_pagina.css"
-	th:href="@{css/pie_pagina.css}">
+	th:href="@{css/pie_pagina.css}" media="screen">
 <link rel="stylesheet" href="static/css/Encabezado-Administrador.css"
-	th:href="@{css/Encabezado-Administrador.css}">
+	th:href="@{css/Encabezado-Administrador.css}" media="screen">
 </head>
+
 
 <style>
     .container-fluid{
@@ -87,156 +87,153 @@ img{
     font-weight: bold;
 }
 .margen-abajo {
-  min-height: 864px;
-}
-
-.titulo-principal {
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.forma-cuadro {
-  grid-template-columns: repeat(3, calc(33.3333% - 20px));
-  grid-gap: 30px;
-}
-
-.margen-texto {
-  padding: 10px;
-}
-
-.margen-cuadro {
-  height: 48px;
-  margin: 30px;
-  margin-left: -10%;
-}
-
-html {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-body {
-  margin: 0%;
-}
-
-.margen-arriba {
-  display: table;
-}
-
-.icono img {
-  height: 10%;
-  width: 15%;
-}
-
-.texto-centro {
-  text-align: center;
-  color: #111111;
-  background-color: #f2f2f2;
-}
-
-.cuadro {
-  display: grid;
-}
-
-.fondo-blanco {
-  color: #111111;
-  background-color: #ffffff;
-}
-
-.fondo-gris {
-  color: #111111;
-  background-color: #f2f2f2;
-}
-
-.titulo {
-  font-size: 20px;
-  font-weight: bold;
-  margin: 21px;
-}
-
-.texto {
-  margin: 29px 1px;
-}
-
-.icono-reportes img {
-  width: 15%;
-}
-
-.icono-pqrs img {
-  width: 15%;
-  padding-top: 22px;
-}
-
-.icono-contratacion img {
-  width: 15%;
-  padding-top: 22px;
-}
-
-.icono-personal img {
-  width: 15%;
-  padding-top: 10px;
-}
-
-.icono-vacantes img {
-  width: 15%;
-  padding-top: 10px;
-}
-
-.icono-servicios img {
-  width: 15%;
-  padding-top: 10px;
-}
-    </style>
-
-
-	<body style="font-family:Arial, Helvetica, sans-serif">
-					<div class="w3-bar w3-black " style="margin-top: -23px;">
-						<a style="text-decoration:none" href="{{ route('administrador.index') }}" class="w3-bar-item w3-button ">Inicio</a>
-						<div class="w3-dropdown-hover">
-							<a style="text-decoration:none" href="{{ route('reportes.index') }}" class="w3-button">Reportes</a>
-						</div>
-						<div class="w3-dropdown-hover">
-							<a style="text-decoration:none" href="{{ route('pqrsadmin.index') }}" class="w3-button">PQRS</a>
-						</div>
-						<div class="w3-dropdown-hover">
-							<a style="text-decoration:none" href="calificacionesadmin.html" class="w3-button">Calificaciones</a>
-						</div>
-						<div class="w3-dropdown-hover">
-							<a style="text-decoration:none" th:href="@{/hojadevidaadmin}" class="w3-button">Hojas
-								de vida</a>
-						</div>
-						<div class="w3-dropdown-hover">
-							<a style="text-decoration:none" href="contratacionadmin.html" class="w3-button">Contratacion</a>
-						</div>
-						<div class="w3-dropdown-hover">
-							<a style="text-decoration:none" href="vacantesadmin.html" class="w3-button">Vacantes</a>
-						</div>
-						<div class="w3-dropdown-hover">
-							<a style="text-decoration:none" href="inforempleado.html" class="w3-button">Personal</a>
-						</div>
-						<div class="w3-dropdown-hover">
-							<a style="text-decoration:none" href="servicioadmin.html" class="w3-button">Servicios</a>
-						</div>
+    min-height: 864px;
+  }
+  
+  .titulo-principal {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  .forma-cuadro {
+    grid-template-columns: repeat(3, calc(33.3333% - 20px));
+    grid-gap: 30px;
+  }
+  
+  .margen-texto {
+    padding: 10px;
+  }
+  
+  .margen-cuadro {
+    height: 48px;
+    margin: 30px;
+    margin-left: -10%;
+  }
+  
+  html {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  body {
+    margin: 0%;
+  }
+  
+  .margen-arriba {
+    display: table;
+  }
+  
+  .icono img {
+    height: 10%;
+    width: 15%;
+  }
+  
+  .texto-centro {
+    text-align: center;
+    color: #111111;
+    background-color: #f2f2f2;
+  }
+  
+  .cuadro {
+    display: grid;
+  }
+  
+  .fondo-blanco {
+    color: #111111;
+    background-color: #ffffff;
+  }
+  
+  .fondo-gris {
+    color: #111111;
+    background-color: #f2f2f2;
+  }
+  
+  .titulo {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 21px;
+  }
+  
+  .texto {
+    margin: 29px 1px;
+  }
+  
+  .icono-reportes img {
+    width: 15%;
+    padding-top: 45px;
+  }
+  
+  .icono-pqrs img {
+    width: 15%;
+    padding-top: 22px;
+  }
+  
+  .icono-contratacion img {
+    width: 15%;
+    padding-top: 46px;
+  }
+  
+  .icono-personal img {
+    width: 15%;
+    padding-top: 10px;
+  }
+  
+  .icono-vacantes img {
+    width: 15%;
+    padding-top: 25px;
+  }
+  
+  .icono-servicios img {
+    width: 15%;
+    padding-top: 10px;
+  }
+</style>
+<body style="font-family:Arial, Helvetica, sans-serif">
+				<div class="w3-bar w3-black " style="margin-top: -23px;">
+					<a style="text-decoration:none" href="{{ route('administrador.index') }}" class="w3-bar-item w3-button ">Inicio</a>
+					<div class="w3-dropdown-hover">
+						<a style="text-decoration:none" href="{{ route('reportes.index') }}" class="w3-button">Reportes</a>
 					</div>
+					<div class="w3-dropdown-hover">
+						<a style="text-decoration:none" href="{{ route('pqrsadmin.index') }}" class="w3-button">PQRS</a>
+					</div>
+					<div class="w3-dropdown-hover">
+						<a style="text-decoration:none" href="calificacionesadmin.html" class="w3-button">Calificaciones</a>
+					</div>
+					<div class="w3-dropdown-hover">
+						<a style="text-decoration:none" th:href="@{/hojadevidaadmin}" class="w3-button">Hojas
+							de vida</a>
+					</div>
+					<div class="w3-dropdown-hover">
+						<a style="text-decoration:none" href="contratacionadmin.html" class="w3-button">Contratacion</a>
+					</div>
+					<div class="w3-dropdown-hover">
+						<a style="text-decoration:none" href="vacantesadmin.html" class="w3-button">Vacantes</a>
+					</div>
+					<div class="w3-dropdown-hover">
+						<a style="text-decoration:none" href="inforempleado.html" class="w3-button">Personal</a>
+					</div>
+					<div class="w3-dropdown-hover">
+						<a style="text-decoration:none" href="servicioadmin.html" class="w3-button">Servicios</a>
+					</div>
+                </div>
 
-
-    
-
-    <div class="texto-centro  fondo-gris">
+                <div class="texto-centro  fondo-gris">
 		<div class="margen-arriba margen-abajo" style="margin: 0%">
-			<h2 class="titulo-principal" style="margin-bottom: 2%;">ADMINISTRADOR {{ Auth::user()->nombre_apellido }}</h2>
+			<h2 class="titulo-principal" style="margin-bottom: 2%;">GESTIÓN
+				DE REPORTES</h2>
 			<div class="cuadro forma-cuadro">
 				<div class="fondo-blanco">
 					<div class="margen-texto">
 						<div class="margen-cuadro"></div>
 						<div>
-							<img class="imagen" src="https://i.ibb.co/1KmNw1s/Reportes.png"
+							<img class="imagen" src="https://i.ibb.co/CbdJX4T/Reportes-pqrs.png"
 								style="height: 25%; width: 25%; margin-top: -20%;">
 						</div>
-						<h5 class="titulo">REPORTES</h5>
-						<p class="texto">Reportes generados del servicio al cliente,
-							contratación de servicos y contratación de Recursos humanos.</p>
+						<h5 class="titulo">REPORTES DE PQRS</h5>
+						<p class="texto">Reportes generados de peticiones quejas,
+							reclamos y sugerencias.</p>
 						<div class="icono-reportes">
-							<a href="{{ route('reportes.index') }}"><img src="https://i.ibb.co/ByPnvn7/2.png" alt="">
+							<a href="{{ route('chart.index') }}"><img src="https://i.ibb.co/ByPnvn7/2.png" alt="">
 						</div>
 						</a>
 					</div>
@@ -244,25 +241,15 @@ body {
 				<div class="fondo-blanco">
 					<div class="margen-texto">
 						<div class="margen-cuadro"></div>
-						<img class="imagen" src="https://i.ibb.co/sQD8Sfq/Pqrs.png"
+						<img class="imagen" src="https://i.ibb.co/K7t1bkJ/Reportescalificacion.png"
 							style="height: 25%; width: 25%; margin-top: -20%;">
-						<h5 class="titulo" style="margin-top: 22px;">PQRS</h5>
-						<p class="texto">Peticiones, Quejas, Reclamos, Sugerencias.</p>
+						<h5 class="titulo" style="margin-top: 22px;">REPORTES DE
+							CALIFICACIONES</h5>
+						<p class="texto">Reportes generados de las calificaciones que
+							han generado los clientes a los empleados de la atención al
+							cliente y del servicio de limpieza.</p>
 						<div class="icono-pqrs">
-							<a href="{{ route('pqrsadmin.index') }}"><img src="https://i.ibb.co/ByPnvn7/2.png" alt="">
-						</div>
-						</a>
-					</div>
-				</div>
-				<div class="fondo-blanco">
-					<div class="margen-texto">
-						<div class="margen-cuadro"></div>
-						<img class="imagen" src="https://i.ibb.co/5W5QC9V/Calificaciones.png"
-							style="height: 25%; width: 25%; margin-top: -20%;">
-						<h5 class="titulo" style="margin-top: 22px;">CALIFICACIONES</h5>
-						<p class="texto">Calificaciones generados por los clientes.</p>
-						<div class="icono-pqrs">
-							<a href="calificacionesadmin.html"><img src="https://i.ibb.co/ByPnvn7/2.png"
+							<a href="reportescalifi.html"><img src="https://i.ibb.co/ByPnvn7/2.png"
 								alt="">
 						</div>
 						</a>
@@ -271,14 +258,14 @@ body {
 				<div class="fondo-blanco">
 					<div class="margen-texto">
 						<div class="margen-cuadro"></div>
-						<img class="imagen" src="https://i.ibb.co/Kz5GcCQ/Contratacion.png"
+						<img class="imagen" src="https://i.ibb.co/dc9Q7ND/Reporteshoja.png"
 							style="height: 25%; width: 25%; margin-top: -20%;">
-						<h5 class="titulo">HOJAS DE VIDA Y CONTRATACIÓN</h5>
-						<p class="texto">Documentación de los usuarios que se han
-							registrado.</p>
+						<h5 class="titulo">REPORTES DE HOJAS DE VIDA</h5>
+						<p class="texto">Reporte de las hojas de vida de los usuarios
+							que se han postulado en las vacantes.</p>
 						<div class="icono-contratacion">
-							<a href="contratacionadmin.html"><img
-								src="https://i.ibb.co/ByPnvn7/2.png" alt="">
+							<a href="reporteshojasdevida.html"><img src="https://i.ibb.co/ByPnvn7/2.png"
+								alt="">
 						</div>
 						</a>
 					</div>
@@ -286,12 +273,13 @@ body {
 				<div class="fondo-blanco">
 					<div class="margen-texto">
 						<div class="margen-cuadro"></div>
-						<img class="imagen" src="https://i.ibb.co/vHF56JB/Vacantes.png"
+						<img class="imagen" src="https://i.ibb.co/mcVBjQm/Reportecontratacion.webp"
 							style="height: 25%; width: 25%; margin-top: -20%;">
-						<h5 class="titulo">VACANTES</h5>
-						<p class="texto">Registrar, modificar o eliminar vacantes.</p>
+						<h5 class="titulo">REPORTES DE CONTRATACIÓN</h5>
+						<p class="texto">Reporte de los usuarios que han sido
+							contratados.</p>
 						<div class="icono-vacantes">
-							<a href="vacantesadmin.html"><img src="https://i.ibb.co/ByPnvn7/2.png"
+							<a href="reportescontratacion.html"><img src="https://i.ibb.co/ByPnvn7/2.png"
 								alt="">
 						</div>
 						</a>
@@ -300,37 +288,23 @@ body {
 				<div class="fondo-blanco">
 					<div class="margen-texto">
 						<div class="margen-cuadro"></div>
-						<img class="imagen" src="https://i.ibb.co/Msznpvc/Empleados.png"
+						<img class="imagen" src="https://i.ibb.co/rtDXtLs/Reportesservicio.png"
 							style="height: 25%; width: 25%; margin-top: -20%;">
-						<h5 class="titulo" style="margin-top: 22px;">PERSONAL</h5>
-						<p class="texto">Información y cargo del empleado.</p>
+						<h5 class="titulo" style="margin-top: 22px;">REPORTES DE
+							SERVICIOS</h5>
+						<p class="texto">Reporte de los servicios que han solicitado
+							los clientes.</p>
 						<div class="icono-personal">
-							<a href="inforempleado.html"><img src="https://i.ibb.co/ByPnvn7/2.png"
-								alt="">
+							<a href="reportesservicios.html"><img src="https://i.ibb.co/ByPnvn7/2.png" alt="">
 						</div>
 						</a>
 					</div>
 				</div>
-				<div class="fondo-blanco">
-					<div class="margen-texto">
-						<div class="margen-cuadro"></div>
-						<img class="imagen" src="https://i.ibb.co/mJw10S9/Servicios.png"
-							style="height: 25%; width: 25%; margin-top: -20%;">
-						<h5 class="titulo">SERVICIOS</h5>
-						<p class="texto">Registar, modificar o eliminar servicios.</p>
-						<div class="icono-servicios ">
-							<a href="servicioadmin.html"><img src="https://i.ibb.co/ByPnvn7/2.png"
-								alt="">
-						</div>
-						</a>
-					</div>
-				</div>
+
 			</div>
 		</div>
-	</div>
-
-
-    <footer>
+                </div>
+                <footer>
 			<div class="container-fluid text-black" style="margin-bottom:-35px;">
 				<div class="row">
 					<div class="col-md-4" style="margin-top: 2%;">

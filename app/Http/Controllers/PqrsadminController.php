@@ -3,21 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pqrs;
-use App\Models\Servicio;
 use App\Models\Tipopqrs;
 use App\Models\Estado;
 use App\Models\Contratoservicio;
 use App\Models\Respuesta;
 use Illuminate\Http\Request;
 
-class PqrsController extends Controller
+class PqrsadminController extends Controller
 {
-        public function index()
+    public function index()
         {
             $pqrs = Pqrs::orderBy('idpqrs', 'ASC')->paginate(5);
     
     
-           return view ('pqrs.index', ['pqrs' => $pqrs]);
+           return view ('pqrsadmin.index', ['pqrs' => $pqrs]);
         }
     
         /**
@@ -32,10 +31,9 @@ class PqrsController extends Controller
         $tipopqrss  = Tipopqrs::all();    
         $estados  = Estado::all();
         $contratoservicios  = Contratoservicio::all();
-        $respuestas  = Respuesta::all();
-        $servicios  = Servicio::all();
+        $respuestum  = Respuesta::all();
 
-        return view ('pqrs.create',['tipopqrss'=>$tipopqrss, 'servicios'=>$servicios, 'estados'=>$estados, 'contratoservicios'=>$contratoservicios, 'respuestas'=>$respuestas]);
+        return view ('pqrsadmin.create',['tipopqrss'=>$tipopqrss, 'estados'=>$estados, 'contratoservicios'=>$contratoservicios, 'respuestum'=>$respuestum]);
     
         }
     
@@ -47,11 +45,11 @@ class PqrsController extends Controller
          'idtipopqrs'=> 'required',
          'idestado'=>'required',
          'idcontratoservicio'=> 'required',
-         'idrespuesta'=> 'required'
+         'idrespuesta'=> 'unique:pqrs'
            ]);
            Pqrs::create($request->all());
     
-           return redirect()->route('pqrs.index');
+           return redirect()->route('pqrsadmin.index');
         }
     
         /**
@@ -71,14 +69,13 @@ class PqrsController extends Controller
         * @param  \App\Models\Pqrs  $pqrss
          * @return \Illuminate\Http\Response
          */
-        public function edit(Pqrs $pqr)
+        public function edit(Pqrs $pqrsadmin)
         {   
             $tipopqrss  = Tipopqrs::all();    
             $estados  = Estado::all();
             $contratoservicios  = Contratoservicio::all();
-            $respuestas  = Respuesta::all();
-            $servicios  = Servicio::all();
-        return view ('pqrs.edit',['pqr'=>$pqr, 'servicios'=>$servicios, 'tipopqrss'=>$tipopqrss, 'estados'=>$estados, 'contratoservicios'=>$contratoservicios, 'respuestas'=>$respuestas]);
+            $respuestum  = Respuesta::all();
+        return view ('pqrsadmin.edit',['pqrsadmin'=>$pqrsadmin, 'tipopqrss'=>$tipopqrss, 'estados'=>$estados, 'contratoservicios'=>$contratoservicios, 'respuestum'=>$respuestum]);
         }
     
         /**
@@ -88,19 +85,15 @@ class PqrsController extends Controller
          * @param  \App\Models\Pqrs  $pqrss
          * @return \Illuminate\Http\Response
          */
-        public function update(Request $request, Pqrs $pqr)
+        public function update(Request $request, Pqrs $pqrsadmin)
         {
           $request->validate([
-            'descripcion'=> 'required|min:1|max:200',
-            'fecha'=> 'required',
-            'idtipopqrs'=> 'required',
             'idestado'=>'required',
-            'idcontratoservicio'=> 'required',
-            'idrespuesta'=> 'required'
+            'idrespuesta'=> 'unique:pqrs'
            ]);
     
-          $pqr->update($request->all());
-           return redirect()->route('pqrs.index');
+          $pqrsadmin->update($request->all());
+           return redirect()->route('pqrsadmin.index');
         }
     
         /**
@@ -109,9 +102,10 @@ class PqrsController extends Controller
          * @param  \App\Models\Pqrs  $pqrss
          * @return \Illuminate\Http\Response
          */
-        public function destroy(Pqrs $pqr)
+        public function destroy(Pqrs $pqrsadmin)
         {
-            $pqr->delete();
-            return redirect()->route('pqrs.index'); 
+            $pqrsadmin->delete();
+            return redirect()->route('pqrsadmin.index'); 
         }
     }
+

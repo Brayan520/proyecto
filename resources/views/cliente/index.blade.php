@@ -164,7 +164,7 @@ img{
 	</div>
 	<div class="texto-centro  fondo-gris" style="padding-top: 3%;">
 		<div class="margen-arriba margen-abajo">
-			<h2 class="titulo-principal" style="margin-bottom: 2%;">CLIENTE {{ Auth::user()->nombre_apellido }}</h2>
+			<h2 class="titulo-principal" style="margin-bottom: 2%;">Hola, {{ Auth::user()->nombre_apellido }}</h2>
 			<div class="cuadro forma-cuadro">
 				<div class="fondo-blanco" style="border-radius: 10px;">
 					<div class="margen-texto">
@@ -219,7 +219,7 @@ img{
 						<h5 class="titulo">CALIFICACIONES</h5>
 						<p class="texto">Califica los servicios que has adquirido
 							dandole click en el boton, animate.</p>
-						<a th:href="{{ route('calificaciones.index') }}">
+						<a href="{{ route('calificaciones.index') }}">
 							<button class="w3-button w3-blue" style="border-radius: 8px;">Dirigirme</button>
 						</a>
 					</div>

@@ -40,7 +40,7 @@ class RespuestaController extends Controller
         );
 
         Respuesta::create($request->all());
-        return redirect()->route('respuesta.index');
+        return redirect()->route('pqrsadmin.index');
     }
 
     /**

@@ -86,7 +86,7 @@ img{
 				@enderror
 			</div>
             <div class="col-md-6">
-				<label for="idcontratoservicio" class="form-label">fecha inicial</label>
+				<label for="idcontratoservicio" class="form-label">Fecha del servicio del contrato</label>
 				<select class="form-control" id='idcontratoservicio' name='idcontratoservicio' value="{{ old('idcontratoservicio') }}">
 					<option value="">Seleccionar ...</option>
 					@foreach($contratoservicios as $contratoservicio)
@@ -99,7 +99,7 @@ img{
 			</div>
 			<div class="col-md-6">
 				<label for="idestado" class="form-label">Estado de la pqrs</label>
-				<select class="form-control" id='idestado' name='idestado' value="{{ old('idestado') }}">
+				<select class="form-control" id='idestado' name='idestado' value="{{ old('idestado') }}" readonly>
 					<option value="1">Activo</option>
 				</select>
 

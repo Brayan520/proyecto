@@ -10,4 +10,12 @@ class IndexController extends Controller
     {
         return view ('index.index');
 }
+public function contactanos()
+{
+    return view ('index.contactanos');
+}
+public function quienessomos()
+{
+    return view ('index.quienessomos');
+}
 }

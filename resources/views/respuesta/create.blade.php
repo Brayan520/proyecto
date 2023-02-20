@@ -4,15 +4,15 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-				<a href="{{ route('respuesta.index') }}" class="btn btn-primary ti-back-left" style="width: 5%;"></a>
+				<a href="{{ route('pqrsadmin.index') }}" class="btn btn-primary ti-back-left" style="width: 5%;"></a>
 			</div>
 		</div>
 		<div class="col-md-12">
 		<form action="{{ route('respuesta.store') }}" method="POST">
 			@csrf
 			<div class="col-md-6">
-				<label for="fecha" class="form-label">Fecha de la respuesta</label>
-				<input type="date" class="form-control" id="fecha" name="fecha" value="{{ old('fecha') }}">
+				<label for="fecha" class="form-label">Fecha</label>
+				<input type="date" class="form-control" id="fecha" name="fecha" value="{{ old('fecha') }}" readonly>
 				@error('fecha')
 				<small class="text-danger">{{ $message }}</small>
 				@enderror
@@ -31,4 +31,18 @@
 	</div>
 </div>
 
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+
+		var now = new Date();
+
+		var day = ("0" + now.getDate()).slice(-2);
+		var month = ("0" + (now.getMonth() + 1)).slice(-2);
+
+		var today = now.getFullYear() + "-" + (month) + "-" + (day);
+		$("#fecha").val(today);
+	});
+</script>
 @endsection

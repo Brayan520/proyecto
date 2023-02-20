@@ -166,7 +166,7 @@ margin-left: 290px;
 			@csrf
 			<div>
 						<label>Fecha</label> <input type="date"
-							 class="cuadros" id="fecha" name="fecharegistrto" value="{{ old('fecharegistro') }}" readonly>
+							 class="cuadros" id="fecharegistro" name="fecharegistro" value="{{ old('fecharegistro') }}" readonly>
 				@error('fecharegistro')
 				<small class="text-danger">{{ $message }}</small>
 				@enderror
@@ -175,7 +175,7 @@ margin-left: 290px;
 				<label>Postulación</label>
 					<div>
 						<select class="cuadros" id="documento" required readonly>
-							<option value="">Auxiliar de limpieza y mantenimiento</option>
+							<option value="Auxiliar de limpieza y mantenimiento" >Auxiliar de limpieza y mantenimiento</option>
 						</select>
 					</div>
 				<hr>
@@ -186,7 +186,7 @@ margin-left: 290px;
 				<hr>
 				
 					<div>
-						<label>Nombre</label> <input type="text"
+						<label for="nombre">Nombre</label> <input type="text"
 							placeholder="Introduzca su nombre" class="cuadros"
 							id="nombre" name="nombre" value="{{ old('nombre') }}">
 				@error('nombre')
@@ -197,48 +197,69 @@ margin-left: 290px;
 					<div>
 						<label>Apellido</label> <input type="text"
 							placeholder="Introduzca su apellido" class="cuadros"
-							id="nombre" required>
+							id="apellido" required>
+							@error('apellido')
+				<small class="text-danger">{{ $message }}</small>
+				@enderror
 					</div>
 					<hr>
 					<div>
 						<label>Fecha nacimiento</label> <input type="date"
-							placeholder="MM/DD/YYYY" class="cuadros" id="nacimiento" required>
+							placeholder="MM/DD/YYYY" class="cuadros" id="fechanacimiento" required>
+							@error('fechanacimiento')
+				<small class="text-danger">{{ $message }}</small>
+				@enderror
 					</div>
 					<hr>
 					<div>
 						<label>Edad</label> <input type="number"
 							placeholder="Introduzca su Edad" class="cuadros" id="edad"
 							required>
+							@error('edad')
+				<small class="text-danger">{{ $message }}</small>
+				@enderror
 					</div>
 					<hr>
 					<label>Tipo de Documento</label>
 					<div>
-						<select class="cuadros" id="documento" required>
+						<select class="cuadros" id="tipoidentificacion" required>
 							<option value="">Seleccionar</option>
 							<option value="Item 1">Cedula Ciudadania</option>
 							<option value="Item 2">Nit</option>
 							<option value="Item 3">Cedula Extranjeria</option>
 						</select>
+						@error('tipoidentificacion')
+				<small class="text-danger">{{ $message }}</small>
+				@enderror
 					</div>
 					<hr>
 					<div>
-						<label>Numero de identificacion</label> <input type="num"
+						<label>Numero de identificacion</label> <input type="number"
 							id="identificacion"
 							placeholder="Introduzca una dirección de correo electrónico válida"
 							class="cuadros" required>
+							@error('identificacion')
+				<small class="text-danger">{{ $message }}</small>
+				@enderror
 					</div>
 					<hr>
 					<div>
-						<label>Correo electronico</label> <input type="email" id="email"
+						<label>Correo electronico</label> <input type="email" id="correo"
 							placeholder="Introduzca una dirección de correo electrónico válida"
 							class="cuadros" required>
+							@error('correo')
+				<small class="text-danger">{{ $message }}</small>
+				@enderror
 					</div>
 					<hr>
 					<div>
 						<label>Número de Teléfono principal</label> <input type="tel"
-							id="telefono"
+							id="telefonoprincipal"
 							placeholder="Ingrese su teléfono principal (por ejemplo, +573201945682)"
 							class="cuadros" required>
+							@error('telefonoprincipal')
+				<small class="text-danger">{{ $message }}</small>
+				@enderror
 					</div>
 					<hr>
 					<div>
@@ -459,7 +480,20 @@ margin-left: 290px;
 				</div>
             </div>
 	</footer>
+	<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
 
+		var now = new Date();
+
+		var day = ("0" + now.getDate()).slice(-2);
+		var month = ("0" + (now.getMonth() + 1)).slice(-2);
+
+		var today = now.getFullYear() + "-" + (month) + "-" + (day);
+		$("#fecharegistro").val(today);
+	});
+</script>
 </body>
 @endsection 
 </html>
