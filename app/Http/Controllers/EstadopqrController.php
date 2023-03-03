@@ -9,14 +9,14 @@ use App\Models\Contratoservicio;
 use App\Models\Respuesta;
 use Illuminate\Http\Request;
 
-class PqrsadminController extends Controller
+class EstadopqrController extends Controller
 {
     public function index()
         {
             $pqrs = Pqrs::orderBy('idpqrs', 'ASC')->paginate(5);
     
     
-           return view ('pqrsadmin.index', ['pqrs' => $pqrs]);
+           return view ('estadopqr.index', ['pqrs' => $pqrs]);
         }
     
         /**
@@ -33,7 +33,7 @@ class PqrsadminController extends Controller
         $contratoservicios  = Contratoservicio::all();
         $respuestum  = Respuesta::all();
 
-        return view ('pqrsadmin.create',['tipopqrss'=>$tipopqrss, 'estados'=>$estados, 'contratoservicios'=>$contratoservicios, 'respuestum'=>$respuestum]);
+        return view ('estadopqr.create',['tipopqrss'=>$tipopqrss, 'estados'=>$estados, 'contratoservicios'=>$contratoservicios, 'respuestum'=>$respuestum]);
     
         }
     
@@ -49,7 +49,7 @@ class PqrsadminController extends Controller
            ]);
            Pqrs::create($request->all());
     
-           return redirect()->route('pqrsadmin.index');
+           return redirect()->route('estadopqr.index');
         }
     
         /**
@@ -75,7 +75,7 @@ class PqrsadminController extends Controller
             $estados  = Estado::all();
             $contratoservicios  = Contratoservicio::all();
             $respuestum  = Respuesta::all();
-        return view ('pqrsadmin.edit',['pqrsadmin'=>$pqrsadmin, 'tipopqrss'=>$tipopqrss, 'estados'=>$estados, 'contratoservicios'=>$contratoservicios, 'respuestum'=>$respuestum]);
+        return view ('estadopqr.edit',['pqrsadmin'=>$pqrsadmin, 'tipopqrss'=>$tipopqrss, 'estados'=>$estados, 'contratoservicios'=>$contratoservicios, 'respuestum'=>$respuestum]);
         }
     
         /**
@@ -93,7 +93,7 @@ class PqrsadminController extends Controller
            ]);
     
           $pqrsadmin->update($request->all());
-           return redirect()->route('pqrsadmin.index');
+           return redirect()->route('estadopqr.index');
         }
     
         /**
@@ -105,7 +105,7 @@ class PqrsadminController extends Controller
         public function destroy(Pqrs $pqrsadmin)
         {
             $pqrsadmin->delete();
-            return redirect()->route('pqrsadmin.index'); 
+            return redirect()->route('estadopqr.index'); 
         }
     }
 ?>

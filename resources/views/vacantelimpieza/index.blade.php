@@ -46,6 +46,59 @@ img{
     width: 40%;
     height: 80%;
 }
+.encabezado{
+    background-color: #dddada;
+}   
+.logo{
+    height: 90px;
+    width: 160px;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+.nproyecto{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    margin-right: 50%;
+    font-weight: bold;
+}
+.margen-texto {
+  font-weight: 700;
+  margin-left: 600px;
+  margin-bottom: -30px;
+}
+.cuadrar-texto {
+  margin: -234px 82px 0 508px;
+}
+.u-btn-1 {
+  font-weight: 700;
+  margin: 38px 232px 0 auto;
+  padding: 8px 33px;
+}
+.u-btn-2 {
+  font-weight: 700;
+  margin: 72px auto 60px;
+  padding: 8px 33px;
+}
+@media (max-width: 1199px) {
+}
+.texto-centro {
+  display: table;
+  padding-bottom: -2%;
+}
+.cuadrar {
+  margin: auto;
+  width: var(--theme-sheet-width-xl);
+}
+.margen{       
+  --theme-sheet-width-xl: 1140px;
+}
+.botones{
+   background-color: #478ac9;
+   color: #ffffff;
+   display: table;
+} 
+
 .iconos{
     margin-bottom: 5%; 
 }
@@ -69,56 +122,6 @@ img{
     color: rgb(255, 255, 255);
     padding: 4px;
 }
-.encabezado{
-    background-color: #dddada;
-}   
-.logo{
-    height: 90px;
-    width: 160px;
-    margin-top: 5px;
-    margin-left: 20px;
-}
-.nproyecto{
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-top: 20px;
-    margin-right: 50%;
-    font-weight: bold;
-}
-.margen-texto {
-  font-weight: 700;
-  margin: 64px 189px 0 auto;
-}
-.cuadrar-texto {
-  margin: -234px 82px 0 508px;
-}
-.u-btn-1 {
-  font-weight: 700;
-  margin: 38px 232px 0 auto;
-  padding: 8px 33px;
-}
-.u-btn-2 {
-  font-weight: 700;
-  margin: 72px auto 60px;
-  padding: 8px 33px;
-}
-@media (max-width: 1199px) {
-}
-.texto-centro {
-  display: table;
-}
-.cuadrar {
-  margin: auto;
-  width: var(--theme-sheet-width-xl);
-}
-.margen{       
-  --theme-sheet-width-xl: 1140px;
-}
-.boton{
-   background-color: #478ac9;
-   color: #ffffff;
-   display: table;
-} 
 					</style>
 <div class="w3-bar w3-black" style="margin-top: -23px;">
 					<a style="text-decoration: none;" href="{{ route('cliente.index') }}" class="w3-bar-item w3-button ">Inicio</a> 
@@ -129,6 +132,9 @@ img{
 					<a style="text-decoration: none;" href="{{ route('quienessomos.index') }}" class="w3-bar-item w3-button">Quienes
 						somos</a> <a style="text-decoration: none;" href="{{ route('contactanos.index') }}" class="w3-bar-item w3-button">Contactanos</a>
 				</div>
+<br>
+<br>
+
 
 				<body>
                 <div class="margen">
@@ -137,20 +143,19 @@ img{
 				generales</h3>
 			<img src="https://i.ibb.co/HDSV8Pq/IStock-906777508.jpg" alt="">
 			<h5 class="cuadrar-texto">
-				Descripción de la vacante: Se requiere personal para ocupar el cargo
-				de, AUXILIAR DE SERVICIOS GENERALES con o sin experiencia
+				<p>Descripción de la vacante: Se requiere personal para ocupar el cargo
+				de, AUXILIAR DE SERVICIOS GENERALES con o sin experiencia<p>
 				<p>Formación: No requerido</p>
 				<p>Disponibilidad: Para Trabajar en tiempo Completo o según
 					acuerdos de operación.</p>
 				<p>Experiencia: con o sin experiencia</p>
 				<p>Sitio de trabajo: BOGOTA</p>
 			</h5>
-			<a style="text-decoration:none" href="{{ route('vacantelimpieza.create') }}" class="boton u-btn-1">Aplica su hoja
-				de vida, Dando click.</a> <a style="text-decoration:none" href="{{ route('trabajaconnosotros.index') }}" class="boton u-btn-2">Volver
-				atras</a>
+			<a style="text-decoration:none; border-radius: 12px;" href="{{ route('vacantelimpieza.create') }}" class="botones u-btn-1">Aplica aqui.</a> 
+				<br>
 		</div>
     	<footer>
-	<div class="container-fluid text-black" style="margin-bottom:-35px;">
+			<div class="container-fluid text-black" style="margin-bottom:-35px;">
 				<div class="row">
 					<div class="col-md-4" style="margin-top: 2%;">
 						<div class="w3-center">

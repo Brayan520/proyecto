@@ -198,10 +198,10 @@ body {
 							<a style="text-decoration:none" href="{{ route('pqrsadmin.index') }}" class="w3-button">PQRS</a>
 						</div>
 						<div class="w3-dropdown-hover">
-							<a style="text-decoration:none" href="calificacionesadmin.html" class="w3-button">Calificaciones</a>
+							<a style="text-decoration:none" href="{{ route('calificacionesadmin.index') }}" class="w3-button">Calificaciones</a>
 						</div>
 						<div class="w3-dropdown-hover">
-							<a style="text-decoration:none" th:href="@{/hojadevidaadmin}" class="w3-button">Hojas
+							<a style="text-decoration:none" href="hojadevidaadmin" class="w3-button">Hojas
 								de vida</a>
 						</div>
 						<div class="w3-dropdown-hover">
@@ -262,7 +262,7 @@ body {
 						<h5 class="titulo" style="margin-top: 22px;">CALIFICACIONES</h5>
 						<p class="texto">Calificaciones generados por los clientes.</p>
 						<div class="icono-pqrs">
-							<a href="calificacionesadmin.html"><img src="https://i.ibb.co/ByPnvn7/2.png"
+							<a href="{{ route('calificacionesadmin.index') }}"><img src="https://i.ibb.co/ByPnvn7/2.png"
 								alt="">
 						</div>
 						</a>

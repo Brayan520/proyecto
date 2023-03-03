@@ -13,7 +13,7 @@ class CalificacionesadminController extends Controller
         $calificaciones = Calificacion::orderBy('idcalificacion', 'ASC')->paginate(5);
 
 
-       return view ('calificacion.index', ['calificaciones' => $calificaciones]);
+       return view ('calificacionesadmin.index', ['calificaciones' => $calificaciones]);
     }
 
     /**
@@ -26,7 +26,7 @@ class CalificacionesadminController extends Controller
     public function create()
     {
     $contratoservicios  = Contratoservicio::all();
-    return view ('calificacion.create',['contratoservicios'=>$contratoservicios]);
+    return view ('calificacionesadmin.create',['contratoservicios'=>$contratoservicios]);
 
     }
 
@@ -40,7 +40,7 @@ class CalificacionesadminController extends Controller
        ]);
        Calificacion::create($request->all());
 
-       return redirect()->route('calificacion.index');
+       return redirect()->route('calificacionesadmin.index');
     }
 
     /**
@@ -63,7 +63,7 @@ class CalificacionesadminController extends Controller
     public function edit(Calificacion $calificacion)
     {   
     $contratoservicios  = Contratoservicio::all();    
-    return view ('calificacion.edit',['calificacion'=>$calificacion, 'contratoservicios'=>$contratoservicios]);
+    return view ('calificacionesadmin.edit',['calificacion'=>$calificacion, 'contratoservicios'=>$contratoservicios]);
     }
 
     /**
@@ -83,7 +83,7 @@ class CalificacionesadminController extends Controller
        ]);
 
       $calificacion->update($request->all());
-       return redirect()->route('calificacion.index');
+       return redirect()->route('calificacionesadmin.index');
     }
 
     /**

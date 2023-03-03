@@ -88,7 +88,7 @@ class PqrsController extends Controller
          * @param  \App\Models\Pqrs  $pqrss
          * @return \Illuminate\Http\Response
          */
-        public function update(Request $request, Pqrs $pqr)
+        public function update(Request $request, Pqrs $pqrsadmin)
         {
           $request->validate([
             'descripcion'=> 'required|min:1|max:200',
@@ -99,8 +99,8 @@ class PqrsController extends Controller
             'idrespuesta'=> 'required'
            ]);
     
-          $pqr->update($request->all());
-           return redirect()->route('pqrs.index');
+          $pqrsadmin->update($request->all());
+           return redirect()->route('estadopqr.index');
         }
     
         /**

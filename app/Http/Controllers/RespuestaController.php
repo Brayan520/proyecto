@@ -10,10 +10,10 @@ class RespuestaController extends Controller
     public function index()
     {
 
-        $respuestas = Respuesta::orderBy('idrespuesta', 'ASC')->paginate(5);
+        $respuestum = Respuesta::orderBy('idrespuesta', 'ASC')->paginate(5);
 
 
-        return view ('respuesta.index', ['respuestas' => $respuestas]);
+        return view ('respuesta.index', ['respuestum' => $respuestum]);
     }
 
     /**

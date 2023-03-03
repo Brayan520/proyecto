@@ -35,7 +35,8 @@
 
 <style>
     .imagen{
-    width: 100%;
+        width: 80%;
+    height: 80%;
 }
 
 
@@ -94,16 +95,16 @@ img{
                 <div id="demo" class="carousel slide" data-ride="carousel">
 
 <!-- Indicators -->
-<ul class="carousel-indicators">
+<!--<ul class="carousel-indicators">
     <li data-target="#demo" data-slide-to="0" class="active"></li>
     <li data-target="#demo" data-slide-to="1"></li>
     <li data-target="#demo" data-slide-to="2"></li>
 </ul>
 
-<!-- The slideshow -->
+The slideshow 
 <div class="carousel-inner">
     <div class="carousel-item active">
-        <img class="imagen" src="https://i.ibb.co/WsHnfbR/Aseo1.jpg" alt="Los Angeles">
+    <img class="imagen" src="https://i.ibb.co/zH7y1hz/Aseo1.jpg" alt="Aseo1" border="0">
         <div class="carousel-caption">
             <h3 style="font-weight: bold; font-size: 60px;">Si no tienes
                 tiempo para limpiar, contactanos ahora y tendras el mejor ambiente
@@ -132,13 +133,13 @@ img{
     </div>
 </div>
 
-<!-- Left and right controls -->
+ Left and right controls 
 <a class="carousel-control-prev" href="#demo" data-slide="prev"> <span
     class="carousel-control-prev-icon"></span>
 </a> <a class="carousel-control-next" href="#demo" data-slide="next">
     <span class="carousel-control-next-icon"></span>
 </a>
-
+-->
 </div>
 <div class="row" style="margin-top: 5%; margin-bottom: 5%;">
 <div class="col-md-2"></div>
@@ -150,13 +151,13 @@ img{
         tener un espacio adecuado y no contar con el tiempo para hacerlo,
         con HOMETOR todos tus problemas se solucionan de ahora en adelante,
         disfrutar la vida mientras nosotros organizamos tu casa.</h5>
-    <a href="iniciarsesion.html"><button class="w3-hover-opacity"
+    <a href="{{ route('quienessomos.index') }}"><button class="w3-hover-opacity"
             style="border-style: none; background-color: rgb(67, 132, 218); padding: 1%; border-radius: 5px; color: white; margin-top: 5%;">Descubre
             más</button></a>
 </div>
 <div class="col-md-4">
     <img style="height: 100%; width: 100%;"
-        src="https://i.ibb.co/jGCdkx8/Imagen1-servicios.jpg"  alt="">
+    src="https://i.ibb.co/0yq8rcs/Imagen1-servicios.jpg" alt="Imagen1-servicios" border="0">
 </div>
 <div class="col-md-2"></div>
 </div>
@@ -167,21 +168,21 @@ style="font-weight: bold; margin-bottom: 0%;">NUESTROS SERVICIOS</h3>
 <div class="col-md-4">
     <img class="w3-circle" src="https://i.ibb.co/nsBgqZq/Asistente-h.png"
         style="height: 80%; width: 80%;" alt=""> <a
-        href="asistentehogar.html"><BUTton
+        href="{{ route('catalogoservicio.index') }}"><BUTton
             style="border-radius: 5px; border-style: none; background-color: white; margin-left: 17%; margin-top: 3%; font-size: 20px;">Asistente
             en el hogar</BUTton></a>
 </div>
 <div class="col-md-4">
     <img class="w3-circle" src="https://i.ibb.co/drjT5Xx/Asistente-v.jpg"
         style="height: 80%; width: 80%; margin-left: 15%;" alt=""> <a
-        href="asistentevirtual.html"><BUTton
+        href="{{ route('contactanos.index') }}"><BUTton
             style="border-radius: 5px; border-style: none; background-color: white; margin-left: 38%; margin-top: 3%; font-size: 20px;">Asistente
             virtual</BUTton></a>
 </div>
 </div>
 <div class="row" style="margin-top: 5%; margin-bottom: 5%;">
 <div class="col-md 6">
-    <img src="https://i.ibb.co/NVD2gLX/Atomi.webp"  style="height: 100%; width: 100%;" alt="">
+<img src="https://i.ibb.co/whM6jd7/Atomi.webp" alt="Atomi" border="0" style="height:100%; width: 100%;">
 </div>
 <div class="col-md 6"
     style="margin-left: 7%; margin-right: 7%; margin-top: 7%;">
@@ -192,10 +193,7 @@ style="font-weight: bold; margin-bottom: 0%;">NUESTROS SERVICIOS</h3>
         Nuestra misión es proporcionar a todos los clientes la mejor calidad
         de servicios de limpieza y reparación para solicitudes residenciales
         y comerciales.</p>
-    <a href="contactanosservicios.html"><button
-            class="w3-blue w3-hover-white"
-            style="margin-bottom: 27%; border-style: none; border-radius: 5px; padding: 6px;">CONTACTANOS
-            AHORA</button></a>
+ 
 </div>
 </div>
 <footer>

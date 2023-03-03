@@ -83,6 +83,10 @@ img{
     margin-right: 50%;
     font-weight: bold;
 }
+	p.outset{border-style: outset}
+
+	p.ridge {border-style: ridge;}
+
 
     </style>
 
@@ -97,29 +101,30 @@ img{
 					<a style="text-decoration: none;" href="{{ route('quienessomos.index') }}" class="w3-bar-item w3-button">Quienes
 						somos</a> <a style="text-decoration: none;" href="{{ route('contactanos.index') }}" class="w3-bar-item w3-button">Contactanos</a>
 				</div>
-                <div class="largo-cuadros">
-		<section
-			style="border: 2px solid black; margin-left: 25%; margin-right: 25%; padding-left: 2%; padding-right: -8%; margin-top: 5%; margin-bottom: 5%;">
-			<div class="largo-cuadros-1">
+                <div class="">
+		<section class="p.ridge p.outset"
+			style=" border-style: ridge; margin-left: 25%; margin-right: 25%; padding-left: 2%; padding-right: -8%; margin-top: 5%; margin-bottom: 5%; background-color:white;">
+			<div class="">
 				<h2 class="w3-center" style="font-weight: bold;">CALIFICA EL
-					SERVICIO</h2>
+				SERVICIO</h2><hr>
 				<div class="">
 
 					<form action="{{ route('calificaciones.store') }}" method="POST">
 						@csrf
 						<center>
+							
 				<label for="fechacalificacion" class="form-label">Fecha</label>
-				<input type="date" id="fecha" name="fechacalificacion" value="{{ old('fechacalificacion') }}" readonly>
+				<input style="padding-left:5%; margin-left:1%;" type="date" id="fecha" name="fechacalificacion" value="{{ old('fechacalificacion') }}" readonly>
 				@error('fechacalificacion')
 				<small class="text-danger">{{ $message }}</small>
 				@enderror
-			</div>
+			</div><hr>
 
 						<div style="margin-top: 2%; margin-bottom: 3%;">
 							<p class="w3-center">Califica el servicio de 1 a 10, donde 1
 								es malo y 10 es bueno</p>
 							<div style="margin-left: 40%;">
-								<select style="margin-left: 40px;" name="puntuacioncalificacion"
+								<select style="margin-left: 40px; padding-left:10%;" name="puntuacioncalificacion"
 								value="{{ old('puntuacioncalificacion') }}" required>
 									<option value=""></option>
 									<option value="1">1</option>
@@ -137,8 +142,8 @@ img{
 				<small class="text-danger">{{ $message }}</small>
 				@enderror
 							</div>
-						</div>
-						<label for="idcontratoservicio" class="form-label" style="margin-left:145px;">fecha inicial</label>
+						</div><hr>
+						<label for="idcontratoservicio" class="form-label" style="margin-left:178px;">Fecha del servicio</label>
 				<select  id='idcontratoservicio' name='idcontratoservicio' value="{{ old('idcontratoservicio') }}">
 					<option value="">Seleccionar ...</option>
 					@foreach($contratoservicios as $contratoservicio)
@@ -148,16 +153,15 @@ img{
 				@error('idcontratoservicio')	
 				<small class="text-danger">{{$message}}</small>
 				@enderror
-			</div>
-						<textarea placeholder="Observaciones"
-							style="margin-left: 240px;" name="observaciones"
-							value="{{ old('observaciones') }}"></textarea>
+			</div><hr>	
+						<textarea  placeholder="Observaciones"
+							style="margin-left: 180px; width: 50%; padding-bottom: 5%;" name="observaciones"
+							value="{{ old('observaciones') }}"></textarea><hr>
 							<div class="col-md-6 mt-3">
-				<button type="submit" class="btn btn-primary" onclick="confirm('Seguro que quieres enviar tu Calificación?')">Enviar Calificación</button>
+				<button type="submit" class="btn btn-primary" style="margin-left: 265px;" onclick="confirm('Seguro que quieres enviar tu Calificación?')">Registrar Calificación</button>
 			</div>
-							<button class="btn btn-primary"
-								style="margin-top: 8px; margin-bottom: 3%;" id="submit">Consultar
-								Calificación</button>
+			<br>
+
 						</div>
 					</form>
 					</center>

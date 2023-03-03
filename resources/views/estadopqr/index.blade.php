@@ -33,8 +33,9 @@
 <link rel="stylesheet" href="static/css/PQRS.css"
 	th:href="@{css/PQRS.css}">
 </head>
+
 <style>
-.container-fluid{
+    .container-fluid{
     background-color: #C9C8C8;
 }
 .texto2{
@@ -83,33 +84,7 @@ img{
     margin-right: 50%;
     font-weight: bold;
 }
-.imagenpeticion{
-    height: 70%; 
-    width: 80%;
-    margin-left: 25%;
-}
-.imagenqueja{
-    height: 100%; 
-    width: 80%;
-    margin-left: 25%;
-}
-.imagenreclamo{
-    height: 100%; 
-    width: 80%;
-    margin-left: 25%;
-}
-.imagensugerencia{
-    height: 80%; 
-    width: 80%;
-    margin-left: 25%;
-}
-.texto{
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
     </style>
-
 
 <body>
 <div class="w3-bar w3-black" style="margin-top: -23px;">
@@ -121,55 +96,58 @@ img{
 					<a style="text-decoration: none;" href="{{ route('quienessomos.index') }}" class="w3-bar-item w3-button">Quienes
 						somos</a> <a style="text-decoration: none;" href="{{ route('contactanos.index') }}" class="w3-bar-item w3-button">Contactanos</a>
 				</div>
-                <div style="background-color: lightsteelblue;">
-		<h2 style="margin-left: 5%; padding-top: 1%;">Realice su
-			Peticion, Queja, Reclamo o Sugerencia</h2>
-		<p class="texto" style="padding-bottom: 1%;">En cumplimiento a lo
-			estipulado en la Ley 142 de 1994 - Ley de Servicios Públicos
-			Domiciliarios, KONTOR cuenta con el personal calificado para tramitar
-			y responder todas las peticiones, reclamos, quejas y sugerencias que
-			presenten los clientes del servicio domestico.</p>
+<br>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+		</div>
+		<br>
+		<div class="col-md-12">
+			<h2 class="" style="font-weight:bold;">Mis estados de PQRS</h2>
+		</div>
+		@if (sizeof($pqrs) > 0)
+	
+			<table class="table table-bordered" id="tblData">
+</div>
+			<thead class="w3-grey w3-center">
+				<tr style="height: 28px;">
+					<th class="borde w3-center">#</th>
+					<th class="borde w3-center" style="width:25%">Descripcion</th>
+					<th class="borde w3-center" style="width:25%">Fecha</th>
+					<th class="borde w3-center" style="width:25%">Tipo</th>
+                    <th class="borde w3-center" style="width:25%">Estado</th>
+					<th class="borde w3-center" style="width:25%">Respuesta</th>
+					<th class="text-center" style="width:25%"></th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach($pqrs as $pqr)
+				<tr style="height: 76px;">
+				<td class="linea w3-center" style="background-color: lightgray;">{{ $pqr->idpqrs }}</td>
+					<td class="linea w3-center" style="font-weight: bold;">{{ $pqr->descripcion }}</td>
+					<td class="linea w3-center">{{ $pqr->fecha }}</td>
+					<td class="linea w3-center">{{ $pqr->tipopqrss->tipo }}</td>
+					<td class="linea w3-center" style="font-weight: bold;">{{ $pqr->estados->tipo }}</td>
+					<td class="linea w3-center" style="font-weight: bold;">{{ $pqr->idrespuesta }}</td>
+					<td class="text-center">
+					
+						<a href="{{ route('estadopqr.edit', $pqr) }}" class="btn  ti-eye" style="color:darkblue"></a>
+					</td>
+				</tr>
+				@endforeach
+			</tbody>
+		</table>
+		<div class="d-flex justify-content-center">
+			
+		</div>
+		@else
+		<div class="alert alert-secondary"><h3>No se encontraron Pqrs</h3></div>
+		@endif
 	</div>
-	<div>
-		<h2 style="text-align: center;">Aprende a formular mejores PQRS</h2>
-		<div id="video1">
-			<iframe style="margin-left: 30%;" width="560" height="315"
-				src="https://www.youtube.com/embed/blLQI56dfGc"
-				title="YouTube video player" frameborder="0"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-				allowfullscreen></iframe>
-		</div>
-	</div>
-	<a href="{{ route('estadopqr.index') }}">
-		<button class="w3-button w3-hover-black w3-grey"
-			style="border-radius: 8px; margin-left: 5%; margin-top: 5%;">Consultar
-			estado de mis PQRS</button>
-	</a>
-	<h5 style="margin-top: 2%; margin-left: 5%; padding-bottom: 1%;">Estos
-		son los diferentes mecanismos que puedes utilizar:</h5>
-	<div>
-		<div class="row" style="margin-top: 2%;"></div>
-		<div class="row" style="padding-bottom: 2%;">
-			<div class="col-md-3">
-				<img class=" imagenqueja w3-card-4" src="https://i.ibb.co/gtG4CTt/Queja.jpg" alt="">
-			</div>
-			<div class="col-md-9">
-				<h4>PQRS</h4>
-				<p>El usuario manifiesta una protesta, censura, descontento o
-					inconformidad con una conducta que considera irregular de uno o
-					varios servicios.</p>
-				<a href="{{ route('pqrs.create') }}">
-					<button class="w3-button w3-blue w3-hover-black"
-						style="border-radius: 8px; margin-left: 32%;">Generar
-						PQRS</button>
-				</a>
-			</div>
-		</div>
-		<div class="row"
-			style="margin-bottom: 2%; margin-top: 2%; padding-bottom: 2%;">
-
-		</div>
-        <footer>
+</div>
+<br>
+<br><br><br><br>
+<footer>
 	<div class="container-fluid text-black" style="margin-bottom:-35px;">
 				<div class="row">
 					<div class="col-md-4" style="margin-top: 2%;">

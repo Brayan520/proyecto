@@ -214,10 +214,9 @@ img{
 				<div>
 					<img class="imagen-1" src="https://i.ibb.co/0XGH69s/cata.png">
 					<h5 class="titulo-cuadro">Asistente en casa</h5>
-					<h6 class="texto-cuadro">En esta seccion podras verificar
-						todos los tipos de servicios que manejamos, ingresa ahora,
-						conocelos y adquirelos.</h6>
-					<a href="asistentehogarcliente.html">
+					<h6 class="texto-cuadro">Si seleccionas este boton te dirigiras a consultar un 
+						servicio de asistente en el hogar, en este podras ver costos, beneficios y tipos de servicios.</h6>
+					<a href="{{ route('catalogoservicio.index') }}">
 						<button class="w3-button w3-blue"
 							style="margin-top: 5%; border-radius: 3vh; margin-left: 25%;">Solicita
 							tu servicio</button>
@@ -228,13 +227,11 @@ img{
 				<div>
 					<img class="imagen-2" src="https://i.ibb.co/H2rL2dz/Trabajaconnosotros.png">
 					<h5 class="titulo-cuadro">Asistent​e virtual</h5>
-					<h6 class="texto-cuadro">Si te interesa trabajar con nosotros
-						dale ya en el boton y enterate de todo en este instante, no
-						pierdas la oportudidad de tu vida.</h6>
-					<a href="asistentevirtualcliente.html">
+					<h6 class="texto-cuadro">Este servicio abarca el soporte de atencion al cliente, colaborando 
+						y realizando las tareas que se estipulan en el contrato.</h6>
+					<a href="{{ route('contactanos.index') }}">
 						<button class="w3-button w3-blue"
-							style="margin-top: 5%; border-radius: 3vh; margin-left: 25%;">Solicita
-							tu servicio</button>
+							style="margin-top: 11%; border-radius: 3vh; margin-left: 33%;">Contactanos</button>
 					</a>
 				</div>
 			</div>

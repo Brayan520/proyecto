@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\HomeController;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,8 @@ use App\Http\Controllers\ContactanosController;
 use App\Http\Controllers\QuienessomosController;
 use App\Http\Controllers\VacantelimpiezaController;
 use App\Http\Controllers\PostularController;
+use App\Http\Controllers\EstadopqrController;
+use App\Http\Controllers\HistorialcalificacionesController;
 
 //Administrador
 use App\Http\Controllers\AdministradorController;
@@ -53,6 +56,13 @@ use App\Http\Controllers\CalificacionesadminController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+
+Route::get('/home', function () {
+    return redirect('/home');
+});
+Route::resource ('home', HomeController::class);
 
 Route::get('/', function () {
     return redirect('/index');
@@ -164,12 +174,25 @@ Route::get('/vacante', function () {
 });
 Route::resource ('vacante', VacanteController::class);
 
+Route::get('/estadopqr', function () {
+    return redirect('/estadopqr');
+});
+Route::resource ('estadopqr', EstadopqrController::class);
+
+Route::get('/historialcalificaciones', function () {
+    return redirect('/historialcalificaciones');
+});
+Route::resource ('historialcalificaciones', HistorialcalificacionesController::class);
+
+
+
 
 
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 
 /*Clientes*/
@@ -244,3 +267,8 @@ Route::get('/calificacionesadmin', function () {
     return redirect('/calificacionesadmin');
 });
 Route::resource ('calificacionesadmin', CalificacionesadminController::class);
+
+
+
+
+?>
