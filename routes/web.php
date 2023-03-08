@@ -49,6 +49,9 @@ use App\Http\Controllers\QuienessomosUsuarioController;
 use App\Http\Controllers\CalificacionesadminController;
 use App\Http\Controllers\HojadevidaAdminController;
 use App\Http\Controllers\ContratacionadminController;
+use App\Http\Controllers\PersonaladminController;
+use App\Http\Controllers\ServiciosadminController;
+use App\Http\Controllers\VacantesadminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -200,6 +203,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/user', [HomeController::class, 'getUser']);
 
 
+Route::post('enviar-correo', function(){
+    return "Correo enviado exitosamente";
+})->name('enviar-correo');
+
 
 /*Clientes*/
 Route::get('/cliente', function () {
@@ -288,6 +295,21 @@ Route::get('/contratacionadmin', function () {
     return redirect('/contratacionadmin');
 });
 Route::resource ('contratacionadmin', ContratacionadminController::class);
+
+Route::get('/personaladmin', function () {
+    return redirect('/personaladmin');
+});
+Route::resource ('personaladmin', PersonaladminController::class);
+
+Route::get('/serviciosadmin', function () {
+    return redirect('/serviciosadmin');
+});
+Route::resource ('serviciosadmin', ServiciosadminController::class);
+
+Route::get('/vacantesadmin', function () {
+    return redirect('/vacantesadmin');
+});
+Route::resource ('vacantesadmin', VacantesadminController::class);
 
 
 ?>

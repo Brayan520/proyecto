@@ -1,18 +1,40 @@
 @extends('layouts.app')
 @section('content')
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cliente</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
-<link rel="stylesheet" href="static/css/Formulario-Queja.css"
-	th:href="@{css/Formulario-Queja.css}">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<script src="js/Formulario-PQRS.js"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script
+	src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="static/css/pie_pagina.css"
+	th:href="@{css/pie_pagina.css}">
+<link rel="stylesheet" href="static/css/Encabezado-Cliente.css"
+	th:href="@{css/Encabezado-Cliente.css}">
+<link rel="stylesheet" href="static/css/PQRS.css"
+	th:href="@{css/PQRS.css}">
+</head>
 <style>
-	.container-fluid{
+.container-fluid{
     background-color: #C9C8C8;
 }
 .texto2{
@@ -45,20 +67,72 @@ img{
     color: rgb(255, 255, 255);
     padding: 4px;
 }
-	</style>
-	<body style="font-family:Arial, Helvetica, sans-serif">
+.encabezado{
+    background-color: #dddada;
+}   
+.logo{
+    height: 90px;
+    width: 160px;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+.nproyecto{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    margin-right: 50%;
+    font-weight: bold;
+}
+.imagenpeticion{
+    height: 70%; 
+    width: 80%;
+    margin-left: 25%;
+}
+.imagenqueja{
+    height: 100%; 
+    width: 80%;
+    margin-left: 25%;
+}
+.imagenreclamo{
+    height: 100%; 
+    width: 80%;
+    margin-left: 25%;
+}
+.imagensugerencia{
+    height: 80%; 
+    width: 80%;
+    margin-left: 25%;
+}
+.texto{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+    </style>
+
+
+<body>
+<div class="w3-bar w3-black" style="margin-top: -23px;">
+					<a style="text-decoration: none;" href="{{ route('cliente.index') }}" class="w3-bar-item w3-button ">Inicio</a> 
+					<a style="text-decoration: none;" href="{{ route('catalogoservicio.index') }}" class="w3-bar-item w3-button">Catalogo
+						de servicio</a> <a style="text-decoration: none;" href="{{ route('trabajaconnosotros.index') }}" class="w3-bar-item w3-button">Trabaja
+						con nosotros</a> <a style="text-decoration: none;" href="{{ route('pqrs.index') }}" class="w3-bar-item w3-button">PQRS</a>
+						<a style="text-decoration: none;" href="{{ route('calificaciones.index') }}" class="w3-bar-item w3-button">Calificaciones</a>
+					<a style="text-decoration: none;" href="{{ route('quienessomos.index') }}" class="w3-bar-item w3-button">Quienes
+						somos</a> <a style="text-decoration: none;" href="{{ route('contactanos.index') }}" class="w3-bar-item w3-button">Contactanos</a>
+				</div>
 <div class="container">
-	<div class="row">
-		<div class="col-md-12">
-				<a href="{{ route('pqrs.index') }}" class="btn btn-primary ti-back-left" style="width: 5%;"></a>
-			</div>
-		</div>
+
+	<hr>
+	<center>
+	<h2 style="font-weight:bold">Registrar PQRS:</h2>
+	<hr>	
 		<div class="col-md-12">
 		<form action="{{ route('pqrs.store') }}" method="POST">
 			@csrf
 
             <div class="col-md-6">
-				<label for="fecha" class="form-label">Fecha de la pqrs</label>
+				<label for="fecha" class="form-label" style="font-weight:bold">Fecha de la pqrs</label>
 				<input type="date" class="form-control" id="fecha" name="fecha" value="{{ old('fecha') }}" readonly>
 				@error('fecha')
 				<small class="text-danger">{{ $message }}</small>
@@ -66,7 +140,7 @@ img{
 			</div>
 
             <div class="col-md-6">
-				<label for="idtipopqrs" class="form-label">Tipo de pqrs</label>
+				<label for="idtipopqrs" class="form-label" style="font-weight:bold">Tipo de pqrs</label>
 				<select class="form-control" id='idtipopqrs' name='idtipopqrs' value="{{ old('idtipopqrs') }}">
 					<option value="">Seleccionar ...</option>
 					@foreach($tipopqrss as $tipopqrs)
@@ -79,18 +153,18 @@ img{
 			</div>
             
 			<div class="col-md-6">
-				<label for="descripcion" class="form-label">Descripcion</label>
+				<label for="descripcion" class="form-label" style="font-weight:bold"> Descripcion</label>
 				<textarea type="text" class="form-control" id="descripcion" name="descripcion" value="{{ old('descripcion') }}"></textarea>
 				@error('descripcion')
 				<small class="text-danger">{{ $message }}</small>
 				@enderror
 			</div>
             <div class="col-md-6">
-				<label for="idcontratoservicio" class="form-label">Fecha del servicio del contrato</label>
+				<label for="idcontratoservicio" class="form-label" style="font-weight:bold">Fecha solicitud del servicio</label>
 				<select class="form-control" id='idcontratoservicio' name='idcontratoservicio' value="{{ old('idcontratoservicio') }}">
 					<option value="">Seleccionar ...</option>
 					@foreach($contratoservicios as $contratoservicio)
-					<option value="{{ $contratoservicio->idcontratoservicio }}">{{ $contratoservicio->fechainicial }}</option>
+					<option value="{{ $contratoservicio->idcontratoservicio }}">{{ $contratoservicio->solicitudservicios->fechasolicitud }}</option>
 					@endforeach
 				</select>
 				@error('idcontratoservicio')	
@@ -98,15 +172,17 @@ img{
 				@enderror
 			</div>
 			<div class="col-md-6">
-				<label for="idestado" class="form-label">Estado de la pqrs</label>
+				<label for="idestado" class="form-label" style="font-weight:bold">Estado de la pqrs</label>
 				<select class="form-control" id='idestado' name='idestado' value="{{ old('idestado') }}" readonly>
 					<option value="1">Activo</option>
 				</select>
+				
 
 			</div>
 			<div class="col-md-6 mt-3">
 				<button type="submit" class="btn btn-primary" onclick="confirm('Seguro que quieres enviar tu PQRS?')">Enviar PQRS</button>
 			</div>
+</center>
 		</form>
 	</div>
 	<br>

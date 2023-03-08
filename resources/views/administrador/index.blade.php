@@ -208,13 +208,13 @@ body {
 							<a style="text-decoration:none" href="{{ route('contratacion.index') }}" class="w3-button">Contratacion</a>
 						</div>
 						<div class="w3-dropdown-hover">
-							<a style="text-decoration:none" href="vacantesadmin.html" class="w3-button">Vacantes</a>
+							<a style="text-decoration:none" href="{{ route('vacantesadmin.index') }}" class="w3-button">Vacantes</a>
 						</div>
 						<div class="w3-dropdown-hover">
-							<a style="text-decoration:none" href="inforempleado.html" class="w3-button">Personal</a>
+							<a style="text-decoration:none" href="{{ route('personaladmin.index') }}" class="w3-button">Personal</a>
 						</div>
 						<div class="w3-dropdown-hover">
-							<a style="text-decoration:none" href="servicioadmin.html" class="w3-button">Servicios</a>
+							<a style="text-decoration:none" href="{{ route('serviciosadmin.index') }}" class="w3-button">Servicios</a>
 						</div>
 					</div>
 
@@ -223,7 +223,7 @@ body {
 
     <div class="texto-centro  fondo-gris">
 		<div class="margen-arriba margen-abajo" style="margin: 0%">
-			<h2 class="titulo-principal" style="margin-bottom: 2%;">ADMINISTRADOR {{ Auth::user()->nombre_apellido }}</h2>
+			<h2 class="titulo-principal" style="margin-bottom: 2%;">Hola, {{ Auth::user()->nombre_apellido }}</h2>
 			<div class="cuadro forma-cuadro">
 				<div class="fondo-blanco">
 					<div class="margen-texto">
@@ -277,7 +277,7 @@ body {
 						<p class="texto">Documentación de los usuarios que se han
 							registrado.</p>
 						<div class="icono-contratacion">
-							<a href="contratacionadmin.html"><img
+							<a href="{{ route('contratacion.index') }}"><img
 								src="https://i.ibb.co/ByPnvn7/2.png" alt="">
 						</div>
 						</a>
@@ -291,7 +291,7 @@ body {
 						<h5 class="titulo">VACANTES</h5>
 						<p class="texto">Registrar, modificar o eliminar vacantes.</p>
 						<div class="icono-vacantes">
-							<a href="vacantesadmin.html"><img src="https://i.ibb.co/ByPnvn7/2.png"
+							<a href="{{ route('vacantesadmin.index') }}"><img src="https://i.ibb.co/ByPnvn7/2.png"
 								alt="">
 						</div>
 						</a>
@@ -305,7 +305,7 @@ body {
 						<h5 class="titulo" style="margin-top: 22px;">PERSONAL</h5>
 						<p class="texto">Información y cargo del empleado.</p>
 						<div class="icono-personal">
-							<a href="inforempleado.html"><img src="https://i.ibb.co/ByPnvn7/2.png"
+							<a href="{{ route('personaladmin.index') }}"><img src="https://i.ibb.co/ByPnvn7/2.png"
 								alt="">
 						</div>
 						</a>
@@ -317,9 +317,9 @@ body {
 						<img class="imagen" src="https://i.ibb.co/mJw10S9/Servicios.png"
 							style="height: 25%; width: 25%; margin-top: -20%;">
 						<h5 class="titulo">SERVICIOS</h5>
-						<p class="texto">Registar, modificar o eliminar servicios.</p>
+						<p class="texto">Servicios solicitados.</p>
 						<div class="icono-servicios ">
-							<a href="servicioadmin.html"><img src="https://i.ibb.co/ByPnvn7/2.png"
+							<a href="{{ route('serviciosadmin.index') }}"><img src="https://i.ibb.co/ByPnvn7/2.png"
 								alt="">
 						</div>
 						</a>

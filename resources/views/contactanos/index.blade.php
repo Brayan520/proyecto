@@ -156,32 +156,35 @@ img{
 					src="https://i.ibb.co/TWL0G0C/Asistente-virtual.jpg">
 			</div>
 			<div class="contenido">
-				<form>
+				<form method="POST" action="mail.php">
 					<div class="cuadro" style="padding: 10px;">
 						<div class="posicion-cuadro correo">
 							<label>Nombre completo</label> <input
-								placeholder="Introduzca su nombre" id='nombre'
-								class="u-border-white tamaño-cuadro" required>
+								placeholder="Introduzca su nombre" id="nombre" name="nombre"
+								class="u-border-white tamaño-cuadro" autocapitalize="words" required>
 						</div>
 						<div class="posicion-cuadro correo">
 							<label>Correo electrónico</label> <input
 								placeholder="Introduzca una dirección de correo electrónico válida"
-								id='email' class="u-border-white tamaño-cuadro" required>
+								id="email" name="email" class="u-border-white tamaño-cuadro" required>
 						</div>
 						<div class="posicion-cuadro">
 							<label>Número de Telefono</label> <input
 								placeholder="Ingrese su teléfono (ejemplo, +57 3201956282)"
-								id='telefono' class="u-border-white tamaño-cuadro" required>
+								id="telefono" name="telefono" class="u-border-white tamaño-cuadro" autocapitalize="words" required>
 						</div>
 						<div class="posicion-cuadro">
-							<label>Asunto</label> <input
-								placeholder="Introduzca el titulo del asunto" id='asunto'
-								class="u-border-white tamaño-cuadro" required>
+							<label>Asunto</label>
+							<select name="asunto" id="asunto" style="width:100%; height: 60%">
+								<option>Comentario</option>
+								<option>Reclamo</option>
+								<option>Sugerencia</option>
+							</select>
 						</div>
 						<div class="posicion-cuadro">
 							<label>Mensaje</label>
-							<textarea placeholder="Ingrese su mensaje" id='mensaje' rows="4"
-								class="u-border-white tamaño-cuadro" required></textarea>
+							<textarea placeholder="Ingrese su mensaje" name="mensaje" id="mensaje" rows="4"
+								class="u-border-white tamaño-cuadro" autocapitalize="words" required></textarea>
 						</div>
 						<button class="btn btn-primary"
 							style="margin-top: 8px; margin-bottom: 3%;" id="submit"

@@ -223,7 +223,7 @@ body {
 
     <div class="texto-centro  fondo-gris">
 		<div class="margen-arriba margen-abajo" style="margin: 0%">
-			<h2 class="titulo-principal" style="margin-bottom: 2%;">ADMINISTRADOR {{ Auth::user()->nombre_apellido }}</h2>
+			<h2 class="titulo-principal" style="margin-bottom: 2%;">Hola, {{ Auth::user()->nombre_apellido }}</h2>
 			<div class="cuadro forma-cuadro">
 				<div class="fondo-blanco">
 					<div class="margen-texto">

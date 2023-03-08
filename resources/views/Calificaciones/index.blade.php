@@ -135,9 +135,9 @@
 	</div>
 	
 	</div>
-	<a href="">
-		<button class="w3-button w3-hover-black w3-grey" style="border-radius: 8px; margin-left: 5%; margin-top: 0%;">Consultar
-			historial de calificaciones</button>
+	
+		<button class="w3-button w3-hover-black w3-grey" style="border-radius: 8px; margin-left: 5%; margin-top: 0%; text-decoration:none"><a style="text-decoration:none; color:white" href="{{route ('historialcalificaciones.index') }}">Consultar
+			historial de calificaciones</a></button>
 	</a>
 	<div>
 		<div class="row" style="margin-top: 2%;"></div>

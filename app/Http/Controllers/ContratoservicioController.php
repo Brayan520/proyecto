@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Contratoservicio;
 use App\Models\Solicitudservicio;
+use App\Models\Detalleservicio;
+use App\Models\Servicio;
 use Illuminate\Http\Request;
 
 class ContratoservicioController extends Controller
@@ -26,7 +28,9 @@ class ContratoservicioController extends Controller
     public function create()
     {
     $solicitudservicios  = Solicitudservicio::all();
-    return view ('contratoservicio.create',['solicitudservicios'=>$solicitudservicios]);
+    $detalleservicios  = Detalleservicio::all();
+    $servicios  = Servicio::all();
+    return view ('contratoservicio.create',['solicitudservicios'=>$solicitudservicios,'detalleservicios'=>$detalleservicios,'servicios'=>$servicios]);
 
     }
 

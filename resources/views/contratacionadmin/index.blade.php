@@ -192,34 +192,33 @@
 
 <body style="font-family:Arial, Helvetica, sans-serif">
 	<div class="w3-bar w3-black " style="margin-top: -23px;">
-		<a style="text-decoration:none" href="{{ route('administrador.index') }}" class="w3-bar-item w3-button ">Inicio</a>
-		<div class="w3-dropdown-hover">
-			<a style="text-decoration:none" href="{{ route('reportes.index') }}" class="w3-button">Reportes</a>
-		</div>
-		<div class="w3-dropdown-hover">
-			<a style="text-decoration:none" href="{{ route('pqrsadmin.index') }}" class="w3-button">PQRS</a>
-		</div>
-		<div class="w3-dropdown-hover">
-			<a style="text-decoration:none" href="{{ route('calificaciones.index') }}" class="w3-button">Calificaciones</a>
-		</div>
-		<div class="w3-dropdown-hover">
-			<a style="text-decoration:none" th:href="@{/hojadevidaadmin}" class="w3-button">Hojas
-				de vida</a>
-		</div>
-		<div class="w3-dropdown-hover">
-			<a style="text-decoration:none" href="contratacionadmin.html" class="w3-button">Contratacion</a>
-		</div>
-		<div class="w3-dropdown-hover">
-			<a style="text-decoration:none" href="vacantesadmin.html" class="w3-button">Vacantes</a>
-		</div>
-		<div class="w3-dropdown-hover">
-			<a style="text-decoration:none" href="inforempleado.html" class="w3-button">Personal</a>
-		</div>
-		<div class="w3-dropdown-hover">
-			<a style="text-decoration:none" href="servicioadmin.html" class="w3-button">Servicios</a>
+	<a style="text-decoration:none" href="{{ route('administrador.index') }}" class="w3-bar-item w3-button ">Inicio</a>
+						<div class="w3-dropdown-hover">
+							<a style="text-decoration:none" href="{{ route('reportes.index') }}" class="w3-button">Reportes</a>
+						</div>
+						<div class="w3-dropdown-hover">
+							<a style="text-decoration:none" href="{{ route('pqrsadmin.index') }}" class="w3-button">PQRS</a>
+						</div>
+						<div class="w3-dropdown-hover">
+							<a style="text-decoration:none" href="{{ route('calificacionesadmin.index') }}" class="w3-button">Calificaciones</a>
+						</div>
+						<div class="w3-dropdown-hover">
+							<a style="text-decoration:none" href="{{ route('hojadevidaadmin.index') }}" class="w3-button">Hojas
+								de vida</a>
+						</div>
+						<div class="w3-dropdown-hover">
+							<a style="text-decoration:none" href="{{ route('contratacion.index') }}" class="w3-button">Contratacion</a>
+						</div>
+						<div class="w3-dropdown-hover">
+							<a style="text-decoration:none" href="{{ route('vacantesadmin.index') }}" class="w3-button">Vacantes</a>
+						</div>
+						<div class="w3-dropdown-hover">
+							<a style="text-decoration:none" href="{{ route('personaladmin.index') }}" class="w3-button">Personal</a>
+						</div>
+						<div class="w3-dropdown-hover">
+							<a style="text-decoration:none" href="{{ route('serviciosadmin.index') }}" class="w3-button">Servicios</a>
 		</div>
 	</div>
-
 	<br>
 
 	<div class="container">
