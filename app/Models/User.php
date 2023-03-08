@@ -24,9 +24,11 @@ class User extends Authenticatable
         'genero',
         'tipo',
         'identificacion',
-        'telefono',
+        'celular',
         'email',
         'password',
+        'fullaccess',
+        'codigo'
     ];
 
     /**

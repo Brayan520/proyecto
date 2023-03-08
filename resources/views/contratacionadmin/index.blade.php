@@ -2,9 +2,13 @@
 @section('content')
 
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contratación-Administrador</title>
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.5/css/buttons.dataTables.min.css">
 	<script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
@@ -185,6 +189,7 @@
 	
 
 
+
 <body style="font-family:Arial, Helvetica, sans-serif">
 	<div class="w3-bar w3-black " style="margin-top: -23px;">
 		<a style="text-decoration:none" href="{{ route('administrador.index') }}" class="w3-bar-item w3-button ">Inicio</a>
@@ -195,7 +200,7 @@
 			<a style="text-decoration:none" href="{{ route('pqrsadmin.index') }}" class="w3-button">PQRS</a>
 		</div>
 		<div class="w3-dropdown-hover">
-			<a style="text-decoration:none" href="calificacionesadmin.html" class="w3-button">Calificaciones</a>
+			<a style="text-decoration:none" href="{{ route('calificaciones.index') }}" class="w3-button">Calificaciones</a>
 		</div>
 		<div class="w3-dropdown-hover">
 			<a style="text-decoration:none" th:href="@{/hojadevidaadmin}" class="w3-button">Hojas
@@ -219,55 +224,70 @@
 
 	<div class="container">
 		<div class="row">
+<a href="{{ route('contratacion.create') }}" class="btn btn-primary">Agregar Contratación</a>
 
-
-			<h2 style="color:darkblue; font-weight:bold;">Reportes Calificaciones</h2>
+			<h2 style="color:darkblue; font-weight:bold;">Reportes Contrataciones</h2>
 		</div>
-		@if (sizeof($calificaciones) > 0)
+		@if (sizeof($contrataciones) > 0)
 
 <br>
-	<div id="maintable">
+	
 	
 		<br>
-		<div class="container">
 	
-	<table id="example" class="display nowrap" style="width:100%">
+		
+        <br>
+        <br>
+	<table id="example" class="display nowrap" >
 		
 			<thead>
+                
 				<tr>
-					<th class="text-center">#</th>
-					<th class="text-center">Puntuación</th>
-					<th class="text-center">Fecha Calificación</th>
-					<th class="text-center">Observaciones</th>
-					<th class="text-center">Dirección</th>
+				<th class="text-center">#</th>
+					<th class="text-center">Termino Laboral</th>
+					<th class="text-center">Fecha inicial</th>
+					<th class="text-center">Fecha final</th>
+                    <th class="text-center">Sueldo</th>
+					<th class="text-center">Colaborador</th>
+					<th class="text-center">Aspirante</th>
+					<th class="text-center" width="20">Acciones</th>
 				</tr>
 			</thead>
 			<tbody>
-				@foreach($calificaciones as $calificacion)
+				@foreach($contrataciones as $contratacion)
 				<tr>
-					<td class="text-center">{{ $calificacion->idcalificacion }}</td>
-					<td class="text-center">{{ $calificacion->puntuacioncalificacion }}</td>
-					<td class="text-center">{{ $calificacion->fechacalificacion }}</td>
-					<td class="text-center">{{ $calificacion->observaciones }}</td>
-					<td class="text-center">{{ $calificacion->contratoservicios->direccion }}</td>
+				<td>{{ $contratacion->idcontratacion }}</td>
+					<td class="text-center">{{ $contratacion->terminolaboral }}</td>
+					<td class="text-center">{{ $contratacion->fechainicial }}</td>
+					<td class="text-center">{{ $contratacion->fechafinal }}</td>
+					<td class="text-center">{{ $contratacion->sueldo }}</td>
+					<td class="text-center">{{ $contratacion->colaboradores->idcolaborador }}</td>
+					<td class="text-center">{{ $contratacion->aspirantes->hojadevidas->nombre_apellido }}</td>
+					
+                    <td class="td-actions text-right">
+                             
+                    <a href="{{ route('contratacion.edit', $contratacion) }}" class="btn btn-success ti-pencil-alt"></a>
+						<form action="{{ route('contratacion.destroy', $contratacion) }}" method="POST" class="d-inline-block">
+							@csrf
+							@method('DELETE')
+							<button type="submit" class="btn btn-danger ti-trash"
+							onclick="return confirm('¿Está seguro de eliminar la contratacion?!!')"></button>
+						</form>
 					</td>
 				</tr>
 				@endforeach
 			</tbody>
 		</table>
 		<div class="d-flex justify-content-center">
-
+			
 		</div>
 		@else
-		<div class="alert alert-secondary">
-			<h3>No se encontraron Calificaciones</h3>
-		</div>
+		<div class="alert alert-secondary"><h3>No se encontraron Contratos</h3></div>
 		@endif
 	</div>
-	</div>
-
-	<br><br><br><br><br>
-	</div>
+</div>
+<br><br><br><br><br>
+	
 	<footer>
 		<div class="container-fluid text-black" style="margin-bottom:-35px;">
 			<div class="row">
@@ -363,5 +383,5 @@
     } );
 } );
 </script>
-</html>
+
 @endsection

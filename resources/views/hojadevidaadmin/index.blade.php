@@ -2,9 +2,13 @@
 @section('content')
 
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PQRS-Administrador</title>
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.5/css/buttons.dataTables.min.css">
 	<script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
@@ -185,6 +189,7 @@
 	
 
 
+
 <body style="font-family:Arial, Helvetica, sans-serif">
 	<div class="w3-bar w3-black " style="margin-top: -23px;">
 		<a style="text-decoration:none" href="{{ route('administrador.index') }}" class="w3-bar-item w3-button ">Inicio</a>
@@ -195,7 +200,7 @@
 			<a style="text-decoration:none" href="{{ route('pqrsadmin.index') }}" class="w3-button">PQRS</a>
 		</div>
 		<div class="w3-dropdown-hover">
-			<a style="text-decoration:none" href="calificacionesadmin.html" class="w3-button">Calificaciones</a>
+			<a style="text-decoration:none" href="{{ route('calificaciones.index') }}" class="w3-button">Calificaciones</a>
 		</div>
 		<div class="w3-dropdown-hover">
 			<a style="text-decoration:none" th:href="@{/hojadevidaadmin}" class="w3-button">Hojas
@@ -221,53 +226,70 @@
 		<div class="row">
 
 
-			<h2 style="color:darkblue; font-weight:bold;">Reportes Calificaciones</h2>
+			<h2 style="color:darkblue; font-weight:bold;">Reportes Hojas de vida</h2>
 		</div>
-		@if (sizeof($calificaciones) > 0)
+		@if (sizeof($hojadevidas) > 0)
 
 <br>
-	<div id="maintable">
+	
 	
 		<br>
-		<div class="container">
 	
-	<table id="example" class="display nowrap" style="width:100%">
+	
+	<table id="example" class="display nowrap" >
 		
 			<thead>
 				<tr>
-					<th class="text-center">#</th>
-					<th class="text-center">Puntuación</th>
-					<th class="text-center">Fecha Calificación</th>
-					<th class="text-center">Observaciones</th>
+				<th class="text-center">#</th>
+					<th class="text-center">Nombres</th>
+					<th class="text-center">Tipo</th>
+					<th class="text-center">Identificación</th>
+                    <th class="text-center">Correo</th>
 					<th class="text-center">Dirección</th>
+					<th class="text-center">Barrio</th>
+
+                    <th class="text-center">Celular</th>
+                    <th class="text-center">Ciudad</th>
+
+                    <th class="text-center">Fecha de registro</th>
+					<th class="text-center" width="20">Consultar</th>
 				</tr>
 			</thead>
 			<tbody>
-				@foreach($calificaciones as $calificacion)
+				@foreach($hojadevidas as $hojadevida)
 				<tr>
-					<td class="text-center">{{ $calificacion->idcalificacion }}</td>
-					<td class="text-center">{{ $calificacion->puntuacioncalificacion }}</td>
-					<td class="text-center">{{ $calificacion->fechacalificacion }}</td>
-					<td class="text-center">{{ $calificacion->observaciones }}</td>
-					<td class="text-center">{{ $calificacion->contratoservicios->direccion }}</td>
+				<td>{{ $hojadevida->idhojadevida }}</td>
+					<td class="text-center">{{ $hojadevida->nombre_apellido }}</td>
+					<td class="text-center">{{ $hojadevida->tipoidentificacion }}</td>
+					<td class="text-center">{{ $hojadevida->identificacion }}</td>
+					<td class="text-center">{{ $hojadevida->correo }}</td>
+					<td class="text-center">{{ $hojadevida->direccion }}</td>
+					<td class="text-center">{{ $hojadevida->barrio }}</td>
+               
+                    <td class="text-center">{{ $hojadevida->celular }}</td>
+                    <td class="text-center">{{ $hojadevida->ciudad }}</td>
+          
+                    <td class="text-center">{{ $hojadevida->fecharegistro }}</td>
+					
+                    <td class="td-actions text-right">
+                             
+                                <a href="{{ route('hojadevidaadmin.show', $hojadevida->idhojadevida) }}" class="btn btn-info"><i class="material-icons">Ver</i></a>
+                                
 					</td>
 				</tr>
 				@endforeach
 			</tbody>
 		</table>
 		<div class="d-flex justify-content-center">
-
+			
 		</div>
 		@else
-		<div class="alert alert-secondary">
-			<h3>No se encontraron Calificaciones</h3>
-		</div>
+		<div class="alert alert-secondary"><h3>No se encontraron Hojas de vida</h3></div>
 		@endif
 	</div>
-	</div>
-
-	<br><br><br><br><br>
-	</div>
+</div>
+<br><br><br><br><br>
+	
 	<footer>
 		<div class="container-fluid text-black" style="margin-bottom:-35px;">
 			<div class="row">
@@ -363,5 +385,5 @@
     } );
 } );
 </script>
-</html>
+
 @endsection

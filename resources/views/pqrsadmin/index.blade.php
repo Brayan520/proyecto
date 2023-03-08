@@ -2,7 +2,7 @@
 @section('content')
 
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
 <meta charset="UTF-8">
@@ -187,29 +187,6 @@
 	}
 </style>
 	
-<style>
-	*,*:after,*:before{
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		-ms-box-sizing: border-box;
-		box-sizing: border-box;
-	}
-	body{
-		font-family: arial;
-		font-size: 16px;
-		margin: 0;
-		background: #fff;
-		color: #000;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		min-height: 100vh;
-	}
-.container{
-	max-width: 1100px;
-	width: 100%;
-}
-	</style>
 
 
 <body style="font-family:Arial, Helvetica, sans-serif">
@@ -222,7 +199,7 @@
 			<a style="text-decoration:none" href="{{ route('pqrsadmin.index') }}" class="w3-button">PQRS</a>
 		</div>
 		<div class="w3-dropdown-hover">
-			<a style="text-decoration:none" href="calificacionesadmin.html" class="w3-button">Calificaciones</a>
+			<a style="text-decoration:none" href="{{ route('calificaciones.index') }}" class="w3-button">Calificaciones</a>
 		</div>
 		<div class="w3-dropdown-hover">
 			<a style="text-decoration:none" th:href="@{/hojadevidaadmin}" class="w3-button">Hojas
@@ -253,7 +230,7 @@
 		@if (sizeof($pqrs) > 0)
 
 <br>
-	<div id="maintable">
+	
 	
 		<br>
 		<div class="container">
@@ -299,7 +276,7 @@
 	</div>
 </div>
 <br><br><br><br><br>
-	</div>
+	
 	<footer>
 		<div class="container-fluid text-black" style="margin-bottom:-35px;">
 			<div class="row">
@@ -395,53 +372,5 @@
     } );
 } );
 </script>
-
-<!--
-			<h2 class="" style="color:darkblue; font-weight:bold;">Reportes Pqrs</h2>
-		</div>
-		@if (sizeof($pqrs) > 0)
-	
-			<table class="table" id="tblData">
-</div>
-			<thead>
-				<tr>
-					<th class="text-center">#</th>
-					<th class="text-center">Descripcion</th>
-					<th class="text-center">Fecha</th>
-					<th class="text-center">Tipo</th>
-                    <th class="text-center">Estado</th>
-					<th class="text-center">Direccion</th>
-					<th class="text-center">Respuesta</th>
-					<th class="text-center" width="20">Acciones</th>
-				</tr>
-			</thead>
-			<tbody>
-				@foreach($pqrs as $pqr)
-				<tr>
-				<td>{{ $pqr->idpqrs }}</td>
-					<td class="text-center">{{ $pqr->descripcion }}</td>
-					<td class="text-center">{{ $pqr->fecha }}</td>
-					<td class="text-center">{{ $pqr->tipopqrss->tipo }}</td>
-					<td class="text-center">{{ $pqr->estados->tipo }}</td>
-					<td class="text-center">{{ $pqr->contratoservicios->direccion }}</td>
-					<td class="text-center">{{ $pqr->idrespuesta }}</td>
-					<td class="text-center">
-						<a href="{{ route('respuesta.create') }}" class="btn btn-info" style="margin-right: 200px; margin-left: 100px;">Respuesta</a>
-						<a href="{{ route('pqrsadmin.edit', $pqr) }}" class="btn btn-info" style="background-color:blue; margin-top: -82px; margin-left: 200px; margin-right: 100px; margin-top: -60px">Estado</a>
-					</td>
-				</tr>
-				@endforeach
-			</tbody>
-		</table>
-		<div class="d-flex justify-content-center">
-			
-		</div>
-		@else
-		<div class="alert alert-secondary"><h3>No se encontraron Pqrs</h3></div>
-		@endif
-	</div>
-</div>
-<br><br><br><br><br>
--->
 
 @endsection

@@ -108,10 +108,10 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="telefono" class="col-md-4 col-form-label text-md-end">{{ __('Telefono') }}</label>
+                            <label for="celular" class="col-md-4 col-form-label text-md-end">{{ __('Celular') }}</label>
 
                             <div class="col-md-6">
-                                <input id="telefono" type="number" class="form-control @error('telefono') is-invalid @enderror" name="telefono" value="{{ old('telefono') }}" required autocomplete="on" autofocus>
+                                <input id="celular" type="number" class="form-control @error('celular') is-invalid @enderror" name="celular" value="{{ old('celular') }}" required autocomplete="on" autofocus>
 
                                 @error('telefono')
                                     <span class="invalid-feedback" role="alert">

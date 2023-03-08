@@ -24,6 +24,8 @@ use App\Http\Controllers\SolicitudservicioController;
 use App\Http\Controllers\TipopqrsController;
 use App\Http\Controllers\VacanteController;
 
+
+
 //Cliente
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\CatalogoservicioController;
@@ -45,6 +47,8 @@ use App\Http\Controllers\ChartController;
 use App\Http\Controllers\ContactanosUsuarioController;
 use App\Http\Controllers\QuienessomosUsuarioController;
 use App\Http\Controllers\CalificacionesadminController;
+use App\Http\Controllers\HojadevidaAdminController;
+use App\Http\Controllers\ContratacionadminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -189,9 +193,11 @@ Route::resource ('historialcalificaciones', HistorialcalificacionesController::c
 
 
 
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/user', [HomeController::class, 'getUser']);
 
 
 
@@ -268,7 +274,20 @@ Route::get('/calificacionesadmin', function () {
 });
 Route::resource ('calificacionesadmin', CalificacionesadminController::class);
 
+Route::get('/hojadevidaadmin', function () {
+    return redirect('/hojadevidaadmin');
+});
+Route::resource ('hojadevidaadmin', HojadevidaadminController::class);
 
+Route::get('/quattrosoft/admin/contratacion', function () {
+    return redirect('/quattrosoft/admin/contratacion');
+});
+Route::resource ('/quattrosoft/admin/contratacion', ContratacionadminController::class);
+
+Route::get('/contratacionadmin', function () {
+    return redirect('/contratacionadmin');
+});
+Route::resource ('contratacionadmin', ContratacionadminController::class);
 
 
 ?>

@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Hojadevida;
 use Illuminate\Http\Request;
 
-class HojadevidaController extends Controller
+class HojadevidaAdminController extends Controller
 {
     public function index()
     {
-        $hojadevidas = Hojadevida::orderBy('idhojadevida', 'ASC')->paginate(5);
+        $hojadevidas = Hojadevida::orderBy('idhojadevida', 'ASC')->paginate(30);
 
 
-       return view ('hojadevida.index', ['hojadevidas' => $hojadevidas]);
+       return view ('hojadevidaadmin.index', ['hojadevidas' => $hojadevidas]);
     }
 
     /**
@@ -25,7 +25,7 @@ class HojadevidaController extends Controller
     public function create()
     {
 
-    return view ('hojadevida.create');
+    return view ('hojadevidaadmin.create');
 
     }
 
@@ -41,13 +41,13 @@ class HojadevidaController extends Controller
             'barrio'=> 'required|min:10|max:100',
             'telefono'=> 'min:7|max:15|unique:hojadevida',
             'celular'=> 'required|max:15|unique:hojadevida',
-            'ciudad',
+            'ciudad'=> 'required',
             'estudios'=>'required|min:1|max:100',
             'fecharegistro'=> 'required'
        ]);
        Hojadevida::create($request->all());
 
-       return redirect()->route('hojadevida.index');
+       return redirect()->route('hojadevidaadmin.index');
     }
 
     /**
@@ -56,9 +56,12 @@ class HojadevidaController extends Controller
      * @param  \App\Models\Vacante  $vacantes
      * @return \Illuminate\Http\Response
      */
-    public function show(Hojadevida $hojadevidas)
+    public function show($idhojadevida)
     {
-        //
+        $hojadevida = Hojadevida::find($idhojadevida);
+        dd($hojadevida);
+        return view('hojadevidaadmin.show', compact('hojadevida'));
+        
     }
 
     /**
@@ -69,7 +72,7 @@ class HojadevidaController extends Controller
      */
     public function edit(Hojadevida $hojadevida)
     {   
-    return view ('hojadevida.edit', ['hojadevida' => $hojadevida]);
+    return view ('hojadevidaadmin.edit', ['hojadevida' => $hojadevida]);
     }
 
     /**
@@ -91,13 +94,13 @@ class HojadevidaController extends Controller
             'barrio'=> 'required|min:10|max:100',
             'telefono'=> 'min:7|max:15|unique:hojadevida',
             'celular'=> 'required|max:15|unique:hojadevida',
-            'ciudad',
+            'ciudad'=> 'required',
             'estudios'=>'required|min:1|max:100',
             'fecharegistro'=> 'required'
        ]);
 
       $hojadevida->update($request->all());
-       return redirect()->route('hojadevida.index');
+       return redirect()->route('hojadevidaadmin.index');
     }
 
     /**
@@ -109,7 +112,7 @@ class HojadevidaController extends Controller
     public function destroy(Hojadevida $hojadevida)
     {
         $hojadevida->delete();
-        return redirect()->route('hojadevida.index'); 
+        return redirect()->route('hojadevidaadmin.index'); 
     }
 }
 $hojadevidas = Hojadevida::all()->pluck('nombre_apellido');

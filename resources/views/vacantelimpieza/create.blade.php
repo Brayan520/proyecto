@@ -212,7 +212,7 @@
 								<div>
 									<label style="margin-left: 55%; margin-top: -11%" for="apellido">Apellido</label>
 								</div>
-								<input style="margin-left: 55%; margin-top: -5.5%" type="text" placeholder="Introduzca su apellido" class="cuadros" id="apellido" required>
+								<input style="margin-left: 55%; margin-top: -5.5%" type="text" placeholder="Introduzca su apellido" class="cuadros" id="apellido" name="apellido" value="{{ old('apellido') }}">
 								@error('apellido')
 								<small class="text-danger">{{ $message }}</small>
 								@enderror
@@ -220,18 +220,18 @@
 							<hr>
 							<div>
 								<div><label style="margin-left: 10%;">Tipo de Documento</label></div>
-								<select style="margin-left: 10%;" class="cuadros" id="tipoidentificacion" required>
+								<select style="margin-left: 10%;" class="cuadros" id="tipoidentificacion" name="tipoidentificacion" value="{{ old('tipoidentificacion') }}">
 									<option value="">Seleccionar</option>
-									<option value="Item 1">Cédula Ciudadania</option>
-									<option value="Item 2">Nit</option>
-									<option value="Item 3">Cedula Extranjeria</option>
+									<option value="CC">Cédula Ciudadania</option>
+									<option value="NIT">Nit</option>
+									<option value="CE">Cedula Extranjeria</option>
 								</select>
 								@error('tipoidentificacion')
 								<small class="text-danger">{{ $message }}</small>
 								@enderror
 
 								<div><label style="margin-left: 55%; margin-top: -11%">Número de Identificación</label></div>
-								<input style="margin-left: 55%; margin-top: -5%" type="number" id="identificacion" placeholder="Introduzca su numero" class="cuadros" required>
+								<input style="margin-left: 55%; margin-top: -5%" type="number" id="identificacion" name="identificacion" value="{{ old('identificacion') }}" placeholder="Introduzca su numero" class="cuadros" required>
 								@error('identificacion')
 								<small class="text-danger">{{ $message }}</small>
 								@enderror
@@ -241,24 +241,24 @@
 								<div>
 									<label style="margin-left: -15%;">Correo Electronico</label>
 								</div>
-								<input style="margin-left: -15%;" type="email" id="correo" placeholder="Introduzca una dirección de correo electrónico válida" class="cuadros" required>
+								<input style="margin-left: -15%;" type="email" id="correo" name="correo" value="{{ old('correo') }}" placeholder="Introduzca una dirección de correo electrónico válida" class="cuadros" required>
 								@error('correo')
 								<small class="text-danger">{{ $message }}</small>
 								@enderror
 
 								<div>
-									<label style="margin-left: 35%; margin-top: -11% ">Teléfono principal</label>
+									<label style="margin-left: 35%; margin-top: -11% ">Teléfono</label>
 								</div>
-								<input style="margin-left: 35%; margin-top: -6%" type="tel" id="telefonoprincipal" placeholder="Ingrese el teléfono principal" class="cuadros" required>
-								@error('telefonoprincipal')
+								<input style="margin-left: 35%; margin-top: -6%" type="tel" id="telefono" name="telefono" value="{{ old('telefono') }}" placeholder="Ingrese el teléfono principal" class="cuadros" required>
+								@error('telefono')
 								<small class="text-danger">{{ $message }}</small>
 								@enderror
 
 								<div>
-									<label style="margin-left: 85%; margin-top: -11% ">Teléfono secundario</label>
+									<label style="margin-left: 85%; margin-top: -11% ">Celular</label>
 								</div>
-								<input style="margin-left: 85%; margin-top: -6%" type="tel" id="telefono1" placeholder="Ingrese el teléfono secundario" class="cuadros">
-								@error('telefonosecundario')
+								<input style="margin-left: 85%; margin-top: -6%" type="tel" id="celular" name="celular" value="{{ old('celular') }}" placeholder="Ingrese el teléfono secundario" class="cuadros">
+								@error('celular')
 								<small class="text-danger">{{ $message }}</small>
 								@enderror
 							</div>
@@ -266,16 +266,25 @@
 							<div>
 								<div>
 									<label style="margin-left: -15%;">Barrio</label>
+									@error('barrio')
+								<small class="text-danger">{{ $message }}</small>
+								@enderror
 								</div>
-								<input style="margin-left: -15%;" type="text" placeholder="Ingrese su Barrio" id="direccion" class="cuadros" required>
+								<input style="margin-left: -15%;" type="text" placeholder="Ingrese su Barrio" id="barrio" name="barrio" value="{{ old('barrio') }}" class="cuadros" required>
 								<div>
 									<label style="margin-left: 35%; margin-top: -11% ">Ciudad</label>
+									@error('ciudad')
+								<small class="text-danger">{{ $message }}</small>
+								@enderror
 								</div>
-								<input style="margin-left: 35%; margin-top: -6% " type="text" placeholder="Ingrese su Ciudad" id="direccion" class="cuadros" required>
+								<input style="margin-left: 35%; margin-top: -6% " type="text" placeholder="Ingrese su Ciudad" id="ciudad" name="ciudad" value="{{ old('ciudad') }}" class="cuadros" required>
 								<div>
 									<label style="margin-left: 85%; margin-top: -11% ">Dirección</label>
+									@error('direccion')
+								<small class="text-danger">{{ $message }}</small>
+								@enderror
 								</div>
-								<input style="margin-left: 85%; margin-top: -6% " type="text" placeholder="Dirección de Domicilio" id="direccion" class="cuadros" required>
+								<input style="margin-left: 85%; margin-top: -6% " type="text" placeholder="Dirección de Domicilio" id="direccion" name="direccion" value="{{ old('direccion') }}" class="cuadros" required>
 							</div>
 							<hr>
 
@@ -287,12 +296,12 @@
 									<label style="margin-left: 32%;">Bachillerato</label>
 								</div>
 								<div>
-									<select style="margin-left: 32%;" class="cuadros" id="estudios" required>
+									<select style="margin-left: 32%;" class="cuadros" id="estudios" name="estudios" value="{{ old('estudios') }}" required>
 										<option value="">Seleccionar</option>
-										<option value="Item 4">Universitario</option>
-										<option value="Item 1">Completo (Grado 11)</option>
-										<option value="Item 2">Incompleto (Grado 6-9)</option>
-										<option value="Item 3">Primaria (Grado 5)</option>
+										<option value="Universidad">Universitario</option>
+										<option value="Completo">Completo (Grado 11)</option>
+										<option value="Incompleto">Incompleto (Grado 6-9)</option>
+										<option value="Primaria">Primaria (Grado 5)</option>
 									</select>
 
 								</div>
@@ -306,7 +315,7 @@
 					</label>
 					<hr>
 				</div>
-				<input style="margin-left: 42%;" type="submit" class="btn btn-primary" style="margin-left: 390px" id="submit" value="Registrar postulación">
+				<input style="margin-left: 42%;" type="submit" class="btn btn-primary" style="margin-left: 390px" id="submit"  onclick="confirm('Seguro que quieres enviar tu hoja de vida?')" value="Registrar postulación">
 				</form>
 				<br>
 				<br>

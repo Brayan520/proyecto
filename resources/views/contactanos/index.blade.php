@@ -185,7 +185,7 @@ img{
 						</div>
 						<button class="btn btn-primary"
 							style="margin-top: 8px; margin-bottom: 3%;" id="submit"
-							onclick="validate()">Enviar</button>
+							onclick="confirm('Seguro que quieres enviar tu mensaje?')">Enviar</button>
 					</div>
 			</div>
 			<h3 class="titulos">Contáctanos</h3>

@@ -21,8 +21,10 @@ return new class extends Migration
             $table->string('genero',100);
             $table->string('tipo',100);
             $table->string('identificacion',15)->unique();
-            $table->string('telefono',10)->unique();
+            $table->string('celular',10)->unique();
             $table->string('email')->unique();
+            $table->string('codigo')->unique();
+            $table->enum('fullaccess',['yes','no'])->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

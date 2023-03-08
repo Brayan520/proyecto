@@ -201,11 +201,11 @@ body {
 							<a style="text-decoration:none" href="{{ route('calificacionesadmin.index') }}" class="w3-button">Calificaciones</a>
 						</div>
 						<div class="w3-dropdown-hover">
-							<a style="text-decoration:none" href="hojadevidaadmin" class="w3-button">Hojas
+							<a style="text-decoration:none" href="{{ route('hojadevidaadmin.index') }}" class="w3-button">Hojas
 								de vida</a>
 						</div>
 						<div class="w3-dropdown-hover">
-							<a style="text-decoration:none" href="contratacionadmin.html" class="w3-button">Contratacion</a>
+							<a style="text-decoration:none" href="{{ route('contratacion.index') }}" class="w3-button">Contratacion</a>
 						</div>
 						<div class="w3-dropdown-hover">
 							<a style="text-decoration:none" href="vacantesadmin.html" class="w3-button">Vacantes</a>

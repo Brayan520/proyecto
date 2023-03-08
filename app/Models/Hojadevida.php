@@ -16,22 +16,11 @@ class Hojadevida extends Model
         'identificacion',
         'correo',
         'direccion',
-        'estadocivil',
-        'telefonoprincipal',
-        'telefonosecundario',
-        'fechanacimiento',
-        'edad',
+        'telefono',
+        'celular',
+        'ciudad',
         'estudios',
-        'otrosestudios',
-        'detallecarrera',
-        'institucion',
-        'estado',
-        'competencias',
-        'experiencialaboral',
-        'fechaingreso',
-        'fechasalida',
-        'referencialaboral',
-        'referenciapersonal',
+        'barrio',
         'fecharegistro',
     ];
 
@@ -45,3 +34,4 @@ class Hojadevida extends Model
         return $this->nombre.' '.$this->apellido;
     }
 }
+?>

@@ -50,6 +50,7 @@
 				</div>
             <div class="col-md-6">
 					<label for="idcolaborador" class="form-label">Id Colaborador</label>
+					<input type="text" class="form-control" id="idcolaborador" name="idcolaborador" value="{{ $colaborador->idcolaborador}}"
 					<select id="idcolaborador" class="form-select" name="idcolaborador" value="{{old('idcolaborador')}}">
 						<option value="" selected>Seleccionar...</option>
 						@foreach($colaboradores as $colaborador)

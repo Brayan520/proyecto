@@ -23,7 +23,13 @@
 					<th>Correo</th>
                     <th>Direccion</th>
 					<th>Telefono</th>
-					<th>Fecha de nacimiento</th>
+					<th>celular</th>
+					<th>fecharegistro</th>
+					<th>barrio</th>
+					<th>ciudad</th>
+					<th>tipoidentificacion</th>
+					<th>estudios</th>
+					
 					<th class="text-center" width="20%">Opciones</th>
 				</tr>
 			</thead>
@@ -35,8 +41,14 @@
 					<td>{{ $hojadevida->identificacion }}</td>
 					<td>{{ $hojadevida->correo }}</td>
 					<td>{{ $hojadevida->direccion }}</td>
-					<td>{{ $hojadevida->telefonoprincipal }}</td>
-					<td>{{ $hojadevida->fechanacimiento }}</td>
+					<td>{{ $hojadevida->telefono }}</td>
+					<td>{{ $hojadevida->celular }}</td>
+					<td>{{ $hojadevida->fecharegistro }}</td>
+					<td>{{ $hojadevida->barrio }}</td>
+					<td>{{ $hojadevida->ciudad }}</td>
+					<td>{{ $hojadevida->tipoidentificacion }}</td>
+					<td>{{ $hojadevida->estudios }}</td>
+				
 					<td class="text-center">
 						<a href="{{ route('hojadevida.edit', $hojadevida) }}" class="btn btn-success ti-pencil-alt"></a>
 						<form action="{{ route('hojadevida.destroy', $hojadevida) }}" method="POST" class="d-inline-block">

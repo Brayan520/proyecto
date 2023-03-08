@@ -21,22 +21,11 @@ return new class extends Migration
             $table->string('identificacion',20)->unique();
             $table->string('correo',100)->unique();
             $table->string('direccion',100);
-            $table->string('estadocivil',30);
-            $table->string('telefonoprincipal',15)->unique();
-            $table->string('telefonosecundario',15)->unique()->nullable();
-            $table->date('fechanacimiento');
-            $table->string('edad',2);
+            $table->string('telefono',15)->unique();
+            $table->string('celular',15)->unique()->nullable();
             $table->string('estudios',100);
-            $table->string('otrosestudios',100)->nullable();
-            $table->string('detallecarrera',100)->nullable();
-            $table->string('institucion',100)->nullable();
-            $table->string('estado',100)->nullable();
-            $table->string('competencias',100)->nullable();
-            $table->string('experiencialaboral',100)->nullable();
-            $table->string('fechaingreso')->nullable();
-            $table->string('fechasalida')->nullable();
-            $table->string('referencialaboral',100)->nullable();
-            $table->string('referenciapersonal',100)->nullable();
+            $table->string('barrio',100)->nullable();
+            $table->string('ciudad',100)->nullable();
             $table->date('fecharegistro');
 
         });

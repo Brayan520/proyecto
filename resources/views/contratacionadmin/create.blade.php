@@ -2,9 +2,13 @@
 @section('content')
 
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contratación-Administrador</title>
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.5/css/buttons.dataTables.min.css">
 	<script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
@@ -185,6 +189,7 @@
 	
 
 
+
 <body style="font-family:Arial, Helvetica, sans-serif">
 	<div class="w3-bar w3-black " style="margin-top: -23px;">
 		<a style="text-decoration:none" href="{{ route('administrador.index') }}" class="w3-bar-item w3-button ">Inicio</a>
@@ -195,7 +200,7 @@
 			<a style="text-decoration:none" href="{{ route('pqrsadmin.index') }}" class="w3-button">PQRS</a>
 		</div>
 		<div class="w3-dropdown-hover">
-			<a style="text-decoration:none" href="calificacionesadmin.html" class="w3-button">Calificaciones</a>
+			<a style="text-decoration:none" href="{{ route('calificaciones.index') }}" class="w3-button">Calificaciones</a>
 		</div>
 		<div class="w3-dropdown-hover">
 			<a style="text-decoration:none" th:href="@{/hojadevidaadmin}" class="w3-button">Hojas
@@ -216,58 +221,87 @@
 	</div>
 
 	<br>
-
+<center>
+    
+    <hr style="background:#111111">
 	<div class="container">
 		<div class="row">
+            <h2 style="font-weight:bold">Agregar contratante:</h2>
+            <hr>
 
+        <form action="{{ route('contratacionadmin.store') }}" method="POST">
+			@csrf
+			<div class="col-md-6">
+				<label for="terminolaboral" class="form-label" style="font-weight: bold;">Termino Laboral</label>
+                <select id="terminolaboral" type="text" class="form-control @error('terminolaboral') is-invalid @enderror" name="terminolaboral" value="{{ old('terminolaboral') }}" required autocomplete="on" autofocus>
+                                <option value="">Seleccionar...</option>    
+                                <option value="Indefinidio">Contrato indefinido</option>
+                                    <option value="Definido">Contrato definido</option>
+                                    <option value="Prestación de servicios">Prestación de servicios</option>
+                                </select>
 
-			<h2 style="color:darkblue; font-weight:bold;">Reportes Calificaciones</h2>
-		</div>
-		@if (sizeof($calificaciones) > 0)
+                                @error('terminolaboral')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+			</div>
+			</div>
+			<div class="col-md-6">
+				<label for="fechainicial" class="form-label" style="font-weight: bold;">Fecha Inicial</label>
+				<input type="date" class="form-control" id="fechainicial" name="fechainicial" value="{{ old('fechainicial') }}">
+				@error('fechainicial')
+				<small class="text-danger">{{ $message }}</small>
+				@enderror
+			</div>
+			<div class="col-md-6">
+				<label for="fechafinal" class="form-label" style="font-weight: bold;">Fecha Final</label>
+				<input type="date" class="form-control" id="fechafinal" name="fechafinal" value="{{ old('fechafinal') }}">
+				@error('fechafinal')
+				<small class="text-danger">{{ $message }}</small>
+				@enderror
+			</div>
 
-<br>
-	<div id="maintable">
-	
-		<br>
-		<div class="container">
-	
-	<table id="example" class="display nowrap" style="width:100%">
-		
-			<thead>
-				<tr>
-					<th class="text-center">#</th>
-					<th class="text-center">Puntuación</th>
-					<th class="text-center">Fecha Calificación</th>
-					<th class="text-center">Observaciones</th>
-					<th class="text-center">Dirección</th>
-				</tr>
-			</thead>
-			<tbody>
-				@foreach($calificaciones as $calificacion)
-				<tr>
-					<td class="text-center">{{ $calificacion->idcalificacion }}</td>
-					<td class="text-center">{{ $calificacion->puntuacioncalificacion }}</td>
-					<td class="text-center">{{ $calificacion->fechacalificacion }}</td>
-					<td class="text-center">{{ $calificacion->observaciones }}</td>
-					<td class="text-center">{{ $calificacion->contratoservicios->direccion }}</td>
-					</td>
-				</tr>
-				@endforeach
-			</tbody>
-		</table>
-		<div class="d-flex justify-content-center">
+<div class="col-md-6">
+				<label for="sueldo" class="form-label" style="font-weight: bold;">Sueldo</label>
+				<input type="text" class="form-control" id="sueldo" name="sueldo" value="{{ old('sueldo') }}">
+				@error('sueldo')
+				<small class="text-danger">{{ $message }}</small>
+				@enderror
+			</div>
+			<div class="col-md-6">
+				<label for="idcolaborador" class="form-label" style="font-weight: bold;">Id Colaborador</label>
+				<select class="form-control" id='idcolaborador' name='idcolaborador' value="{{ old('idcolaborador') }}">
+					<option value="">Seleccionar ...</option>
+					@foreach($colaboradores as $colaborador)
+					<option value="{{ $colaborador->idcolaborador }}" >{{ $colaborador->idcolaborador }}</option>
+					@endforeach
+				</select>
+				@error('idcolaborador')
+				<small class="text-danger">Colaborador ya contratado</small>
+				@enderror
+			</div>
 
-		</div>
-		@else
-		<div class="alert alert-secondary">
-			<h3>No se encontraron Calificaciones</h3>
-		</div>
-		@endif
+			<div class="col-md-6">
+				<label for="idaspirante" class="form-label" style="font-weight: bold;">Aspirante</label>
+				<select class="form-control" id='idaspirante' name='idaspirante' value="{{ old('idaspirante') }}">
+					<option value="">Seleccionar ...</option>
+					@foreach($aspirantes as $aspirante)
+					<option value="{{ $aspirante->idaspirante }}">{{ $aspirante->hojadevidas->nombre_apellido }}</option>
+					@endforeach
+				</select>
+				@error('idaspirante')
+				<small class="text-danger">Aspirante ya contratado</small>
+				@enderror
+			</div>
+			<div class="col-md-6 mt-3">
+				<button type="submit" class="btn btn-primary">Guardar</button>
+			</div>
+		</form>
 	</div>
-	</div>
-
-	<br><br><br><br><br>
-	</div>
+</div>
+<br><br><br><br><br>
+</center>
 	<footer>
 		<div class="container-fluid text-black" style="margin-bottom:-35px;">
 			<div class="row">
@@ -340,28 +374,4 @@
 	</footer>
 </body>
 
-	
-
-
-	
-	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-	<script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
-	<script src="https://cdn.datatables.net/buttons/2.3.5/js/dataTables.buttons.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-	<script src="https://cdn.datatables.net/buttons/2.3.5/js/buttons.html5.min.js"></script>
-	<script src="https://cdn.datatables.net/buttons/2.3.5/js/buttons.print.min.js"></script>
-
-<script>
-	$(document).ready(function() {
-    $('#example').DataTable( {
-        dom: 'Bfrtip',
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
-    } );
-} );
-</script>
-</html>
 @endsection
