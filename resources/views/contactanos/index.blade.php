@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head>
+<head lang="es">
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -156,7 +156,7 @@ img{
 					src="https://i.ibb.co/TWL0G0C/Asistente-virtual.jpg">
 			</div>
 			<div class="contenido">
-				<form method="POST" action="mail.php">
+				<form method="POST" action="{{ route('contactanos.index') }}">
 					<div class="cuadro" style="padding: 10px;">
 						<div class="posicion-cuadro correo">
 							<label>Nombre completo</label> <input
