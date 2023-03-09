@@ -263,7 +263,12 @@
 					<td class="text-center">
 						
 						<a href="{{ route('productadmin.edit', $product) }}" class="btn btn-info ti-pencil-alt" style="background-color:blue; margin-left: 10px;"></a>
-						<a href="{{ route('productadmin.edit', $product) }}" class="btn btn-danger ti-trash" style=" margin-left: 10px;"></a>
+						<form action="{{ route('productadmin.destroy', $product) }}" method="POST" class="d-inline-block">
+							@csrf
+							@method('DELETE')
+							<button type="submit" class="btn btn-danger ti-trash"
+							onclick="return confirm('¿Está seguro de eliminar el servicio?!!')"></button>
+						</form>
 					</td>
 				</tr>
 				@endforeach
