@@ -11,13 +11,17 @@ class Colaborador extends Model
     
     protected $table = 'colaborador';
     protected $primaryKey = 'idcolaborador';
-    protected $fillable = ['idcontratoservicio'];
+    protected $fillable = [
+        'nombre',
+        'apellido',
+    'celular'];
 
     public $timestamps = false;  
 
-    public function contratoservicios()
+   
+    public function contratoservicio()
     {
-        return $this->belongsTo(Contratoservicio::class, 'idcontratoservicio', 'idcontratoservicio');
+        return $this->hasMany(Contratoservicio::class, 'idcolaborador', 'idcolaborador');
     }
     
 }

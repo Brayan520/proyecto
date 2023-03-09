@@ -140,12 +140,12 @@ img{
 
 
 
-<body>
+<body style="font-family:Arial, Helvetica, sans-serif">
 
 			
 				<div class="w3-bar w3-black" style="margin-top: -23px;">
 					<a style="text-decoration: none;" href="{{ route('cliente.index') }}" class="w3-bar-item w3-button ">Inicio</a> 
-					<a style="text-decoration: none;" href="{{ route('catalogoservicio.index') }}" class="w3-bar-item w3-button">Catalogo
+					<a style="text-decoration: none;" href="/shop" class="w3-bar-item w3-button">Catalogo
 						de servicio</a> <a style="text-decoration: none;" href="{{ route('trabajaconnosotros.index') }}" class="w3-bar-item w3-button">Trabaja
 						con nosotros</a> <a style="text-decoration: none;" href="{{ route('pqrs.index') }}" class="w3-bar-item w3-button">PQRS</a>
 						<a style="text-decoration: none;" href="{{ route('calificaciones.index') }}" class="w3-bar-item w3-button">Calificaciones</a>

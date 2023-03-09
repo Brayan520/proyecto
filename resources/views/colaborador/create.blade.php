@@ -11,15 +11,27 @@
 		<form action="{{ route('colaborador.store') }}" method="POST">
 			@csrf
 			<div class="col-md-6">
-				<label for="idcontratoservicio" class="form-label">Dirección</label>
-				<select class="form-control" id='idcontratoservicio' name='idcontratoservicio' value="{{ old('idcontratoservicio') }}">
-					<option value="">Seleccionar ...</option>
-					@foreach($contratoservicios as $contratoservicio)
-					<option value="{{ $contratoservicio->idcontratoservicio }}">{{ $contratoservicio->direccion }}</option>
-					@endforeach
+				<label for="nombre" class="form-label">Nombre</label>
+				<input type="text" class="form-control" id="nombre" name="nombre" value="{{ old('nombre') }}">
 				</select>
-				@error('idcontratoservicio')
-				<small class="text-danger">Seleccione una dirección</small>
+				@error('nombre')
+				<small class="text-danger"></small>
+				@enderror
+			</div>
+			<div class="col-md-6">
+				<label for="apellido" class="form-label">Apellido</label>
+				<input type="text" class="form-control" id="apellido" name="apellido" value="{{ old('apellido') }}">
+				</select>
+				@error('apellido')
+				<small class="text-danger"></small>
+				@enderror
+			</div>
+			<div class="col-md-6">
+				<label for="celular" class="form-label">Número de celular</label>
+				<input type="text" class="form-control" id="celular" name="celular" value="{{ old('celular') }}">
+				</select>
+				@error('celular')
+				<small class="text-danger"></small>
 				@enderror
 			</div>
 			<div class="col-md-6 mt-3">

@@ -18,7 +18,9 @@
 			<thead>
 				<tr>
 					<th>#</th>
-					<th>Dirección</th>
+					<th>Nombre</th>
+					<th>Apellido</th>
+					<th>Número de celular</th>
 					<th class="text-center" width="20%">Opciones</th>
 				</tr>
 			</thead>
@@ -26,7 +28,9 @@
 				@foreach($colaboradores as $colaborador)
 				<tr>
 					<td>{{ $colaborador->idcolaborador }}</td>
-					<td>{{ $colaborador->contratoservicios->direccion }}</td>
+					<td>{{ $colaborador->nombre }}</td>
+					<td>{{ $colaborador->apellido }}</td>
+					<td>{{ $colaborador->celular }}</td>
 					<td class="text-center">
 						<a href="{{ route('colaborador.edit', $colaborador) }}" class="btn btn-success ti-pencil-alt"></a>
 						<form action="{{ route('colaborador.destroy', $colaborador) }}" method="POST" class="d-inline-block">

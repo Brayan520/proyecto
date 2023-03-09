@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('identificacion',15)->unique();
             $table->string('celular',10)->unique();
             $table->string('email')->unique();
-            $table->string('codigo')->unique();
+            $table->string('codigo')->unique()->nullable();
             $table->enum('fullaccess',['yes','no'])->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

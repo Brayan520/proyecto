@@ -33,7 +33,9 @@ class ColaboradorController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-     'idcontratoservicio'=> 'required'
+     'nombre'=> 'required',
+     'apellido'=> 'required',
+     'celular'=> 'required|unique:colaborador'
        ]);
        Colaborador::create($request->all());
 
@@ -73,7 +75,9 @@ class ColaboradorController extends Controller
     public function update(Request $request, Colaborador $colaborador)
     {
       $request->validate([
-     'idcontratoservicio'=> 'required'
+        'nombre'=> 'required',
+        'apellido'=> 'required',
+        'celular'=> 'required|unique:colaborador'
        ]);
 
       $colaborador->update($request->all());

@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\HomeController;
 
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
@@ -52,6 +53,7 @@ use App\Http\Controllers\ContratacionadminController;
 use App\Http\Controllers\PersonaladminController;
 use App\Http\Controllers\ServiciosadminController;
 use App\Http\Controllers\VacantesadminController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,12 +68,12 @@ use App\Http\Controllers\VacantesadminController;
 
 
 
-Route::get('/home', function () {
-    return redirect('/home');
+Route::get('/', function () {
+    return redirect('/index');
 });
 Route::resource ('home', HomeController::class);
 
-Route::get('/', function () {
+Route::get('/index', function () {
     return redirect('/index');
 });
 Route::resource ('index', IndexController::class);
@@ -310,6 +312,19 @@ Route::get('/vacantesadmin', function () {
     return redirect('/vacantesadmin');
 });
 Route::resource ('vacantesadmin', VacantesadminController::class);
+
+
+Route::get('/shop', [CartController::class, 'shop'])->name('shop');
+Route::get('/cart', [CartController::class, 'cart'])->name('cart.index');
+Route::post('/add', [CartController::class, 'add'])->name('cart.store');
+Route::post('/update', [CartController::class, 'update'])->name('cart.update');
+Route::post('/remove', [CartController::class, 'remove'])->name('cart.remove');
+Route::post('/clear', [CartController::class, 'clear'])->name('cart.clear');
+
+
+
+
+
 
 
 ?>

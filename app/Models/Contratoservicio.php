@@ -11,13 +11,18 @@ class Contratoservicio extends Model
 
     protected $table = 'contratoservicio';
     protected $primaryKey = 'idcontratoservicio';
-    protected $fillable = ['direccion', 'fechainicial', 'fechafinal', 'idsolicitudservicio'];
+    protected $fillable = ['direccion', 'fechainicial', 'fechafinal', 'idsolicitudservicio', 'idcolaborador'];
 
     public $timestamps = false;  
 
     public function solicitudservicios()
     {
         return $this->belongsTo(Solicitudservicio::class, 'idsolicitudservicio', 'idsolicitudservicio');
+    }
+
+    public function colaboradors()
+    {
+        return $this->belongsTo(Colaborador::class, 'idcolaborador', 'idcolaborador');
     }
     
     public function pqrss()
