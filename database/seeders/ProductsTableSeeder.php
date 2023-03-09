@@ -16,87 +16,111 @@ class ProductsTableSeeder extends Seeder
     public function run()
     {
         Product::create([
-            'name' => 'MacBook Pro',
-            'slug' => 'macbook-pro',
-            'details' => '15 pulgadas, 1TB HDD, 32GB RAM',
-            'price' => 2499.99,
-            'shipping_cost' => 29.99,
-            'description' => 'MackBook Pro',
+            'name' => 'Servicio de asesoria en administración de personal',
+            'slug' => 'Asesoria',
+            'details' => 'Asesoria laboral',
+            'price' => 100000,
+            'shipping_cost' => 0,
+            'description' => 'Servicio de asesoria en administración de personal',
             'category_id' => 1,
             'brand_id' => 1,
-            'image_path' => 'macbook-pro.png'
+            'image_path' => 'administrarpersonal.jpg'
         ]);
 
         Product::create([
-            'name' => 'Dell Vostro 3557',
-            'slug' => 'vostro-3557',
-            'details' => '15 pulgadas, 1TB HDD, 8GB RAM',
-            'price' => 1499.99,
-            'shipping_cost' => 19.99,
-            'description' => 'Dell Vostro 3557',
+            'name' => 'Servicio de afiliación a seguridad social',
+            'slug' => 'Afiliación',
+            'details' => 'Afiliación',
+            'price' => 120000,
+            'shipping_cost' => 0,
+            'description' => 'Servicio de afiliación a seguridad social',
             'category_id' => 1,
             'brand_id' => 2,
-            'image_path' => 'dell-v3557.png'
+            'image_path' => 'afiliacionseguridadsocial.jpg'
         ]);
 
         Product::create([
-            'name' => 'iPhone 11 Pro',
-            'slug' => 'iphone-11-pro',
-            'details' => '6.1 pulgadas, 64GB 4GB RAM',
-            'price' => 649.99,
-            'shipping_cost' => 14.99,
-            'description' => 'iPhone 11 Pro',
+            'name' => 'Aseo en apoyos de casas y oficinas',
+            'slug' => 'Aseo',
+            'details' => 'Aseo general',
+            'price' => 80000,
+            'shipping_cost' => 0,
+            'description' => 'Aseo en apoyos de casas y oficinas',
             'category_id' => 2,
             'brand_id' => 1,
-            'image_path' => 'iphone-11-pro.png'
+            'image_path' => 'apoyoencasayoficina.jpg'
         ]);
 
         Product::create([
-            'name' => 'Remax 610D Headset',
-            'slug' => 'remax-610d',
-            'details' => '6.1 pulgadas, 64GB 4GB RAM',
-            'price' => 8.99,
-            'shipping_cost' => 1.89,
-            'description' => 'Remax 610D Headset',
+            'name' => 'Servicio de aseo en dormitorios',
+            'slug' => 'Aseo cuartos',
+            'details' => 'Aseo en dormitorios',
+            'price' => 80000,
+            'shipping_cost' => 0,
+            'description' => 'Servicio de aseo en dormitorios',
             'category_id' => 3,
             'brand_id' => 3,
-            'image_path' => 'remax-610d.jpg'
+            'image_path' => 'aseoendormitorios.jpg'
         ]);
 
         Product::create([
-            'name' => 'Samsung LED TV',
-            'slug' => 'samsung-led-24',
-            'details' => '24 pulgadas, LED Display, Resolución 1366 x 768',
-            'price' => 41.99,
-            'shipping_cost' => 12.59,
-            'description' => 'Samsung LED TV',
+            'name' => 'Servicio de cuidado a adulto mayor',
+            'slug' => 'Cuidado',
+            'details' => 'Cuidado a adulto mayor',
+            'price' => 80000,
+            'shipping_cost' => 0,
+            'description' => 'Servicio de cuidado a adulto mayor',
             'category_id' => 4,
             'brand_id' => 4,
-            'image_path' => 'samsung-led-24.png'
+            'image_path' => 'cuidadoadultomayor.jpg'
         ]);
 
         Product::create([
-            'name' => 'Samsung Camara Digital',
-            'slug' => 'samsung-mv800',
-            'details' => '16.1MP, 5x Optical Zoom',
-            'price' => 144.99,
-            'shipping_cost' => 13.39,
-            'description' => 'Samsung Digital Camera',
+            'name' => 'Servicio de cuidado de niños',
+            'slug' => 'Cuidado nniños',
+            'details' => 'Cuidado de niños',
+            'price' => 80000,
+            'shipping_cost' => 0,
+            'description' => 'Servicio de cuidado de niños',
             'category_id' => 5,
             'brand_id' => 4,
-            'image_path' => 'samsung-mv800.jpg'
+            'image_path' => 'cuidadodeniños.jpg'
         ]);
 
         Product::create([
-            'name' => 'Huawei GR 5 2017',
-            'slug' => 'gr5-2017',
-            'details' => '5.5 pulgadas, 32GB 4GB RAM',
-            'price' => 148.99,
-            'shipping_cost' => 6.79,
-            'description' => 'Huawei GR 5 2017',
+            'name' => 'Servicio de limpieza de baños',
+            'slug' => 'Aseo baños',
+            'details' => 'Aseo de baños',
+            'price' => 80000,
+            'shipping_cost' => 0,
+            'description' => 'Servicio de limpieza de baños',
             'category_id' => 2,
             'brand_id' => 5,
-            'image_path' => 'gr5-2017.jpg'
+            'image_path' => 'limpiezadebaños.jpg'
+        ]);
+
+        Product::create([
+            'name' => 'Servicio de planchado de ropa',
+            'slug' => 'Planchado',
+            'details' => 'Planchado de ropa',
+            'price' => 80000,
+            'shipping_cost' => 0,
+            'description' => 'Servicio de planchado de ropa',
+            'category_id' => 2,
+            'brand_id' => 5,
+            'image_path' => 'planchadoderopa.jpg'
+        ]);
+
+        Product::create([
+            'name' => 'Servicio de preparación de alimento',
+            'slug' => 'Preparación',
+            'details' => 'Preparación de alimentos',
+            'price' => 80000,
+            'shipping_cost' => 0,
+            'description' => 'Servicio de preparación de alimento',
+            'category_id' => 2,
+            'brand_id' => 5,
+            'image_path' => 'preparaciondealimentos.jpg'
         ]);
 
     }

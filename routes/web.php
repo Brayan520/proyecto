@@ -54,6 +54,7 @@ use App\Http\Controllers\PersonaladminController;
 use App\Http\Controllers\ServiciosadminController;
 use App\Http\Controllers\VacantesadminController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ProductadminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -312,6 +313,11 @@ Route::get('/vacantesadmin', function () {
     return redirect('/vacantesadmin');
 });
 Route::resource ('vacantesadmin', VacantesadminController::class);
+
+Route::get('/productadmin', function () {
+    return redirect('/productadmin');
+});
+Route::resource ('productadmin', ProductadminController::class);
 
 
 Route::get('/shop', [CartController::class, 'shop'])->name('shop');

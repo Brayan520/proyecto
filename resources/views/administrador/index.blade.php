@@ -214,7 +214,7 @@ body {
 							<a style="text-decoration:none" href="{{ route('personaladmin.index') }}" class="w3-button">Personal</a>
 						</div>
 						<div class="w3-dropdown-hover">
-							<a style="text-decoration:none" href="{{ route('serviciosadmin.index') }}" class="w3-button">Servicios</a>
+							<a style="text-decoration:none" href="{{ route('productadmin.index') }}" class="w3-button">Servicios</a>
 						</div>
 					</div>
 
@@ -319,7 +319,7 @@ body {
 						<h5 class="titulo">SERVICIOS</h5>
 						<p class="texto">Servicios solicitados.</p>
 						<div class="icono-servicios ">
-							<a href="{{ route('serviciosadmin.index') }}"><img src="https://i.ibb.co/ByPnvn7/2.png"
+							<a href="{{ route('productadmin.index') }}"><img src="https://i.ibb.co/ByPnvn7/2.png"
 								alt="">
 						</div>
 						</a>

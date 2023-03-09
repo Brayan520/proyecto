@@ -215,7 +215,7 @@
 							<a style="text-decoration:none" href="{{ route('personaladmin.index') }}" class="w3-button">Personal</a>
 						</div>
 						<div class="w3-dropdown-hover">
-							<a style="text-decoration:none" href="{{ route('serviciosadmin.index') }}" class="w3-button">Servicios</a>
+							<a style="text-decoration:none" href="{{ route('productadmin.index') }}" class="w3-button">Servicios</a>
 	</div>
 	</div>
 

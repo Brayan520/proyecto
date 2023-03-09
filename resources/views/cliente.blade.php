@@ -177,7 +177,7 @@ img{
 						<p class="texto">En esta seccion podras verificar todos los
 							tipos de servicios que manejamos, ingresa ahora, conocelos y
 							adquirelos.</p>
-						<a href="{{ route('catalogoservicio.index') }}">
+						<a href="/shop">
 							<button class="w3-button w3-blue" style="border-radius: 8px;">Dirigirme</button>
 						</a>
 					</div>

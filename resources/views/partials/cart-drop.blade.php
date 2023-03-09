@@ -2,9 +2,9 @@
 @if(count(\Cart::getContent()) > 0)
     @foreach(\Cart::getContent() as $item)
         <li class="list-group-item">
-            <div class="row">s
+            <div class="row">
                 <div class="col-lg-3">
-                    <img src="/images/{{ $item->attributes->image }}"
+                    <img src="/img/{{ $item->attributes->image }}"
                          style="width: 50px; height: 50px;"
                     >
                 </div>
