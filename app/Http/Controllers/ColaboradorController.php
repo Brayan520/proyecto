@@ -96,3 +96,4 @@ class ColaboradorController extends Controller
         return back();
     }
 }
+$colaboradores = Colaborador::all()->pluck('nombre_apellido');

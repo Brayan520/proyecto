@@ -23,5 +23,13 @@ class Colaborador extends Model
     {
         return $this->hasMany(Contratoservicio::class, 'idcolaborador', 'idcolaborador');
     }
-    
+
+    public function contrataciones()
+    {
+        return $this->hasMany(Contratacion::class, 'idcolaborador', 'idcolaborador');
+    }
+
+    public function getNombreApellidoAttribute(){
+        return $this->nombre.' '.$this->apellido;
+    }
 }

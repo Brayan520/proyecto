@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Colaborador;
 use App\Models\Aspirante;
-use App\Models\Hojadevida;
 use App\Models\Contratacion;
 
 class ContratacionadminController extends Controller
@@ -107,3 +106,4 @@ class ContratacionadminController extends Controller
         return back();
     }
 }
+$colaboradores = Colaborador::all()->pluck('nombre_apellido');

@@ -278,7 +278,7 @@
 			
 		</div>
 		@else
-		<div class="alert alert-secondary"><h3>No se encontraron Sservicios</h3></div>
+		<div class="alert alert-secondary"><h3>No se encontraron Servicios</h3></div>
 		@endif
 	</div>
 </div>

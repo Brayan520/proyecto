@@ -33,13 +33,11 @@ class ProductadminController extends Controller
     {
         $request->validate([
             'name'=> 'required|min:2|max:100',
-            'slug'=> 'required|min:2|max:100',
-            'details'=> 'required|min:5|max:100',
+         
             'price',
-            'shipping_cost',
-            'description'=> 'required|min:5|max:100',
-            'category_id',
-            'brand_id',
+          
+            'details'=> 'required|min:5|max:100',
+          
             'image_path'
        ]);
        Product::create($request->all());
@@ -83,8 +81,8 @@ class ProductadminController extends Controller
     {
       $request->validate([
         'name'=> 'required|min:2|max:100',
-        'slug'=> 'required|min:2|max:100',
-        'details'=> 'required|min:5|max:100',
+        'slug'=> 'min:2|max:100',
+        'details'=> 'min:5|max:100',
         'price',
         'shipping_cost',
         'description'=> 'required|min:5|max:100',
@@ -106,6 +104,6 @@ class ProductadminController extends Controller
     public function destroy(Product $products)
     {
         $products->delete();
-        return redirect()->route('productadmin.index'); 
+        return back(); 
     }
 }
