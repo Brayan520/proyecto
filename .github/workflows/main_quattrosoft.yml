@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy PHP app to Azure Web App - quattrosoft
+name: Build and deploy PHP app to Azure Web App - Quattrosoft
 
 on:
   push:
@@ -54,7 +54,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'quattrosoft'
+          app-name: 'Quattrosoft'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_DA916ADEB43C4027AB1693DB07F43347 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E8523C7FA1CA49CEBBFB62513A05C17A }}
           package: .
