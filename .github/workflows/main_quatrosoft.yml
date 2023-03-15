@@ -56,5 +56,5 @@ jobs:
         with:
           app-name: 'quatrosoft'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_57DE458785924C8EB465CBC18F6EB666 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E16E1E20AA7647888DEF1522DCC64EA8 }}
           package: .
