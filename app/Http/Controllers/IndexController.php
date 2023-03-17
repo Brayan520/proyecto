@@ -8,7 +8,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        return view ('index.index');
+        return view ('index');
 }
 public function contactanos()
 {
@@ -18,4 +18,5 @@ public function quienessomos()
 {
     return view ('index.quienessomos');
 }
+
 }

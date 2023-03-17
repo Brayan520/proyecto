@@ -74,7 +74,7 @@ Route::get('/', function () {
 });
 Route::resource ('home', HomeController::class);
 
-Route::get('/index', function () {
+Route::get('/', function () {
     return redirect('/index');
 });
 Route::resource ('index', IndexController::class);
