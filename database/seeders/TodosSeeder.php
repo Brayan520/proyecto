@@ -43,5 +43,18 @@ class TodosSeeder extends Seeder
             'fullaccess' => 'no',
             'codigo' => 'user1',
         ]);
+        $user1=User::create([
+            'nombre' => 'Yineth',
+            'apellido' => 'Parra',
+            'direccion' => 'calle 9',
+            'genero' => 'femenino',
+            'tipo' => 'CC',
+            'identificacion' => '111548677',
+            'celular' => '3122137909',
+            'email' => 'yineth@gmail.com',
+            'password' => Hash::make('scenario'),
+            'fullaccess' => 'no',
+            'codigo' => 'user2',
+        ]);
     }
 }
