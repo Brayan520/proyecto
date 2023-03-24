@@ -27,7 +27,7 @@ class UserSettingsController extends Controller
         if($request->password_actual !=""){
             $NuewPass   = $request->password;
             $confirPass = $request->confirm_password;
-            $name       = $request->name;
+            $nombre       = $request->nombre;
 
                 //Verifico si la clave actual es igual a la clave del usuario en session
                 if (Hash::check($request->password_actual, $userPassword)) {
@@ -39,7 +39,7 @@ class UserSettingsController extends Controller
                             $user->password = Hash::make($request->password);
                             $sqlBD = DB::table('users')
                                   ->where('id', $user->id)
-                                  ->update(['password' => $user->password], ['name' => $user->name]);
+                                  ->update(['password' => $user->password], ['nombre' => $user->nombre]);
                     
                             return redirect()->back()->with('updateClave','La clave fue cambiada correctamente.');
                         }else{
@@ -56,11 +56,11 @@ class UserSettingsController extends Controller
 
 
         }else{
-            $name       = $request->name;
+            $nombre       = $request->nombre;
             $sqlBDUpdateName = DB::table('users')
                             ->where('id', $user->id)
-                            ->update(['name' => $name]);
-            return redirect()->back()->with('name','El nombre fue cambiado correctamente.');;
+                            ->update(['nombre' => $nombre]);
+            return redirect()->back()->with('nombre','El nombre fue cambiado correctamente.');;
 
         }
 
