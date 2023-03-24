@@ -1,0 +1,33 @@
+.container-fluid{
+    background-color: #C9C8C8;
+}
+.texto2{
+    padding-left: 10%;
+}
+img{
+    width: 40%;
+    height: 80%;
+}
+.iconos{
+    margin-bottom: 5%; 
+}
+.boton .facebook{
+    background: #3b5998;
+    color: #fff;
+    padding: 4px;
+}
+.boton .instagram{
+    background: #d11d62;
+    color: rgb(255, 255, 255);
+    padding: 4px;
+}
+.boton .email{
+    background: #ffffff;
+    color: rgb(255, 0, 0);
+    padding: 4px;
+}
+.boton .mobile{
+    background: #14ac14;
+    color: rgb(255, 255, 255);
+    padding: 4px;
+}

@@ -1,0 +1,63 @@
+img {
+  width: 60%;
+  height: 120%;
+  margin-left: 100px;
+ }
+.body{
+  background-color: rgb(233, 233, 233);
+}
+.contenido {
+  max-width: 540px;
+  margin: 8vh auto; }
+
+.cuadro {
+  background: #ffffff;
+  padding: 30px 30px 20px;
+  border-radius: 2px; }
+
+.Iniciar-espacio h4 {
+  color: #878787;
+  text-align: center;
+  margin-bottom: 50px; }
+
+.Iniciar-espacio .checar {
+  color: #C9C8C8; }
+
+.Iniciar-espacio .checar label {
+  text-transform: none; }
+
+.Iniciar-espacio .btn {
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 15px;
+  border: 0px; }
+
+.Iniciar-espacio label {
+  color: #878787;
+  text-transform: uppercase; }
+
+.Iniciar-espacio label a {
+  color: #ff2e44; }
+
+.cuadro-social {
+  margin: 0px -30px;
+  border-top: 1px solid #e7e7e7;
+  padding: 30px 0px;
+  background: #fcfcfc; }
+
+.boton {
+  padding: 0 30px; 
+}
+  .boton .facebook {
+    background: #3b5998;
+    color: #fff; }
+
+  .boton .email {
+    background: #ff0000;
+    color: #fff; 
+  }
+
+.boton i {
+  padding: 19px; }
+
